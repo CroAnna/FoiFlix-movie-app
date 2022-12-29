@@ -45,6 +45,9 @@ CREATE TABLE IF NOT EXISTS `korisnik` (
 INSERT INTO `korisnik` (`id`, `korime`, `lozinka`, `ime`, `prezime`, `email`, `token`, `sol`, `uloga_id`, `aktiviran`, `blokiran`, `tajniTOTPkljuc`) VALUES
 (3, 'a', '3f5d173d7b5bc56590f5f6793ac07d278f5a6e088f72b66c0ca9cda1039dbccc', 'a', 'a', 'aaa@gmail.com', NULL, NULL, 1, NULL, 1, NULL);
 
+INSERT INTO `korisnik` (`id`, `korime`, `lozinka`, `ime`, `prezime`, `email`, `token`, `sol`, `uloga_id`, `aktiviran`, `blokiran`, `tajniTOTPkljuc`) VALUES
+(85, 'administrator', '2317c5cc4e67b0cb5f55b26fdcf5fe0a24012503ae99d22b26f3c866d281be2b', 'admin', 'istrator', 'oday.khiree@minutestep.com', NULL, NULL, 1, 1, NULL, 'BECRAAAAAAAACBRBAAAAABRAAADRAAAJAAAAKAAAAIAAABAEAAAAMARABEDRABZAAAAARAAEAZAARAZFA5DACAAAAACAAAAHAABRABA');
+
 SELECT * FROM korisnik;
 
 

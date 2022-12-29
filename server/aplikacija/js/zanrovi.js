@@ -1,4 +1,5 @@
-let url = "http://spider.foi.hr:12238/api";
+//let url = "http://spider.foi.hr:12238/api";
+let url = "http://localhost:9001/api"
 window.addEventListener("load", async () => {
     const inputPromjena = document.getElementById("inputPromjenaNaziva");
     const btnPromjena = document.getElementById("promijeniNaziv");
@@ -30,7 +31,9 @@ function promijeniNaziv() {
 }
 
 async function dajPodatke() {
-    let odgovor = await fetch("http://spider.foi.hr:12204/dajSveZanrove");
+    //let odgovor = await fetch("http://spider.foi.hr:12204/dajSveZanrove");
+    let odgovor = await fetch("http://localhost:9001/dajSveZanrove");
+
     if (odgovor.status == 200) {
         let podaci = await odgovor.text();
         prikaziTMDBZanrove(podaci);
@@ -40,17 +43,19 @@ async function dajPodatke() {
 }
 
 async function dajMojePodatke() {
-    let odgovor = await fetch("http://spider.foi.hr:12204/dajMojeZanrove");
+    let odgovor = await fetch("http://localhost:9001/dajMojeZanrove");
     if (odgovor.status == 200) {
         let podaci = await odgovor.text();
         prikaziMojeZanrove(podaci);
     } else {
+        console.error();
+
         alert("Problem kod preuzimanja podataka:\n" + odgovor.statusText);
     }
 }
 
 async function dodajTMDBPodatke() {
-    let odgovor = await fetch("http://spider.foi.hr:12204/dajSveZanrove");
+    let odgovor = await fetch("http://localhost:9001/dajSveZanrove");
     if (odgovor.status == 200) {
         let podaci = await odgovor.text();
         dodajIzTMDBAuMojuBazu(podaci);
@@ -61,7 +66,7 @@ async function dodajTMDBPodatke() {
 }
 
 async function dajMojePodatkeBrisanje() {
-    let odgovor = await fetch("http://spider.foi.hr:12204/dajMojeZanrove");
+    let odgovor = await fetch("http://localhost:9001/dajMojeZanrove");
     if (odgovor.status == 200) {
         let podaci = await odgovor.text();
         izbrisiBezFilmova(podaci);
@@ -87,7 +92,7 @@ async function izbrisiBezFilmova(podaci) {
         headers: header
     }
 
-    let podatki = await fetch("http://spider.foi.hr:12204/zanroviDelete", parametri);
+    let podatki = await fetch("http://localhost:9001/zanroviDelete", parametri);
     await podatki.text();
 }
 
@@ -153,7 +158,7 @@ async function dodajZanr(novi_id, naziv) {
         headers: header
     }
 
-    let podatki = await fetch("http://spider.foi.hr:12204/zanroviDodaj", parametri);
+    let podatki = await fetch("http://localhost:9001/zanroviDodaj", parametri);
     await podatki.text();
 }
 
@@ -172,7 +177,7 @@ async function updateajZanr(id, novi_naziv) {
         headers: header
     }
 
-    let podatki = await fetch("http://spider.foi.hr:12204/zanroviUpdate", parametri);
+    let podatki = await fetch("http://localhost:9001/zanroviUpdate", parametri);
     await podatki.text();
 }
 

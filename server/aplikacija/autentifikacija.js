@@ -91,8 +91,7 @@ class Autentifikacija {
     };
 
     let odgovor = await fetch(
-      "http://spider.foi.hr:" +
-      portRest +
+      "http://localhost:9000" +
       "/api/korisnici/" +
       korime +
       "/prijava?korime={rest.korime}&lozinka={rest.lozinka}",//

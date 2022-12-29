@@ -1,4 +1,5 @@
-let url = "http://spider.foi.hr:12204";
+//let url = "http://spider.foi.hr:12204";
+let url = "http://localhost:9000"; // TODO promijeni u rest port da se odnekud uzme
 
 window.addEventListener("load", async () => {
   let main = document.querySelector(".generirani-kontejner");

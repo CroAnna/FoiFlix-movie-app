@@ -26,7 +26,10 @@ class FilmoviZanroviPretrazivanje {
 
   async dohvatiMojeZanrove() {
     console.log("putanja => " + url + "/zanr");
-    let odgovor = await fetch("localhost:9000/api/zanr?korime={rest.korime}&lozinka={rest.lozinka}"); // TODO
+    //let odgovor = await fetch("localhost:9000/api/zanr?korime={rest.korime}&lozinka={rest.lozinka}"); // TODO
+    console.log("prije dohvatiMojeZanrove");
+
+    let odgovor = await fetch("http://localhost:9000/api/zanr");
     console.log("u dohvatiMojeZanrove");
     let podaci = await odgovor.text();
     console.log(podaci);
