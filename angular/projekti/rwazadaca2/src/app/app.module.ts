@@ -2,17 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ZanrComponent } from './zanr/zanr.component';
 import { NavigacijaComponent } from './navigacija/navigacija.component';
-
-// pocetak navigacije za routing
-const routes: Routes = [{ path: 'zanrovi', component: ZanrComponent }];
+import { PregledFilmovaComponent } from './pregled-filmova/pregled-filmova.component';
 
 @NgModule({
-  declarations: [AppComponent, ZanrComponent, NavigacijaComponent],
+  declarations: [AppComponent, ZanrComponent, NavigacijaComponent, PregledFilmovaComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,1 +1,715 @@
 /* You can add global styles to this file, and also import other style files */
+$color_black: #171717;
+$color_white: #ededed;
+$color_red: #da0037;
+$color_dark_gray: #444444;
+$color_white_pure: #fff;
+$color_dark_gray: #202020;
+$color_light_gray: #9b9b9b;
+$color_green: #1bb10b;
+
+$font-family_1: "Exo", sans-serif;
+$font-family_2: "Poppins", sans-serif;
+
+@import "https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: $font-family_1;
+}
+body {
+  background: rgb(0, 0, 0);
+  background-attachment: fixed;
+  background: radial-gradient(
+    /*ovo nije originalna boja*/ circle,
+    rgb(180, 180, 180) 0%,
+    rgb(249, 125, 125) 100%
+  );
+
+  /*background: radial-gradient(
+    circle,
+    rgba(218, 0, 55, 1) 0%,
+    rgba(23, 23, 23, 1) 100%
+  );*/
+}
+.o-studentu {
+  margin: 20px auto;
+  width: 60%;
+}
+.podaci-container {
+  background-color: $color_dark_gray;
+  padding: 50px;
+  border-radius: 30px;
+  display: block;
+  h2 {
+    color: $color_white;
+    text-align: center;
+    font-size: 70px;
+  }
+  h3 {
+    font-size: 30px;
+    padding: 10px;
+  }
+}
+.podaci {
+  margin: 20px auto;
+  background-color: $color_light_gray;
+  color: $color_black;
+  width: 95%;
+  padding: 30px;
+  border-radius: 15px;
+  width: 50%;
+  font-size: 1.5rem;
+  input {
+    display: block;
+    background-color: $color_light_gray;
+    border: var(--dark) 1px solid;
+    font-size: 1.5rem;
+  }
+  .gumbi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #btnSpremi {
+    background-color: $color_white;
+    font-weight: 600;
+    box-shadow: var(--red) 0px 0px 15px;
+    &:hover {
+      background-color: $color_red;
+      color: $color_white;
+      transition: all 0.6s;
+    }
+  }
+  #btnOdustani {
+    background-color: $color_light_gray;
+    color: $color_black;
+    font-weight: 600;
+    &:hover {
+      background-color: $color_black;
+      color: $color_white;
+      transition: all 0.6s;
+    }
+  }
+  form {
+    background-color: $color_dark_gray;
+    max-width: 1000px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0px auto;
+    padding: 30px;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    input {
+      background-color: $color_light_gray;
+      margin: 20px auto;
+      padding: 10px;
+      border: 2px solid rgb(10, 10, 10);
+      border-radius: 4px;
+      width: 85%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  button {
+    background-color: $color_green;
+    text-align: center;
+    padding: 10px 30px;
+    width: 250px;
+    height: 70px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 50px 20px;
+    font-size: 25px;
+    font-family: $font-family_2;
+  }
+  h2 {
+    text-align: center;
+    margin: 5px auto 20px;
+  }
+}
+.slike {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 380px;
+    height: 490px;
+    padding: 4px;
+    border-radius: 15px;
+  }
+}
+.back-icon {
+  position: absolute;
+  color: $color_red;
+}
+nav {
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: sticky;
+  top: 0;
+  display: block;
+  border-radius: 20px;
+  padding: 0px 80px;
+  margin: 25px auto;
+  padding: 5px 0 5px 0;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  ul {
+    text-transform: uppercase;
+    padding: 10px 0;
+    width: fit-content;
+    text-align: center;
+    display: inline-block;
+    li {
+      text-align: center;
+      display: inline;
+      padding: 21px;
+      a {
+        color: $color_white;
+        font-weight: 450;
+        font-size: 150%;
+        text-decoration: none;
+        height: fit-content;
+        display: inline;
+      }
+      &:hover {
+        color: $color_black;
+      }
+    }
+  }
+}
+.pretrazivanje-gore {
+  position: relative;
+}
+.search {
+  display: flex;
+  background-color: $color_white;
+  height: 40px;
+  padding: 10px;
+  width: 400px;
+  float: right;
+  position: absolute;
+  right: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px var(--red);
+}
+.login-container {
+  transition: all 2s;
+  min-width: 1000px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  // background: url(../fotografije/background.jpg);
+  border-radius: 30px;
+  display: flex;
+  width: 70%;
+  box-shadow: 0px 0px 20px var(--darkgrey);
+  text-align: center;
+  .lijevo {
+    align-items: center;
+    flex: 3;
+    padding: 30px 0;
+    margin-top: 80px;
+    h2 {
+      font-size: 7rem;
+      font-family: $font-family_1;
+      text-shadow: 2px 2px 3px var(--red);
+      color: $color_black;
+    }
+    h3 {
+      font-size: 1.8rem;
+      font-weight: lighter;
+      color: $color_dark_gray;
+    }
+    ul {
+      width: 70%;
+      margin: 25px auto;
+      text-align: left;
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      list-style-type: square;
+    }
+    li {
+      margin: 15px 0px 10px 40px;
+    }
+    span {
+      font-size: 2.5rem;
+    }
+  }
+  .desno {
+    padding: 20px;
+    margin: 30px;
+    flex: 2;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 2px var(--dark);
+    height: 690px;
+  }
+  #btnSalji {
+    margin: 40px auto 0;
+    font-weight: bold;
+    color: $color_white_pure;
+    cursor: pointer;
+    background-color: $color_red;
+    border: #fff solid 2px;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    width: fit-content;
+    min-width: 40%;
+    font-size: 1.4rem;
+    padding: 12px;
+    display: block;
+  }
+  button {
+    &:hover {
+      background-color: $color_black;
+      transition: all 0.3s;
+    }
+  }
+  p {
+    color: $color_white;
+    margin-top: 30px;
+    font-family: $font-family_1;
+    cursor: pointer;
+    span {
+      color: $color_red;
+      text-shadow: 0px 0px 10px var(--white);
+      font-weight: bolder;
+      font-family: $font-family_1;
+      cursor: pointer;
+    }
+  }
+  .input-container {
+    width: 380px;
+  }
+  .login {
+    margin: 130px auto;
+  }
+  .registration {
+    margin: 40px auto;
+  }
+  h2 {
+    font-family: $font-family_1;
+    color: $color_white;
+    font-size: 30px;
+    text-shadow: 2px 2px 8px var(--darkgrey);
+    margin-bottom: 30px;
+    font-weight: 500;
+    letter-spacing: 5px;
+  }
+  h3 {
+    position: relative;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color: $color_white_pure;
+    text-shadow: 2px 2px 8px var(--darkgrey);
+    font-weight: 800;
+    letter-spacing: 0.4px;
+  }
+  input {
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ff544f;
+    background-color: $color_white;
+    border-radius: 10px;
+    transition: all 0.3s;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    &::placeholder {
+      opacity: 1;
+      transition: all 0.3s;
+      color: $color_dark_gray;
+    }
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+}
+.login-container.registration-container {
+  height: 750px;
+  input {
+    margin: 10px 0;
+  }
+}
+.input-container {
+  #btnRegistriraj {
+    margin: 40px auto 0;
+    font-weight: bold;
+    color: $color_white_pure;
+    cursor: pointer;
+    background-color: $color_red;
+    border: #fff solid 2px;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    width: fit-content;
+    min-width: 40%;
+    font-size: 1.4rem;
+    padding: 12px;
+    display: block;
+  }
+}
+select {
+  padding: 0.8rem;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ff544f;
+  background-color: $color_white;
+  border-radius: 10px;
+  transition: all 0.3s;
+  margin: 15px 0;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+label {
+  margin-left: 70px;
+  display: block;
+  color: $color_white;
+  width: 700px;
+}
+.sakrij {
+  display: none;
+  visibility: hidden;
+}
+.zanrovi-vanjski-container {
+  padding: 0 50px;
+  color: $color_white;
+  width: 80%;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  button {
+    color: $color_dark_gray;
+    width: 250px;
+    font-size: 1.5rem;
+  }
+}
+#zanrovi-container-moje {
+  background-color: $color_dark_gray;
+  width: 70%;
+  margin: 30px auto;
+  padding: 50px;
+  border-radius: 30px;
+}
+#zanrovi-container {
+  background-color: $color_dark_gray;
+  width: 70%;
+  margin: 30px auto;
+  padding: 50px;
+  border-radius: 30px;
+}
+#profil-korime {
+  background: rgb(155, 155, 155, 0.6);
+  &:focus {
+    outline-width: 0;
+  }
+}
+#profil-email {
+  background: rgb(155, 155, 155, 0.6);
+  &:focus {
+    outline-width: 0;
+  }
+}
+#moji-filmovi-kontejner {
+  width: 60%;
+  color: $color_white;
+  font-size: 1.5rem;
+  margin: 0 auto;
+}
+.pregled {
+  h2 {
+    text-align: center;
+    color: $color_white;
+    font-size: 1.7rem;
+    margin: 40px auto;
+  }
+  select {
+    display: flex;
+    background-color: $color_light_gray;
+    height: 60px;
+    padding-left: 12px;
+    width: 400px;
+    float: right;
+    position: relative;
+    right: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px var(--red);
+  }
+  li {
+    list-style: none;
+  }
+  .moji-filmovi {
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: $color_red;
+      width: fit-content;
+    }
+  }
+  label {
+    margin: 25px auto 0;
+    font-size: 1.3rem;
+  }
+  input {
+    margin: 5px auto 0;
+    font-weight: bold;
+    color: $color_black;
+    background-color: $color_white;
+    border: #da0037 solid 2px;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    width: fit-content;
+    min-width: 40%;
+    font-size: 1.4rem;
+    padding: 12px;
+    display: block;
+    cursor: default;
+    &:focus {
+      outline: none;
+    }
+  }
+  textarea {
+    margin: 5px auto 0;
+    font-weight: bold;
+    color: $color_black;
+    background-color: $color_white;
+    border: #da0037 solid 2px;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    width: fit-content;
+    min-width: 40%;
+    font-size: 1.4rem;
+    padding: 12px;
+    display: block;
+    cursor: default;
+    &:focus {
+      outline: none;
+    }
+  }
+  a {
+    margin-left: 30px;
+  }
+}
+#slika-poster {
+  float: left;
+  position: absolute;
+  margin: auto 35px;
+  margin-top: 80px;
+  width: 20%;
+}
+.podaci-filma-kontejner {
+  position: relative;
+}
+.lijepiGumb {
+  margin: 60px auto 30px;
+  font-weight: bold;
+  color: $color_black;
+  cursor: pointer;
+  background-color: $color_light_gray;
+  border: var(--dark) solid 2px;
+  letter-spacing: 1.5px;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 20%;
+  font-size: 1.4rem;
+  padding: 12px;
+  display: block;
+}
+.lijepiGumbCrveni {
+  margin: 60px auto 30px;
+  font-weight: bold;
+  color: $color_white;
+  cursor: pointer;
+  background-color: $color_red;
+  border: var(--dark) solid 2px;
+  letter-spacing: 1.5px;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 20%;
+  font-size: 1.4rem;
+  padding: 12px;
+  display: block;
+}
+.generirani {
+  width: 70%;
+  margin: 0 auto;
+  background-color: $color_light_gray;
+  box-shadow: 0px 0px 15px var(--dark);
+  border-radius: 30px;
+  padding: 10px;
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  ol {
+    list-style: none;
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+}
+ul {
+  list-style: none;
+  padding: 10px;
+  font-size: 1.3rem;
+}
+.zanrovi-gumbi {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 0 auto;
+  button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+.pretrazivanje-kontejner {
+  background-color: $color_light_gray;
+  margin: 0 auto;
+  width: 90%;
+  padding: 15px;
+  border-radius: 30px;
+}
+h1.pretrazivanje {
+  margin-top: 30px;
+  font-size: 2rem;
+  text-align: center;
+  color: $color_white;
+  position: relative;
+  margin-bottom: 20px;
+}
+#stranicenje {
+  margin: 15px;
+}
+.btnStranicenje {
+  background-color: $color_red;
+  margin: 4px;
+  border-radius: 15px;
+  font-size: 1.4rem;
+  padding: 5px 20px;
+  color: $color_white;
+  text-shadow: 2px 2px 3px var(--dark);
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+td {
+  button {
+    background-color: $color_dark_gray;
+    color: $color_white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+.slike-kontejner {
+  background-color: $color_light_gray;
+  margin: 0 auto;
+  width: 90%;
+  padding: 15px;
+  border-radius: 30px;
+  text-align: center;
+  input {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+}
+#slika-upload {
+  text-align: center;
+  margin: 40px auto;
+  padding: 10px;
+  padding-left: 15%;
+}
+#btnUpload {
+  cursor: pointer;
+  background-color: $color_red;
+  color: $color_white;
+}
+#korisnici-kontejner {
+  background-color: $color_light_gray;
+  margin: 0 auto;
+  width: 90%;
+  padding: 15px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  li {
+    list-style: none;
+  }
+}
+#prijedlozi-kontejner {
+  width: 50%;
+  color: $color_white;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  background-color: $color_black;
+  padding: 40px;
+  border-radius: 30px;
+}
+#btnOdobri {
+  background-color: $color_dark_gray;
+  margin: 4px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  padding: 5px 20px;
+  color: $color_white;
+  text-shadow: 2px 2px 3px var(--dark);
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+#btnOdbaci {
+  background-color: $color_dark_gray;
+  margin: 4px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  padding: 5px 20px;
+  color: $color_white;
+  text-shadow: 2px 2px 3px var(--dark);
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+#inputPromjenaNaziva {
+  margin: 40px auto 0;
+  font-weight: bold;
+  color: $color_white_pure;
+  cursor: pointer;
+  background-color: $color_black;
+  border: #fff solid 2px;
+  letter-spacing: 1.5px;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 40%;
+  font-size: 1.4rem;
+  padding: 12px;
+  display: block;
+}
+.ikona-dno {
+  width: 50px;
+  bottom: 20px;
+  cursor: pointer;
+  float: right;
+  position: absolute;
+  right: 20px;
+  margin-left: 30px;
+  position: sticky;
+}
+.podaci-prijava {
+  color: $color_white;
+}

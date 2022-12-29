@@ -1,0 +1,19 @@
+{
+  "name": "servis",
+  "version": "1.0.0",
+  "description": "rest za rwa",
+  "main": "restServer.js",
+  "scripts": {
+    "start": "node restServer.js ../konfiguracija.csv &",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rwa"
+  ],
+  "author": "Ana Skarica",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.4"
+  }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="/fotografije/favicon.png" />
+
+
+    <title>FOIFLIX - Film</title>
+  </head>
+  <body>
+    <main>
+      <nav>#navigacija#</nav>
+      <div class="pregled">
+        <a href="/filmoviPregled">
+          <img
+            src="../fotografije/previous_icon_light.png"
+            alt="back"
+            class="back-icon"
+            title="Na pregled filmova"
+          />
+        </a>
+        <div id="film-slika"></div>
+        <div class="podaci-filma-kontejner">
+          <form>
+            <label for="film-title">Title</label>
+            <input id="film-title" type="text" readonly />
+            <label for="film-original-language">Original language</label>
+            <input id="film-original-language" type="text" readonly />
+            <label for="film-original-title">Original title</label>
+            <input id="film-original-title" type="text" readonly />
+            <label for="film-overview">Overview</label>
+            <textarea
+              readonly
+              name="film-overview"
+              id="film-overview"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <label for="film-id">Id</label>
+            <input id="film-id" type="text" readonly />
+            <label for="film-adult">Adult</label>
+            <input id="film-adult" type="text" readonly />
+            <label for="film-popularity">Popularity</label>
+            <input id="film-popularity" type="text" readonly />
+            <label for="film-release-date">Release-date</label>
+            <input id="film-release-date" type="text" readonly />
+            <label for="film-backdroppath">Backdroppath</label>
+            <input id="film-backdroppath" type="text" readonly />
+            <label for="film-video">Video</label>
+            <input id="film-video" type="text" readonly />
+            <label for="film-vote-average">Vote average</label>
+            <input id="film-vote-average" type="text" readonly />
+            <label for="film-vote-count">Vote count</label>
+            <input id="film-vote-count" type="text" readonly />
+            <label for="film-datum-unosa">Datum unosa</label>
+            <input id="film-datum-unosa" type="text" readonly />
+            <label for="film-budget">Budget</label>
+            <input id="film-budget" type="text" readonly />
+            <label for="film-homepage">Homepage</label>
+            <input id="film-homepage" type="text" readonly />
+            <label for="film-imdb-id">Imdb id</label>
+            <input id="film-imdb-id" type="text" readonly />
+            <label for="film-revenue">Revenue</label>
+            <input id="film-revenue" type="text" readonly />
+            <label for="film-runtime">Runtime</label>
+            <input id="film-runtime" type="text" readonly />
+            <label for="film-status">Status</label>
+            <input id="film-status" type="text" readonly />
+            <label for="film-tagline">Tagline</label>
+            <input id="film-tagline" type="text" readonly />
+            <label for="film-odobreno">Odobreno</label>
+            <input id="film-odobreno" type="text" readonly />
+            <label for="film-korisnik-id">Korisnik id</label>
+            <input id="film-korisnik-id" type="text" readonly />
+          </form>
+          <button class="lijepiGumb">Na galeriju</button>
+        </div>
+      </div>
+      <script src="../js/filmPodaci.js"></script>
+      <script src="../js/funkcije.js"></script>
+      <a href="http://validator.w3.org/check?uri=http://spider.foi.hr:12204/film"> <img class="ikona-dno" src="../fotografije/html_ikona.png" alt="html-ikona"></a>
+    </main>
+  </body>
+</html>

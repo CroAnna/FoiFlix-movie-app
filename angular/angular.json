@@ -39,21 +39,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rwazadaca2",
+            "outputPath": "../server/aplikacija/angular",
             "index": "projekti/rwazadaca2/src/index.html",
             "main": "projekti/rwazadaca2/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projekti/rwazadaca2/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projekti/rwazadaca2/src/favicon.ico",
               "projekti/rwazadaca2/src/assets"
             ],
-            "styles": [
-              "projekti/rwazadaca2/src/styles.scss"
-            ],
+            "styles": ["projekti/rwazadaca2/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
