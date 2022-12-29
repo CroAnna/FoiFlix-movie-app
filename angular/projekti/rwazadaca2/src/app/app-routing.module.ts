@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NavigacijaComponent } from './navigacija/navigacija.component';
+import { ZanrComponent } from './zanr/zanr.component';
 
-const routes: Routes = [];
+// pocetna verzija za routing
+const routes: Routes = [
+  { path: 'first-component', component: ZanrComponent },
+  { path: 'second-component', component: NavigacijaComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
