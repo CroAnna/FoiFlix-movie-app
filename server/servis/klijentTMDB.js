@@ -8,12 +8,15 @@ class TMDBklijent {
   async dohvatiZanrove() {
     let resurs = "/genre/movie/list";
     let odgovor = await this.obaviZahtjev(resurs);
+    console.log("ODGOVOOOOR " + odgovor);
     return odgovor;
   }
 
   async dohvatiFilm(id) {
     let resurs = "/movie/" + id;
     let odgovor = await this.obaviZahtjev(resurs);
+
+
     return odgovor;
   }
 
@@ -36,9 +39,16 @@ class TMDBklijent {
     for (let p in parametri) {
       zahtjev += "&" + p + "=" + parametri[p];
     }
-    console.log(zahtjev);
+    console.log("zahtjev u klijentTMDB = " + zahtjev); // OVO JE PRAZNO
+    //console.log("ZATHJEV" + zahtjev);
+
     let odgovor = await fetch(zahtjev);
+
+    //console.log("ODG = " + odgovor + odgovor.text());
+
     let rezultat = await odgovor.text();
+    console.log("REZULTAT = " + rezultat);
+
     return rezultat;
   }
   async dajKljucneRijeci(rijeci) {

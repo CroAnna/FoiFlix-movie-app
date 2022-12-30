@@ -6,7 +6,9 @@ class ZanrDAO {
   }
 
   dajSve = async function () {
+    console.log("THIS BAZA " + this.baza.podaci);
     this.baza.spojiSeNaBazu();
+    console.log("THIS BAZA poslije " + this.baza.podaci);
     let sql = "SELECT * FROM zanr;";
     var podaci = await this.baza.izvrsiUpit(sql, []);
     this.baza.zatvoriVezu();
@@ -15,6 +17,8 @@ class ZanrDAO {
 
   daj = async function (id) {
     this.baza.spojiSeNaBazu();
+    console.log("THIS BAZA " + this.baza);
+
     let sql = "SELECT * FROM zanr WHERE id=?;";
     var podaci = await this.baza.izvrsiUpit(sql, [id]);
     this.baza.zatvoriVezu();
@@ -38,13 +42,18 @@ class ZanrDAO {
   };
 
   dodaj = async function (zanr) {
-    console.log(zanr);
-    let sql = `INSERT INTO zanr (id,name) VALUES (?,?)`;
+    console.log("THIS BAZA 2 " + this.baza);
+    console.log("zanr = " + zanr + zanr.id + zanr.name);
+    let sql = `INSERT INTO zanr (id, name) VALUES (?,?)`;
     let podaci = [
       zanr.id,
       zanr.name
     ];
+    console.log("this baza " + this.db + " " + this.baza);
+
     try {
+      console.log("sql i podaci ---> " + sql + " " + podaci);
+
       await this.baza.izvrsiUpit(sql, podaci);
     } catch (error) {
       console.log("Neispravno je nekaj - zanr insert - " + error)

@@ -12,7 +12,7 @@ async function dodajToken(parametri = {}) {
 }
 
 async function dajToken() {
-	let odgovor = await fetch("http://spider.foi.hr:12238/getJWT");
+	let odgovor = await fetch("http://localhost:9000/getJWT");
 	let tekst = JSON.parse(await odgovor.text());
 	if (tekst.ok != null)
 		return tekst.ok;

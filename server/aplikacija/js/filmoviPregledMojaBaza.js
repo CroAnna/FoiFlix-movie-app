@@ -1,4 +1,4 @@
-let url = "http://spider.foi.hr:12238/api";
+let url = "http://localhost:9000/api";
 
 var tipSortiranja = null;
 window.addEventListener("DOMContentLoaded", async () => {
@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   dajMojeFilmove();
 
   async function dajMojeFilmove() {
-    let odgovor = await fetch("http://spider.foi.hr:12204/dajMojeFilmove");
+    let odgovor = await fetch("http://localhost:9001/dajMojeFilmove");
     if (odgovor.status == 200) {
       let podaci = await odgovor.text();
       prikaziMojeFilmove(podaci);

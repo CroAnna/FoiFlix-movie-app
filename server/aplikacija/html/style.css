@@ -18,7 +18,7 @@
 
 body {
   background: rgb(0, 0, 0);
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background: radial-gradient(
     circle,
     rgba(218, 0, 55, 1) 0%,
@@ -117,7 +117,7 @@ nav ul li:hover {
   color: var(--dark);
 }
 
-.pretrazivanje-gore{
+.pretrazivanje-gore {
   position: relative;
 }
 .search {
@@ -172,7 +172,7 @@ nav ul li:hover {
 .login-container .lijevo ul {
   width: 70%;
   margin: 25px auto;
-  text-align: left; 
+  text-align: left;
   font-weight: bold;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -584,7 +584,7 @@ label {
   display: block;
 }
 
-.generirani{
+.generirani {
   width: 70%;
   margin: 0 auto;
   background-color: var(--light);
@@ -594,30 +594,31 @@ label {
   padding: 10px;
 }
 
-.generirani h2{
+.generirani h2 {
   text-align: center;
   font-size: 2rem;
 }
 
-.generirani ol, ul{
+.generirani ol,
+ul {
   list-style: none;
   padding: 10px;
   font-size: 1.3rem;
 }
 
-.zanrovi-gumbi{
+.zanrovi-gumbi {
   display: flex;
   flex-wrap: wrap;
   width: 70%;
   margin: 0 auto;
 }
 
-.zanrovi-gumbi button{
+.zanrovi-gumbi button {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.pretrazivanje-kontejner{
+.pretrazivanje-kontejner {
   background-color: var(--light);
   margin: 0 auto;
   width: 90%;
@@ -625,7 +626,7 @@ label {
   border-radius: 30px;
 }
 
-h1.pretrazivanje{
+h1.pretrazivanje {
   margin-top: 30px;
   font-size: 2rem;
   text-align: center;
@@ -634,12 +635,11 @@ h1.pretrazivanje{
   margin-bottom: 20px;
 }
 
-
-#stranicenje{
+#stranicenje {
   margin: 15px;
 }
 
-.btnStranicenje{
+.btnStranicenje {
   background-color: var(--red);
   margin: 4px;
   border-radius: 15px;
@@ -651,7 +651,7 @@ h1.pretrazivanje{
   cursor: pointer;
 }
 
-td button{
+td button {
   background-color: var(--grey);
   color: var(--white);
   padding: 10px;
@@ -659,7 +659,7 @@ td button{
   cursor: pointer;
 }
 
-.slike-kontejner{
+.slike-kontejner {
   background-color: var(--light);
   margin: 0 auto;
   width: 90%;
@@ -668,27 +668,27 @@ td button{
   text-align: center;
 }
 
-.slike-kontejner input{
+.slike-kontejner input {
   margin: 0 auto;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
 }
 
-#slika-upload{
+#slika-upload {
   text-align: center;
-  margin:40px  auto;
+  margin: 40px auto;
   padding: 10px;
   padding-left: 15%;
 }
 
-#btnUpload{
+#btnUpload {
   cursor: pointer;
   background-color: var(--red);
   color: var(--white);
 }
 
-#korisnici-kontejner{
+#korisnici-kontejner {
   background-color: var(--light);
   margin: 0 auto;
   width: 90%;
@@ -698,11 +698,11 @@ td button{
   font-size: 1.2rem;
 }
 
-#korisnici-kontejner li{
+#korisnici-kontejner li {
   list-style: none;
 }
 
-#prijedlozi-kontejner{
+#prijedlozi-kontejner {
   width: 50%;
   color: var(--white);
   font-size: 1.5rem;
@@ -712,7 +712,7 @@ td button{
   border-radius: 30px;
 }
 
-#btnOdobri{
+#btnOdobri {
   background-color: var(--grey);
   margin: 4px;
   border-radius: 5px;
@@ -724,7 +724,7 @@ td button{
   cursor: pointer;
 }
 
-#btnOdbaci{
+#btnOdbaci {
   background-color: var(--grey);
   margin: 4px;
   border-radius: 5px;
@@ -736,7 +736,7 @@ td button{
   cursor: pointer;
 }
 
-#inputPromjenaNaziva{
+#inputPromjenaNaziva {
   margin: 40px auto 0;
   font-weight: bold;
   color: #fff;
@@ -752,7 +752,7 @@ td button{
   display: block;
 }
 
-.ikona-dno{
+.ikona-dno {
   width: 50px;
   bottom: 20px;
   cursor: pointer;
@@ -763,6 +763,37 @@ td button{
   position: sticky;
 }
 
-.podaci-prijava{
+.podaci-prijava {
   color: var(--white);
+}
+
+.tablica {
+  align-items: center;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: #bdbdbd;
+}
+
+.tablica thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.tablica th,
+.tablica td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.tablica tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.tablica tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
 }

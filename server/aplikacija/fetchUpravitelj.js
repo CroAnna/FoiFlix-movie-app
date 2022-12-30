@@ -70,7 +70,7 @@ exports.dodajFilm = async function (zahtjev, odgovor) {
     };
 
     let odgFetch = await fetch(
-        "http://spider.foi.hr:12238/api/filmovi?korime={rest.korime}&lozinka={rest.lozinka}",//
+        "http://localhost:9000/api/filmovi?korime={rest.korime}&lozinka={rest.lozinka}",//
         parametri
     );
 
@@ -98,7 +98,7 @@ exports.filmoviUpdate = async (zahtjev, odgovor) => {
         headers: zaglavlje,
     };
     let odgFetch = await fetch(
-        "http://spider.foi.hr:12238/api/filmovi/:id?korime={rest.korime}&lozinka={rest.lozinka}",
+        "http://localhost:9000/api/filmovi/:id?korime={rest.korime}&lozinka={rest.lozinka}",
         parametri
     );
     if (odgFetch.status == 200) {
@@ -121,7 +121,7 @@ exports.filmoviDelete = async (zahtjev, odgovor) => {
         headers: zaglavlje,
     };
     let odgFetch = await fetch(
-        "http://spider.foi.hr:12238/api/filmovi/:id?korime={rest.korime}&lozinka={rest.lozinka}",//
+        "http://localhost:9000/api/filmovi/:id?korime={rest.korime}&lozinka={rest.lozinka}",//
         parametri
     );
     if (odgFetch.status == 200) {
@@ -134,7 +134,11 @@ exports.filmoviDelete = async (zahtjev, odgovor) => {
 }
 
 exports.zanroviDodaj = async (zahtjev, odgovor) => {
+
+
     tijelo = zahtjev.body;
+    console.log("id tijela " + tijelo.id);
+
     let zaglavlje = new Headers();
     zaglavlje.set("Content-Type", "application/json");
 
@@ -145,7 +149,7 @@ exports.zanroviDodaj = async (zahtjev, odgovor) => {
     };
 
     let odgFetch = await fetch(
-        "http://spider.foi.hr:12238/api/zanr?korime={rest.korime}&lozinka={rest.lozinka}",
+        "http://localhost:9000/api/zanr",
         parametri
     );
 
@@ -174,7 +178,7 @@ exports.zanroviUpdate = async (zahtjev, odgovor) => {
     };
 
     let odgFetch = await fetch(
-        "http://spider.foi.hr:12238/api/zanr/:id?korime={rest.korime}&lozinka={rest.lozinka}",
+        "http://localhost:9000/api/zanr/:id?korime={rest.korime}&lozinka={rest.lozinka}",
         parametri
     );
 
@@ -199,7 +203,7 @@ exports.zanroviDelete = async (zahtjev, odgovor) => {
     };
 
     let odgFetch = await fetch(
-        "http://spider.foi.hr:12238/api/zanr/?korime={rest.korime}&lozinka={rest.lozinka}",
+        "http://localhost:9000/api/zanr/?korime={rest.korime}&lozinka={rest.lozinka}",
         parametri
     );
 
@@ -224,7 +228,7 @@ exports.korisnikUpdate = async (zahtjev, odgovor) => {
     };
 
     let odgFetch = await fetch(
-        "http://spider.foi.hr:12238/api/korisnici/:korime?korime={rest.korime}&lozinka={rest.lozinka}",
+        "http://localhost:9000/api/korisnici/:korime?korime={rest.korime}&lozinka={rest.lozinka}",
         parametri
     );
 
@@ -252,7 +256,7 @@ exports.korisniciBlokiraj = async (zahtjev, odgovor) => {
     };
 
     let odgFetch = await fetch(
-        "http://spider.foi.hr:12238/api/korisnici/" + korime + "/blokiranje?korime={rest.korime}&lozinka={rest.lozinka}",
+        "http://localhost:9000/api/korisnici/" + korime + "/blokiranje?korime={rest.korime}&lozinka={rest.lozinka}",
         parametri
     );
 

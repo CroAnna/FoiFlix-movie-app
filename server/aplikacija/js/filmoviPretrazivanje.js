@@ -1,4 +1,4 @@
-let url = "http://spider.foi.hr:12238/api";
+let url = "http://localhost:9000/api";
 let poruka = document.getElementById("poruka");
 
 window.addEventListener("load", async () => {

@@ -61,6 +61,8 @@ INSERT INTO `zanr` (`id`, `name`) VALUES
 (35, 'Comedy'),
 (53, 'Thriller')
 
+INSERT INTO `zanr` (`id`, `name`) VALUES (?,?) 28,Action;
+
 SELECT * FROM zanr;
 
 CREATE TABLE IF NOT EXISTS `zanr_film` (

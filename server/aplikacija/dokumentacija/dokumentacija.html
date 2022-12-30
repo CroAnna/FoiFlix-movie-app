@@ -4,9 +4,341 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dokumentacija</title>
+    <title>O studentu</title>
+    <link rel="stylesheet" href="../style.css" />
   </head>
+
   <body>
-    <p>Ne znam zakej ovo mora bit odvojeno, ali dobroooo</p>
+    <header>
+      <nav>#navigacija#</nav>
+    </header>
+    <main>
+      <div class="o-studentu">
+        <div class="podaci-container">
+          <a href="/">
+            <img
+              src="../fotografije/previous_icon_dark.png"
+              alt="back"
+              class="back-icon"
+              title="Na početnu"
+            />
+          </a>
+          <h2>Podaci</h2>
+          <div class="podaci">
+            <h3>Ana Škarica</h3>
+            <h3>askarica20@student.foi.hr</h3>
+            <h3>IPS-RPS</h3>
+          </div>
+          <div class="slike">
+            <img src="../fotografije/ja.jpg" alt="moja-slika" />
+          </div>
+
+          <div>
+            <table class="tablica">
+              <thead>
+                <tr>
+                  <th>Resurs Parametri</th>
+                  <th>GET čitanje</th>
+                  <th>POST kreiranje</th>
+                  <th>PUT ažuriranje</th>
+                  <th>DELETE brisanje</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>api/korisnici</td>
+                  <td>vraća listu korisnika</td>
+                  <td>kreira novog korisnika</td>
+                  <td>501</td>
+                  <td>501</td>
+                </tr>
+                <tr>
+                  <td>api/korisnici /{korime}</td>
+                  <td>vraća određenog korisnika</td>
+                  <td>405</td>
+                  <td>Ažurira određenog korisnika</td>
+                  <td>501</td>
+                </tr>
+                <tr>
+                  <td>api/korisnici /{korime}/aktivacija</td>
+                  <td>501</td>
+                  <td>405</td>
+                  <td>Aktivira novog korisnika</td>
+                  <td>501</td>
+                </tr>
+                <tr>
+                  <td>api/korisnici /{korime}/prijava</td>
+                  <td>501</td>
+                  <td>
+                    Provjerava podatke prijave i vraća je li korisnik uspješno
+                    prijavljen
+                  </td>
+                  <td>501</td>
+                  <td>501</td>
+                </tr>
+                <tr>
+                  <td>
+                    api/filmovi/ ?stranica=broj &brojFilmova=broj [&datum=datum]
+                    [&zanr=idZanr] [&naziv=dioNazivFilma] [&sortiraj=[d | z |
+                    n]]
+                  </td>
+                  <td>
+                    vraća listu određenog broja filmova za neku stranicu (broj),
+                    opcionalno filtrirano po datumu unosa (datum) i/ili žanru
+                    (idZanr) i/ili nazivu filma (dioNazivFilma), te može
+                    sortirati uzlazno po datumu (d), nazivu (n) ili žanru (z)
+                  </td>
+                  <td>
+                    Uz dobivene podatke čita sve podatke o filmu s vanjskog
+                    servisa i dodaje novi film
+                  </td>
+                  <td>501</td>
+                  <td>501</td>
+                </tr>
+                <tr>
+                  <td>api/filmovi/{id}</td>
+                  <td>Vraća podatke određenog filma (id)</td>
+                  <td>405</td>
+                  <td>Ažurira podatke određenog filma</td>
+                  <td>Briše određeni film</td>
+                </tr>
+                <tr>
+                  <td>api/zanr/</td>
+                  <td>Vraća listu žanrova</td>
+                  <td>Dodaje novi žanr</td>
+                  <td>501</td>
+                  <td>Briše sve žanrove za koje ne postoji film</td>
+                </tr>
+                <tr>
+                  <td>api/zanr/{id}</td>
+                  <td>Vraća podatke određenog žanra (id)</td>
+                  <td>405</td>
+                  <td>Ažurira postojeći žanr</td>
+                  <td>Briše određeni žanr</td>
+                </tr>
+                <tr>
+                  <td>api/tmdb/zanr</td>
+                  <td>Prosljeđuje listu žanrova koji vrati servis TMDB</td>
+                  <td>501</td>
+                  <td>501</td>
+                  <td>501</td>
+                </tr>
+                <tr>
+                  <td>
+                    api/tmdb/filmovi ?kljucaRijec=rijec1 [,rijec2]
+                    &stranica=broj
+                  </td>
+                  <td>
+                    Prosljeđuje listu filmova koju vrati servis TMDB, a čiji
+                    filmovi imaju ključnu riječ ili više njih
+                  </td>
+                  <td>501</td>
+                  <td>501</td>
+                  <td>501</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <table class="tablica">
+              <thead>
+                <tr>
+                  <th>Uloga</th>
+                  <th>Stranica/e</th>
+                  <th>Opis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gost</td>
+                  <td>Početna</td>
+                  <td>
+                    Prikazuje popis žanrova u bazi podataka i nasumice prikazuje
+                    2 filma za svaki žanr koji postoje u bazi podataka.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gost</td>
+                  <td>Dokumentacija</td>
+                  <td>Prikazuje stranicu dokumentacija.html opisanu ranije</td>
+                </tr>
+                <tr>
+                  <td>Gost</td>
+                  <td>Registracija, Prijava, Odjava</td>
+                  <td>
+                    Gost se može se registrirati kao novi korisnik. Kod
+                    registracije šalje se e-mail s tokenom za aktivaciju računa.
+                    Lozinka se u bazu ne smije spremati u čitljivom obliku i
+                    treba koristiti sol kod spremanja. Dok se račun ne aktivira
+                    nije moguće napraviti prijavu. Kod prijave treba koristiti
+                    autentikacija dvije razine prvo lozinka s JWT i nakon toga
+                    TOTP. Jednom prijavljeni korisnik može se odjaviti u bilo
+                    kojem trenutku. OVDE DIO SE IZBACUJE
+                  </td>
+                </tr>
+                <tr>
+                  <td>Korisnik</td>
+                  <td>Profil</td>
+                  <td>
+                    Vidi svoje podatke (ime, prezime, korisničko ime, e-mail,
+                    ...) i može ih ažurirati. Korisničko ime i e-mail se ne mogu
+                    ažurirati.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Korisnik</td>
+                  <td>Filmovi pregled</td>
+                  <td>
+                    Vidi popis svih filmova koji postoje u bazi, može filmove
+                    filtrirati po žanru i/ili datumu unosa. Datumsko filtriranje
+                    čita podatke od unesenog datuma do današnjeg datuma. Može
+                    uzlazno sortirati filmove po nazivu filma, datumu ili nazivu
+                    žanra. Može kliknuti na naziv filma i dobiti sve podatke o
+                    filmu.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Korisnik</td>
+                  <td>Film</td>
+                  <td>
+                    Prikazuje sve podatke o filmu zajedno s posterom i
+                    poveznicom na “Galerija slika” za taj film i podatkom koji
+                    korisnik je dodao film u bazu.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Korisnik</td>
+                  <td>Filmovi pretraživanje</td>
+                  <td>
+                    Može upisati ključne riječi po kojima se pretražuju filmovi
+                    sa servisa TMDB (preko api/tmdb). Broj stranica nalazi se u
+                    podatku “total_pages”. Ako pronađe film koji mu se sviđa
+                    može kliknuti na dodaj u bazu. Film se svim dobivenim
+                    podacima dodaje u bazu kao prijedlog, ali čeka odobrenje
+                    admina da bude vidljiv u “Filmovi pregled”. Nije potrebno
+                    spremati podatke o “production_companies”,
+                    “production_countries” i “spoken_languages”. Ako već postoji
+                    prijedlog za neki film tada nije moguće kliknuti dodaj u
+                    bazu
+                  </td>
+                </tr>
+                <tr>
+                  <td>Korisnik</td>
+                  <td>Galerija slika</td>
+                  <td>
+                    Korisnik vidi galeriju slika postavljenih od strane svih
+                    korisnika za odabrani film. Može pretraživati galeriju slika
+                    po datumu postavljanja slike tako da unese od i/ili do
+                    datum. Može kliknuti na sliku te ga se prebacuje na “Film”
+                  </td>
+                </tr>
+                <tr>
+                  <td>Korisnik</td>
+                  <td>Slika</td>
+                  <td>
+                    Može postaviti novu sliku (samo jpg, jpeg, png ili gif
+                    maksimalne veličine 500KB) za neki film koji postoji u bazi.
+                    Slika se sprema fizički na poslužitelj unutar direktorija
+                    slike/{id_filma}/{korime}. Direktorij označen sa id_filma
+                    predstavlja id filma pod kojim je film spremljen u bazi, a
+                    direktroij korime je korisničko ime korisnika koji je dodao
+                    sliku. Slika se sprema pod nazivom
+                    {datum_hash}.{ekstenzija}. Datum je datum postavljanja slike
+                    u obliku “godina-mjesec-dan”, a hash je generiran na temelju
+                    vremena i korisničkog imena. Ekstenzija je originalna
+                    ekstenzija prenesene datoteke
+                  </td>
+                </tr>
+                <tr>
+                  <td>Admin</td>
+                  <td>Filmovi prijedlozi</td>
+                  <td>
+                    Vidi popis filmova koji su poslani kao prijedlog za
+                    dodavanje, ako odobri film postaje vidljiv svim korisnicima
+                    u pogledu “Filmovi pregled”. Kod odobravanja filma preuzima
+                    se slika postera s TMDB koja se sprema lokalno na
+                    poslužitelj u direktorij posteri. Ako ne odobri film tada se
+                    on briše i može se opet kasnije dati kao prijedlog
+                  </td>
+                </tr>
+                <tr>
+                  <td>Admin</td>
+                  <td>Žanrovi</td>
+                  <td>
+                    Vidi pregled svih žanrova u bazi podataka, može ažurirati
+                    naziv žanra, može obrisati sve žanrove za koje nema filmova
+                    u bazi. Može povući listu žanrova s TMDB servisa te može
+                    dodati u bazu sve ili samo neke žanrove. Ako pri dodavanju,
+                    već postoji neki žanr s istim id-om, tada se takav preskače
+                    i uopće se ne šalje zahtjev na servis za dodavanjem.
+                    Korisniku se javlja poruka na ekranu koji žanrovi su bili
+                    preskočeni jer već postoje
+                  </td>
+                </tr>
+                <div>
+                  <table class="tablica">
+                    <thead>
+                      <tr>
+                        <th>Korak</th>
+                        <th>Što je dovršeno</th>
+                        <th>Što nije dovršeno</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Kreirati 3 tablice na dokumentaciji i ispuniti ih
+                        </td>
+                        <td>Sve</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>Prebaciti bazu u sqlite</td>
+                        <td>Sve</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Prebaciti zadaću 1 da funkcionira s novom bazom
+                          lokalno
+                        </td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Posložiti strukturu prema uputama</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

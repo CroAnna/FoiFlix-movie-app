@@ -1,4 +1,4 @@
-let url = "http://spider.foi.hr:12238/api";
+let url = "http://localhost:9000/api";
 window.addEventListener("load", async () => {
     var profilIme = document.getElementById("profil-ime");
     var profilPrezime = document.getElementById("profil-prezime");
@@ -7,7 +7,9 @@ window.addEventListener("load", async () => {
     var btnOdustani = document.getElementById("btnOdustani");
     var btnSpremi = document.getElementById("btnSpremi");
 
-    await fetchaj('http://spider.foi.hr:12204/profil/ispisiKorime', profilKorime);
+    //await fetchaj('http://spider.foi.hr:12204/profil/ispisiKorime', profilKorime);
+    await fetchaj('http://localhost:9001/profil/ispisiKorime', profilKorime);
+
 
     function fetchaj(url, varijabla) {
         var pom;
@@ -64,12 +66,12 @@ window.addEventListener("load", async () => {
             body: JSON.stringify(tijelo),
             headers: header
         }
-        let podatki = await fetch("http://spider.foi.hr:12204/korisnikUpdate", parametri);
+        let podatki = await fetch("http://localhost:9001/korisnikUpdate", parametri);
         await podatki.text();
     }
 
     async function dajKorisnikovePodatke(korimeValue) {
-        let odgovor = await fetch("http://spider.foi.hr:12204/dajMojeKorisnike");
+        let odgovor = await fetch("http://localhost:9001/dajMojeKorisnike");
         if (odgovor.status == 200) {
             let podaci = await odgovor.text();
             console.log(podaci);

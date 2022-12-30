@@ -33,13 +33,16 @@ window.addEventListener("load", async () => {
             headers: header
         }
 
-        let podaci = await fetch("http://spider.foi.hr:12204/registracija", parametri);
+        //let podaci = await fetch("http://spider.foi.hr:12204/registracija", parametri);
+        let podaci = await fetch("http://localhost:9000/registracija", parametri);
+
         await podaci.text();
     }
 })
 
 async function dohvatiKorisnikee() {
-    let odgovor = await fetch("http://spider.foi.hr:12204/dajMojeKorisnike");
+    // let odgovor = await fetch("http://spider.foi.hr:12204/dajMojeKorisnike");
+    let odgovor = await fetch("http://localhost:9001/dajMojeKorisnike");
     if (odgovor.status == 200) {
         let podaci = await odgovor.text();
         return podaci;

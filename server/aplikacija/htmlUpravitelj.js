@@ -176,5 +176,5 @@ async function ucitajStranicudokum(nazivStranice, poruka = "") {
 }
 
 function ucitajHTMLdokum(htmlStranica) {
-    return ds.readFile("../dokumentacija/" + htmlStranica + ".html", "UTF-8");
+    return ds.readFile("./dokumentacija/" + htmlStranica + ".html", "UTF-8");
 }

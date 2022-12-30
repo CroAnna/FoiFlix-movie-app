@@ -1,4 +1,4 @@
-let url = "http://spider.foi.hr:12238/api";
+let url = "http://localhost:9000/api";
 window.addEventListener("load", async () => {
     const btnPrikaziPopisKorisnika = document.getElementById("prikaziPopisKorisnika");
     const btnBlokiraj = document.getElementById("blokiraj");
@@ -10,7 +10,7 @@ window.addEventListener("load", async () => {
 
 
 async function dohvatiKorisnike() {
-    let odgovor = await fetch("http://spider.foi.hr:12204/dajMojeKorisnike");
+    let odgovor = await fetch("http://localhost:9001/dajMojeKorisnike");
     if (odgovor.status == 200) {
         let podaci = await odgovor.text();
         prikaziKorisnike(podaci);
@@ -59,6 +59,6 @@ async function blokirajKorisnika(korime) {
         headers: header
     }
 
-    let podatki = await fetch("http://spider.foi.hr:12204/korisniciBlokiraj", parametri);
+    let podatki = await fetch("http://localhost:9001/korisniciBlokiraj", parametri);
     await podatki.text();
 }

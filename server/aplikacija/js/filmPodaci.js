@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 
 async function dajPodatkeFilmova(idFilma) {
-    let odgovor = await fetch("http://spider.foi.hr:12204/dajMojeFilmove");
+    let odgovor = await fetch("http://localhost:9001/dajMojeFilmove");
     if (odgovor.status == 200) {
         let podaci = await odgovor.text();
         console.log(podaci);

@@ -4,7 +4,7 @@
   "description": "rest za rwa",
   "main": "restServer.js",
   "scripts": {
-    "start": "node restServer.js ../konfiguracija.csv &",
+    "start": "node --experimental-fetch restServer.js ../konfiguracija.csv &",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

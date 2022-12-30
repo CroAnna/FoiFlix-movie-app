@@ -37,7 +37,7 @@ class Autentifikacija {
       let mailPoruka =
         "aktivacijski kod:" +
         aktivacijskiKod +
-        " http://spider.foi.hr:12204/aktivacijaRacuna?korime=" +
+        " http://localhost:9001/aktivacijaRacuna?korime=" +
         korisnik.korime +
         "&kod=" +
         aktivacijskiKod;
@@ -66,8 +66,7 @@ class Autentifikacija {
     };
 
     return await fetch(
-      "http://spider.foi.hr:" +
-      portRest +
+      "http://localhost:9000" +
       "/api/korisnici/" +
       korime +
       "/aktivacija?korime={rest.korime}&lozinka={rest.lozinka}",
