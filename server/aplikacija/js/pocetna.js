@@ -4,11 +4,11 @@
 let konf = new Konfiguracija();
 let jsonobjekt = konf.dajKonf();
 let restport = jsonobjekt["rest.port"]*/
-let url = "http://localhost:" + "9000"; // TODO promijeni u rest port da se odnekud uzme
+let url = "http://localhost:" + "9001"; // TODO promijeni u rest port da se odnekud uzme
 
 window.addEventListener("load", async () => {
 
-  console.log("restport " + restport);
+  // console.log("restport " + restport);
 
   let main = document.querySelector(".generirani-kontejner");
   let prikaz = "<ol>";
