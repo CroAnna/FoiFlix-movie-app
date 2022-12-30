@@ -1,5 +1,5 @@
 const konst = require("../../konstante.js");
-const nodemailer = require(konst.dirModula + "\\nodemailer");
+const nodemailer = require("nodemailer");
 
 let mailer = nodemailer.createTransport({
 	host: 'mail.foi.hr',

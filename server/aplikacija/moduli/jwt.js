@@ -1,5 +1,5 @@
 const konst = require("../../konstante.js");
-const jwt = require(konst.dirModula + "\\jsonwebtoken")//proba
+const jwt = require("jsonwebtoken")
 
 exports.kreirajToken = function (korisnik) {
 	let token = jwt.sign({ korime: korisnik.korime }, konst.tajniKljucJWT, { expiresIn: "15s" });

@@ -1,7 +1,7 @@
 const konst = require("../konstante.js");
-const express = require(konst.dirModula + "\\express");
-const kolacici = require(konst.dirModula + "\\cookie-parser");
-const sesija = require(konst.dirModula + "\\express-session")
+const express = require("express");
+const kolacici = require("cookie-parser");
+const sesija = require("express-session")
 const Konfiguracija = require("../konfiguracija");
 //const portovi = require("portovi.js");
 const htmlUpravitelj = require("./htmlUpravitelj.js");
@@ -50,6 +50,9 @@ function pokreniServer() {
   server.listen(port, () => {
     console.log(`Server pokrenut na portu: ${port}`);
   });
+
+
+
 }
 
 let konf = new Konfiguracija();
@@ -63,6 +66,8 @@ konf
     else console.error("Nije moguće otvoriti datoteku: " + greska.path);
     process.exit();
   });
+
+
 
 server.get("/", (zahtjev, odgovor) => {
   odgovor.redirect("/pocetna");

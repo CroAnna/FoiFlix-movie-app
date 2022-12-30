@@ -1,7 +1,7 @@
 const konst = require("../../konstante.js");
-const totp = require(konst.dirModula + "\\totp-generator")
+const totp = require("totp-generator")
 const kodovi = require("./kodovi.js")
-const base32 = require(konst.dirModula + '\\base32-encoding')
+const base32 = require('base32-encoding')
 
 exports.kreirajTajniKljuc = function (korime) {
 	let tekst = korime + new Date() + kodovi.dajNasumceBroj(10000000, 90000000);

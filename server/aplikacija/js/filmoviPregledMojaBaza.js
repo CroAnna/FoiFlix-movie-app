@@ -1,4 +1,12 @@
-let url = "http://localhost:9000/api";
+const Konfiguracija = require("../../konfiguracija");
+
+let konf = new Konfiguracija();
+let jsonobjekt = konf.dajKonf();
+let restport = jsonobjekt["rest.port"]
+let appport = jsonobjekt["app.port"]
+//let url = "http://localhost:" + restport;
+
+let url = "http://localhost:" + restport + "/api"; // ni ne treba nam ovde...
 
 var tipSortiranja = null;
 window.addEventListener("DOMContentLoaded", async () => {
@@ -7,7 +15,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   dajMojeFilmove();
 
   async function dajMojeFilmove() {
-    let odgovor = await fetch("http://localhost:9001/dajMojeFilmove");
+    let odgovor = await fetch("http://localhost:" + appport + "/dajMojeFilmove");
     if (odgovor.status == 200) {
       let podaci = await odgovor.text();
       prikaziMojeFilmove(podaci);

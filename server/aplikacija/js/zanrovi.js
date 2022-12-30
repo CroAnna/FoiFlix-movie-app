@@ -1,6 +1,11 @@
 //let url = "http://spider.foi.hr:12238/api";
 let url = "http://localhost:9001/api"
 window.addEventListener("load", async () => {
+    //let jsonobjekt = konf.dajKonf();
+    //let restport = jsonobjekt["rest.port"]
+    //console.log("RESTPORT " + restport);
+
+
     const inputPromjena = document.getElementById("inputPromjenaNaziva");
     const btnPromjena = document.getElementById("promijeniNaziv");
     btnPromjena.addEventListener("click", function () {

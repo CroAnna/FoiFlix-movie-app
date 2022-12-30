@@ -1,5 +1,5 @@
 const konst = require("../konstante.js");
-const express = require(konst.dirModula + "\\express");
+const express = require("express");
 const Konfiguracija = require("../konfiguracija");
 //const portovi = require(konst.dirPortova + "portovi_rest.js");
 const restKorisnik = require("./restKorisnik.js");
