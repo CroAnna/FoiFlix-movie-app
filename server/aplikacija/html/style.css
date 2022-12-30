@@ -779,7 +779,7 @@ td button {
 }
 
 .tablica thead tr {
-  background-color: #009879;
+  background-color: #c80d39e4;
   color: #ffffff;
   text-align: left;
 }
@@ -796,4 +796,22 @@ td button {
 
 .tablica tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
+}
+
+.oznaka {
+  padding: 10px;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.zelena {
+  border-color: #009879;
+}
+
+.zuta {
+  border-color: #acae04;
+}
+
+.crvena {
+  border-color: #d63d0e;
 }
