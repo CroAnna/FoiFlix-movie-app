@@ -53,26 +53,27 @@ exports.prijava = async function (zahtjev, odgovor) {
         var korisnik = await auth.prijaviKorisnika(korime, lozinka);
 
         if (korisnik) {
+            /*
             var zaKljucIzBazeIAktivaciju = JSON.parse(korisnik);
             let totpKljuc = zaKljucIzBazeIAktivaciju.tajniTOTPkljuc;
-            let totpKod = zahtjev.body.totp;
-
+            let totpKod = zahtjev.body.totp;*/
+            /*
             if (!totp.provjeriAkt(zaKljucIzBazeIAktivaciju.aktiviran)) {
                 greska = "Nije aktiviran!"
             }
             else if (!totp.provjeriTOTP(totpKod, totpKljuc)) {
                 greska = "TOTP nije dobar!"
-            } else {
-                var nekak = JSON.parse(korisnik);
-                zahtjev.session.jwt = jwt.kreirajToken(korisnik)
-                zahtjev.session.korisnik = nekak.ime + " " + nekak.prezime;
-                zahtjev.session.uloga_id = nekak.uloga_id;
-                zahtjev.session.korisnik_id = nekak.id;
-                zahtjev.session.korime = nekak.korime;
+            } else {*/
+            var nekak = JSON.parse(korisnik);
+            zahtjev.session.jwt = jwt.kreirajToken(korisnik)
+            zahtjev.session.korisnik = nekak.ime + " " + nekak.prezime;
+            zahtjev.session.uloga_id = nekak.uloga_id;
+            zahtjev.session.korisnik_id = nekak.id;
+            zahtjev.session.korime = nekak.korime;
 
-                odgovor.redirect("/");
-                return;
-            }
+            odgovor.redirect("/");
+            return;
+            // }
         } else {
             greska = "Netocni podaci!";
         }
