@@ -134,8 +134,6 @@ exports.filmoviDelete = async (zahtjev, odgovor) => {
 }
 
 exports.zanroviDodaj = async (zahtjev, odgovor) => {
-
-
     tijelo = zahtjev.body;
     console.log("id tijela " + tijelo.id);
 
