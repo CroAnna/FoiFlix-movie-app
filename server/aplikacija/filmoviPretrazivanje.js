@@ -50,7 +50,10 @@ class FilmoviZanroviPretrazivanje {
   }
 
   async dohvatiMojeKorisnike() {
+    console.log("PRIJE dohvatiMojeKorisnike U filmoviPretrazivanje.js");
     let odgovor = await fetch("http://localhost:9000/api/korisnici?korime={rest.korime}&lozinka={rest.lozinka}");
+    console.log("izmedu");
+
     let podaci = await odgovor.text();
     console.log(odgovor.status);
     let korisnici = JSON.parse(podaci);

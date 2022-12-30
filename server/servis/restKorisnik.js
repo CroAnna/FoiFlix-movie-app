@@ -1,14 +1,19 @@
 const KorisnikDAO = require("./korisnikDAO.js");
 
 exports.getKorisnici = function (zahtjev, odgovor) {
+  console.log("u getKorisnici u restKorisnik");
+
   odgovor.type("application/json");
   let kdao = new KorisnikDAO();
   kdao.dajSve().then((korisnici) => {
     odgovor.send(JSON.stringify(korisnici));
+    console.log("uspjesno dohvaceni u restKorisnik");
+
   });
 };
 
 exports.postKorisnici = function (zahtjev, odgovor) {
+  console.log("u post korisnici");
   odgovor.type("application/json");
   let podaci = zahtjev.body;
   let kdao = new KorisnikDAO();

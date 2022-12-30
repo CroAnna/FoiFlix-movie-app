@@ -1,9 +1,9 @@
 //let url = "http://spider.foi.hr:12204";
-const Konfiguracija = require("../konfiguracija");
+/*const Konfiguracija = require("../konfiguracija");
 
 let konf = new Konfiguracija();
 let jsonobjekt = konf.dajKonf();
-let restport = jsonobjekt["rest.port"]
+let restport = jsonobjekt["rest.port"]*/
 let url = "http://localhost:" + "9000"; // TODO promijeni u rest port da se odnekud uzme
 
 window.addEventListener("load", async () => {

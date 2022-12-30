@@ -3,7 +3,7 @@ const jwt = require("./moduli/jwt.js")
 const Autentifikacija = require("./autentifikacija.js")
 let auth = new Autentifikacija();
 let fp = new FilmoviPretrazivanje();
-
+/*
 exports.aktvacijaRacuna = async function (zahtjev, odgovor) {
     console.log(zahtjev.query);
     let korime = zahtjev.query.korime;
@@ -17,13 +17,15 @@ exports.aktvacijaRacuna = async function (zahtjev, odgovor) {
     } else {
         odgovor.send(await poruka.text());
     }
-}
+}*/
 
 exports.dajSveZanrove = async function (zahtjev, odgovor) {
     odgovor.json(await fp.dohvatiSveZanrove());
 }
 
 exports.dajMojeKorisnike = async function (zahtjev, odgovor) {
+    console.log("u dajMojeKorisnike u fetchUpravitelju");
+
     odgovor.json(await fp.dohvatiMojeKorisnike());
 }
 

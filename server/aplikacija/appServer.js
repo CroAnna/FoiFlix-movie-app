@@ -100,7 +100,7 @@ function pripremiPutanjeAutentifikacija() {
   server.get("/prijava", htmlUpravitelj.prijava);
   server.post("/prijava", htmlUpravitelj.prijava);
   server.get("/getJWT", fetchUpravitelj.getJWT);
-  server.get("/aktivacijaRacuna", fetchUpravitelj.aktvacijaRacuna);
+  //server.get("/aktivacijaRacuna", fetchUpravitelj.aktvacijaRacuna);
 }
 
 function pripremiPutanjeDokumentacija() {

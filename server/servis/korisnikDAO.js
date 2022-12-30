@@ -23,6 +23,8 @@ class KorisnikDAO {
   };
 
   dodaj = async function (korisnik) {
+    console.log("U DODAJ U DAOU");
+
     let sql = `INSERT INTO korisnik (korime,lozinka,ime,prezime,email,uloga_id,tajniTOTPkljuc) VALUES (?,?,?,?,?,?,?)`;
     let podaci = [
       korisnik.korime,
@@ -31,13 +33,13 @@ class KorisnikDAO {
       korisnik.prezime,
       korisnik.email,
       2,
-      korisnik.TOTPkljuc,
+      "ABC"
     ];
 
     try {
       await this.baza.izvrsiUpit(sql, podaci);
     } catch (error) {
-      console.log("Neispravno je nekaj ")
+      console.log("Neispravno je nekaj " + error)
       return false;
     }
     return true;

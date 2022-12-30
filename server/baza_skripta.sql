@@ -28,7 +28,7 @@ SELECT * FROM film_zanr;
 
 
 CREATE TABLE IF NOT EXISTS `korisnik` (
-  id INTEGER NOT NULL,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   korime TEXT NOT NULL,
   lozinka TEXT NOT NULL,
   ime TEXT NOT NULL,
@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS `korisnik` (
   blokiran INTEGER DEFAULT NULL,
   tajniTOTPkljuc TEXT DEFAULT NULL
 );
+
+DROP TABLE `korisnik`;
 
 INSERT INTO `korisnik` (`id`, `korime`, `lozinka`, `ime`, `prezime`, `email`, `token`, `sol`, `uloga_id`, `aktiviran`, `blokiran`, `tajniTOTPkljuc`) VALUES
 (3, 'a', '3f5d173d7b5bc56590f5f6793ac07d278f5a6e088f72b66c0ca9cda1039dbccc', 'a', 'a', 'aaa@gmail.com', NULL, NULL, 1, NULL, 1, NULL);

@@ -13,7 +13,11 @@ exports.pocetna = async function (zahtjev, odgovor) {
 
 exports.registracija = async function (zahtjev, odgovor) {
     let greska = "";
+    console.log("zasal sam u registraciju,metoda = " + zahtjev.method);
+
     if (zahtjev.method == "POST") {
+        console.log("ZAHTJEV BODY " + JSON.stringify(zahtjev.body)); // tu dojdu dobri podaci
+
         let uspjeh = await auth.dodajKorisnika(zahtjev.body);
 
         if (uspjeh) {
