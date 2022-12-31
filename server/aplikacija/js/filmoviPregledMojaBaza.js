@@ -1,10 +1,13 @@
-const Konfiguracija = require("../../konfiguracija");
+/*const Konfiguracija = require("../../konfiguracija");
 
 let konf = new Konfiguracija();
 let jsonobjekt = konf.dajKonf();
 let restport = jsonobjekt["rest.port"]
-let appport = jsonobjekt["app.port"]
+let appport = jsonobjekt["app.port"]*/
 //let url = "http://localhost:" + restport;
+
+let restport = 9000;
+let appport = 9001;
 
 let url = "http://localhost:" + restport + "/api"; // ni ne treba nam ovde...
 

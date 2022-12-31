@@ -9,22 +9,6 @@ INSERT INTO `uloga` (`id`, `naziv`) VALUES
 (3, 'gost');
 
 
-CREATE TABLE IF NOT EXISTS film_zanr (
-  zanr_id INTEGER NOT NULL,
-  film_id INTEGER NOT NULL,
-  FOREIGN KEY (zanr_id) REFERENCES zanr (id) NOT DEFERRABLE INITIALLY IMMEDIATE,
-  FOREIGN KEY (film_id) REFERENCES film (id) NOT DEFERRABLE INITIALLY IMMEDIATE
-);
-
-INSERT INTO `film_zanr` (`zanr_id`, `film_id`) VALUES
-(80, 3);
-
-
-SELECT * FROM film_zanr;
-
-
-
-
 
 
 CREATE TABLE IF NOT EXISTS `korisnik` (
@@ -51,13 +35,14 @@ INSERT INTO `korisnik` (`id`, `korime`, `lozinka`, `ime`, `prezime`, `email`, `t
 (85, 'administrator', '2317c5cc4e67b0cb5f55b26fdcf5fe0a24012503ae99d22b26f3c866d281be2b', 'admin', 'istrator', 'oday.khiree@minutestep.com', NULL, NULL, 1, 1, NULL, 'BECRAAAAAAAACBRBAAAAABRAAADRAAAJAAAAKAAAAIAAABAEAAAAMARABEDRABZAAAAARAAEAZAARAZFA5DACAAAAACAAAAHAABRABA');
 
 SELECT * FROM korisnik;
-
+SELECT * FROM `film_zanr`;
 
 
 CREATE TABLE IF NOT EXISTS `zanr` (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 name VARCHAR(50) NOT NULL
 );
+
 
 INSERT INTO `zanr` (`id`, `name`) VALUES
 (35, 'Comedy'),
@@ -67,19 +52,13 @@ INSERT INTO `zanr` (`id`, `name`) VALUES (?,?) 28,Action;
 
 SELECT * FROM zanr;
 
-CREATE TABLE IF NOT EXISTS `zanr_film` (
-  `zanr_id` INT NOT NULL,
-  `film_id` INT NOT NULL,
-  FOREIGN KEY (`zanr_id`) REFERENCES `zanr` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  FOREIGN KEY (`film_id`) REFERENCES `film` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-);
+
 INSERT INTO `film_zanr` (`zanr_id`, `film_id`)
 VALUES (10402, 65),
   (28, 809183),
   (12, 19995),
   (16, 4523);
-SELECT *
-FROM `zanr_film`;
+
 
 
 
@@ -115,17 +94,82 @@ SELECT * FROM `film`;
 
 DROP TABLE `film`;
 
+DELETE FROM `film` WHERE `id`=661374;
+
 INSERT INTO `film` (`id`, `adult`, `backdrop_path`, `budget`, `homepage`, `imdb_id`, `original_language`, `original_title`, `overview`, `popularity`, `poster_path`, `release_date`, `revenue`, `runtime`, `status`, `tagline`, `title`, `video`, `vote_average`, `vote_count`, `datum_unosa`, `odobreno`, `korisnik_id`) VALUES
 (3, 0, NULL, 5, '5', '5', '5', '5', NULL, 5, NULL, '5', 5, NULL, '5', NULL, '5', 5, 5, 5, '2022-11-23 23:49:47', NULL, 9);
 
 
 
+/* mislim da tu vanjski kljucevi trebaju ic nekak drukcije da crasha ak taj zanr id ne postoji */
+/*
 CREATE TABLE IF NOT EXISTS `film_zanr` (
   zanr_id INT NOT NULL,
   film_id INT NOT NULL,
-  FOREIGN KEY (`zanr_id`) REFERENCES zanr (id) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT,
-  FOREIGN KEY (`film_id`) REFERENCES film (id) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT
+  FOREIGN KEY (`zanr_id`) REFERENCES `zanr` (id) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT,
+  FOREIGN KEY (`film_id`) REFERENCES `film` (id) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT
+);*/
+
+
+CREATE TABLE `film_zanr` (
+  `zanr_id` INTEGER NOT NULL,
+  `film_id` INTEGER NOT NULL,
+  PRIMARY KEY (zanr_id, film_id)
+  FOREIGN KEY (zanr_id) REFERENCES zanr(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  FOREIGN KEY (film_id) REFERENCES film(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 INSERT INTO `film_zanr` (`zanr_id`, `film_id`) VALUES
 (80, 3);
+
+SELECT * FROM film;
+SELECT * FROM film_zanr;
+
+DROP TABLE `film_zanr`;
+
+SELECT * FROM `film_zanr`;
+
+INSERT INTO `film_zanr` (`zanr_id`, `film_id`) VALUES
+(12, 19995);
+
+
+/* novo */
+/*
+CREATE TABLE `film_zanr` (
+  zanr_id INTEGER NOT NULL,
+  film_id INTEGER NOT NULL,
+  PRIMARY KEY (zanr_id, film_id)
+);
+
+CREATE INDEX fk_zanr_has_film_film1_idx ON `film_zanr` (film_id);
+CREATE INDEX fk_zanr_has_film_zanr1_idx ON `film_zanr` (zanr_id);
+
+
+
+CREATE TRIGGER film_zanr_delete
+AFTER DELETE ON `film`
+FOR EACH ROW
+BEGIN
+  DELETE FROM `film_zanr` WHERE film_id = OLD.id;
+END;
+
+CREATE TRIGGER film_zanr_update
+AFTER UPDATE OF `id` ON `film`
+FOR EACH ROW
+BEGIN
+  UPDATE `film_zanr` SET film_id = NEW.id WHERE film_id = OLD.id;
+END;
+
+CREATE TRIGGER zanr_delete
+AFTER DELETE ON `zanr`
+FOR EACH ROW
+BEGIN
+  DELETE FROM `film_zanr` WHERE zanr_id = OLD.id;
+END;
+
+CREATE TRIGGER zanr_update
+AFTER UPDATE OF `id` ON `zanr`
+FOR EACH ROW
+BEGIN
+  UPDATE `film_zanr` SET zanr_id = NEW.id WHERE zanr_id = OLD.id;
+END;*/

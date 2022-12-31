@@ -25,14 +25,14 @@ exports.postKorisnici = function (zahtjev, odgovor) {
 exports.putKorisnici = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.deleteKorisnici = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
@@ -48,7 +48,7 @@ exports.getKorisnik = function (zahtjev, odgovor) {
 exports.postKorisnik = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(405);
-  let poruka = { greska: "Metoda nije dopustena!" };
+  let poruka = { greska: "Metoda nije dopustena! 405" };
   odgovor.send(JSON.stringify(poruka));
 }
 
@@ -65,28 +65,28 @@ exports.putKorisnik = function (zahtjev, odgovor) {
 exports.deleteKorisnik = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.gettKorisnikPrijava = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.deleteKorisnikPrijava = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.putKorisnikPrijava = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
@@ -107,21 +107,21 @@ exports.getKorisnikPrijava = function (zahtjev, odgovor) {
 exports.getKorisnikAktivacija = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.deleteKorisnikAktivacija = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.postKorisnikAktivacija = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(405);
-  let poruka = { greska: "Metoda nije dopustena!" };
+  let poruka = { greska: "Metoda nije dopustena! 405" };
   odgovor.send(JSON.stringify(poruka));
 }
 

@@ -77,7 +77,7 @@ class FilmDAO {
         var zanrString = (film.genre_ids).toString();
         const poljeZanrova = zanrString.split(",");
         for (let i = 0; i < poljeZanrova.length; i++) {
-            console.log(poljeZanrova[i]);
+            console.log("\nzanr " + i + " " + poljeZanrova[i]);
         }
 
         try {

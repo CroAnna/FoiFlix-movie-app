@@ -43,11 +43,15 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><div class="oznaka zelena">Sve napravljeno</div></td>
+                  <td><div class="oznaka zelena">Sve je napravljeno</div></td>
                   <td>
-                    <div class="oznaka zuta">Djelomično napravljeno</div>
+                    <div class="oznaka zuta">Djelomično je napravljeno</div>
                   </td>
-                  <td><div class="oznaka crvena">Nije napravljeno</div></td>
+                  <td>
+                    <div class="oznaka crvena">
+                      Skoro ništa nije napravljeno
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -73,54 +77,58 @@
                   <td>
                     <div class="oznaka zelena">kreira novog korisnika</div>
                   </td>
-                  <td><div>501</div></td>
-                  <td><div>501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
                   <td><div></div></td>
                 </tr>
                 <tr>
-                  <td><div>api/korisnici /{korime}</div></td>
-                  <td><div>vraća određenog korisnika</div></td>
-                  <td><div>405</div></td>
-                  <td><div>Ažurira određenog korisnika</div></td>
-                  <td><div>501</div></td>
-                  <td><div></div></td>
-                </tr>
-                <tr>
-                  <td><div>api/korisnici /{korime}/aktivacija</div></td>
-                  <td><div>501</div></td>
-                  <td><div>405</div></td>
-                  <td><div>Aktivira novog korisnika</div></td>
-                  <td><div>501</div></td>
-                  <td><div></div></td>
-                </tr>
-                <tr>
-                  <td><div>api/korisnici /{korime}/prijava</div></td>
-                  <td><div>501</div></td>
+                  <td><div>api/korisnici/{korime}</div></td>
                   <td>
-                    <div>
+                    <div class="oznaka zelena">vraća određenog korisnika</div>
+                  </td>
+                  <td><div class="oznaka zelena">405</div></td>
+                  <td>
+                    <div class="oznaka zelena">Ažurira određenog korisnika</div>
+                  </td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div></div></td>
+                </tr>
+                <tr>
+                  <td><div>api/korisnici/{korime}/aktivacija</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div class="oznaka zelena">405</div></td>
+                  <td><div>Aktivira novog korisnika</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div></div></td>
+                </tr>
+                <tr>
+                  <td><div>api/korisnici/{korime}/prijava</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td>
+                    <div class="oznaka zelena">
                       Provjerava podatke prijave i vraća je li korisnik uspješno
                       prijavljen
                     </div>
                   </td>
-                  <td><div>501</div></td>
-                  <td><div>501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
                   <td><div></div></td>
                 </tr>
                 <tr>
                   <td>
                     <div>
-                      api/filmovi/ ?stranica=broj &brojFilmova=broj
-                      [&datum=datum] [&zanr=idZanr] [&naziv=dioNazivFilma]
-                      [&sortiraj=[d | z | n]]
+                      api/filmovi/?stranica=broj&brojFilmova=
+                      broj[&datum=datum][&zanr=idZanr]
+                      [&naziv=dioNazivFilma][&sortiraj=[d|z|n]]
                     </div>
                   </td>
                   <td>
-                    <div>
+                    <div class="oznaka zuta">
                       vraća listu određenog broja filmova za neku stranicu
                       (broj), opcionalno filtrirano po datumu unosa (datum)
                       i/ili žanru (idZanr) i/ili nazivu filma (dioNazivFilma),
-                      te može sortirati uzlazno po datumu (d), nazivu (n) ili
-                      žanru (z)
+                      te može sortirati uzlazno po datumu(d), nazivu(n) ili
+                      žanru(z)
                     </div>
                   </td>
                   <td>
@@ -129,61 +137,92 @@
                       servisa i dodaje novi film
                     </div>
                   </td>
-                  <td><div>501</div></td>
-                  <td><div>501</div></td>
-                  <td><div></div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td>
+                    <div>
+                      Pri GET metodi nema svih vrsta filtriranja i sortiranja,
+                      nego samo neke
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td><div>api/filmovi/{id}</div></td>
-                  <td><div>Vraća podatke određenog filma (id)</div></td>
-                  <td><div>405</div></td>
-                  <td><div>Ažurira podatke određenog filma</div></td>
-                  <td><div>Briše određeni film</div></td>
-                  <td><div></div></td>
+                  <td>
+                    <div class="oznaka zelena">
+                      Vraća podatke određenog filma (id)
+                    </div>
+                  </td>
+                  <td><div class="oznaka zelena">405</div></td>
+                  <td>
+                    <div class="oznaka zuta">
+                      Ažurira podatke određenog filma
+                    </div>
+                  </td>
+                  <td>
+                    <div class="oznaka zelena">Briše određeni film</div>
+                  </td>
+                  <td>
+                    <div>
+                      Pri PUT metodi se updatea samo je li prihvaćen za
+                      dodavanje u bazu ili ne
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td><div>api/zanr/</div></td>
-                  <td><div>Vraća listu žanrova</div></td>
-                  <td><div>Dodaje novi žanr</div></td>
-                  <td><div>501</div></td>
-                  <td><div>Briše sve žanrove za koje ne postoji film</div></td>
+                  <td><div class="oznaka zelena">Vraća listu žanrova</div></td>
+                  <td><div class="oznaka zelena">Dodaje novi žanr</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td>
+                    <div class="oznaka zelena">
+                      Briše sve žanrove za koje ne postoji film
+                    </div>
+                  </td>
                   <td><div></div></td>
                 </tr>
                 <tr>
                   <td><div>api/zanr/{id}</div></td>
-                  <td><div>Vraća podatke određenog žanra (id)</div></td>
-                  <td><div>405</div></td>
-                  <td><div>Ažurira postojeći žanr</div></td>
-                  <td><div>Briše određeni žanr</div></td>
+                  <td>
+                    <div class="oznaka zelena">
+                      Vraća podatke određenog žanra (id)
+                    </div>
+                  </td>
+                  <td><div class="oznaka zelena">405</div></td>
+                  <td>
+                    <div class="oznaka zelena">Ažurira postojeći žanr</div>
+                  </td>
+                  <td><div class="oznaka zelena">Briše određeni žanr</div></td>
                   <td><div></div></td>
                 </tr>
                 <tr>
                   <td><div>api/tmdb/zanr</div></td>
                   <td>
-                    <div>Prosljeđuje listu žanrova koji vrati servis TMDB</div>
+                    <div class="oznaka zelena">
+                      Prosljeđuje listu žanrova koji vrati servis TMDB
+                    </div>
                   </td>
-                  <td><div>501</div></td>
-                  <td><div>501</div></td>
-                  <td><div>501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
                   <td><div></div></td>
                 </tr>
                 <tr>
                   <td>
                     <div>
-                      api/tmdb/filmovi ?kljucaRijec=rijec1 [,rijec2]
-                      &stranica=broj
+                      api/tmdb/filmovi?kljucnaRijec=rijec1[,rijec2]&stranica=broj
                     </div>
                   </td>
                   <td>
-                    <div>
+                    <div class="oznaka zelena">
                       Prosljeđuje listu filmova koju vrati servis TMDB, a čiji
                       filmovi imaju ključnu riječ ili više njih
                     </div>
                   </td>
-                  <td><div>501</div></td>
-                  <td><div>501</div></td>
-                  <td><div>501</div></td>
-                  <td>div</td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div class="oznaka zelena">501</div></td>
+                  <td><div></div></td>
                 </tr>
               </tbody>
             </table>
@@ -202,19 +241,16 @@
               <tbody>
                 <tr>
                   <td>Gost</td>
-                  <td>Početna</td>
+                  <td><div class="oznaka zuta">Početna</div></td>
                   <td>
-                    <div>
-                      Prikazuje popis žanrova u bazi podataka i nasumice
-                      prikazuje 2 filma za svaki žanr koji postoje u bazi
-                      podataka.
-                    </div>
+                    Prikazuje popis žanrova u bazi podataka i nasumice prikazuje
+                    2 filma za svaki žanr koji postoje u bazi podataka.
                   </td>
-                  <td></td>
+                  <td>Ne prikazuje filmove iz moje baze, nego iz TMDB-a</td>
                 </tr>
                 <tr>
                   <td>Gost</td>
-                  <td>Dokumentacija</td>
+                  <td><div class="oznaka zelena">Dokumentacija</div></td>
                   <td>
                     <div>
                       Prikazuje stranicu dokumentacija.html opisanu ranije
@@ -224,36 +260,52 @@
                 </tr>
                 <tr>
                   <td>Gost</td>
-                  <td>Registracija, Prijava, Odjava</td>
+                  <td>
+                    <div class="oznaka zuta">Registracija, Prijava, Odjava</div>
+                  </td>
                   <td>
                     <div>
-                      Gost se može se registrirati kao novi korisnik. Kod
-                      registracije šalje se e-mail s tokenom za aktivaciju
-                      računa. Lozinka se u bazu ne smije spremati u čitljivom
-                      obliku i treba koristiti sol kod spremanja. Dok se račun
-                      ne aktivira nije moguće napraviti prijavu. Kod prijave
-                      treba koristiti autentikacija dvije razine prvo lozinka s
-                      JWT i nakon toga TOTP. Jednom prijavljeni korisnik može se
-                      odjaviti u bilo kojem trenutku. OVDE DIO SE IZBACUJE
+                      Gost se može se registrirati kao novi korisnik.
+                      <s>
+                        Kod registracije šalje se e-mail s tokenom za aktivaciju
+                        računa.
+                      </s>
+                      Lozinka se u bazu ne smije spremati u čitljivom obliku i
+                      treba koristiti sol kod spremanja.
+                      <s>
+                        Dok se račun ne aktivira nije moguće napraviti prijavu.
+                        Kod prijave treba koristiti autentikacija dvije razine
+                        prvo lozinka s JWT i nakon toga TOTP.
+                      </s>
+                      Jednom prijavljeni korisnik može se odjaviti u bilo kojem
+                      trenutku.
                     </div>
                   </td>
-                  <td></td>
+                  <td>
+                    <div>
+                      nakon registracije treba se ručno prebaciti na stranicu za
+                      prijavu, REST servis ne koristi više username i password
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td>Korisnik</td>
-                  <td>Profil</td>
+                  <td><div class="oznaka zelena">Profil</div></td>
                   <td>
                     <div>
                       Vidi svoje podatke (ime, prezime, korisničko ime, e-mail,
                       ...) i može ih ažurirati. Korisničko ime i e-mail se ne
-                      mogu ažurirati.
+                      mogu ažurirati. NE ZNAM JEL OVO ZUTO IL ZELENO
                     </div>
                   </td>
-                  <td></td>
+                  <td>
+                    Mogu se ažurirati samo ove 2 stvari koje su navedene u
+                    zadaći (ime i prezime)
+                  </td>
                 </tr>
                 <tr>
                   <td>Korisnik</td>
-                  <td>Filmovi pregled</td>
+                  <td><div class="oznaka zuta">Filmovi pregled</div></td>
                   <td>
                     <div>
                       Vidi popis svih filmova koji postoje u bazi, može filmove
@@ -264,11 +316,14 @@
                       dobiti sve podatke o filmu.
                     </div>
                   </td>
-                  <td></td>
+                  <td>
+                    Jedino postoji filtriranje po nazivu, abecedno. Nema
+                    sortiranja po datumu ili nazivu.
+                  </td>
                 </tr>
                 <tr>
                   <td>Korisnik</td>
-                  <td>Film</td>
+                  <td><div class="oznaka zelena">Film</div></td>
                   <td>
                     <div>
                       Prikazuje sve podatke o filmu zajedno s posterom i
@@ -276,11 +331,13 @@
                       korisnik je dodao film u bazu.
                     </div>
                   </td>
-                  <td></td>
+                  <td>Prikazuju se samo podaci koji su unešeni</td>
                 </tr>
                 <tr>
                   <td>Korisnik</td>
-                  <td>Filmovi pretraživanje</td>
+                  <td>
+                    <div class="oznaka zuta">Filmovi pretraživanje</div>
+                  </td>
                   <td>
                     <div>
                       Može upisati ključne riječi po kojima se pretražuju
@@ -295,7 +352,10 @@
                       dodaj u bazu
                     </div>
                   </td>
-                  <td></td>
+                  <td>
+                    Moguće je kliknuti dvaput na isti film, makar je već u
+                    prijedlozima
+                  </td>
                 </tr>
                 <tr>
                   <td>Korisnik</td>

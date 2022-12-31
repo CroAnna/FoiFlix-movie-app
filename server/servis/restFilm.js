@@ -12,18 +12,20 @@ exports.getFilmovi = function (zahtjev, odgovor) {
 exports.putFilmovi = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     odgovor.status(501);
-    let poruka = { greska: "metoda nije implementirana" };
+    let poruka = { greska: "metoda nije implementirana 501" };
     odgovor.send(JSON.stringify(poruka));
 };
 exports.deleteFilmovi = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     odgovor.status(501);
-    let poruka = { greska: "metoda nije implementirana" };
+    let poruka = { greska: "metoda nije implementirana 501" };
     odgovor.send(JSON.stringify(poruka));
 };
 
 exports.postFilmovi = function (zahtjev, odgovor) {
     odgovor.type("application/json");
+    console.log("U POST FILMOVI U RESTFILM");
+
     let podaci = zahtjev.body;
     let fdao = new FilmDAO();
     fdao.dodaj(podaci).then((poruka) => {
@@ -44,7 +46,7 @@ exports.getFilm = function (zahtjev, odgovor) {
 exports.postFilm = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     odgovor.status(405);
-    let poruka = { greska: "Metoda nije dopustena!" };
+    let poruka = { greska: "Metoda nije dopustena! 405" };
     odgovor.send(JSON.stringify(poruka));
 }
 

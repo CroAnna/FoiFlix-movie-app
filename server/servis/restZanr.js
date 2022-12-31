@@ -21,7 +21,7 @@ exports.postZanrovi = function (zahtjev, odgovor) {
 exports.putZanrovi = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
@@ -48,7 +48,7 @@ exports.getZanr = function (zahtjev, odgovor) {
 exports.postZanr = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(405);
-  let poruka = { greska: "Metoda nije dopustena!" };
+  let poruka = { greska: "Metoda nije dopustena! 405" };
   odgovor.send(JSON.stringify(poruka));
 }
 
@@ -74,55 +74,55 @@ exports.deleteZanr = function (zahtjev, odgovor) {
 exports.postZanrTmdb = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.putZanrTmdb = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.deleteZanrTmdb = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.postTmdbFilmovi = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.putTmdbFilmovi = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.deleteTmdbFilmovi = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.putFilmovi = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
 
 exports.deleteFilmovi = function (zahtjev, odgovor) {
   odgovor.type("application/json");
   odgovor.status(501);
-  let poruka = { greska: "metoda nije implementirana" };
+  let poruka = { greska: "metoda nije implementirana 501" };
   odgovor.send(JSON.stringify(poruka));
 };
