@@ -1,5 +1,6 @@
 const FilmDAO = require("./filmDAO.js");
 
+
 exports.getFilmovi = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     let fdao = new FilmDAO();

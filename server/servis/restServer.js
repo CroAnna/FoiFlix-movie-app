@@ -1,6 +1,11 @@
 const konst = require("../konstante.js");
 const express = require("express");
+
 const Konfiguracija = require("../konfiguracija");
+
+
+
+
 //const portovi = require(konst.dirPortova + "portovi_rest.js");
 const restKorisnik = require("./restKorisnik.js");
 const restFilm = require("./restFilm.js");
@@ -8,7 +13,8 @@ const restZanr = require("./restZanr.js");
 const RestTMDB = require("./restTMDB.js");
 const fsPromise = require("fs/promises");
 
-const port = 9000; // todo
+
+
 const server = express();
 
 let konf = new Konfiguracija();
@@ -23,6 +29,10 @@ konf
     process.exit();
   });
 
+
+
+let port;
+
 function pokreniServer() {
   server.use(express.urlencoded({ extended: true }));
   server.use(express.json());
@@ -31,6 +41,11 @@ function pokreniServer() {
   pripremiPutanjeResursTMDB();
   pripremaPutanjaFilmova();
   pripremaPutanjaZanrova();
+
+  let jsonobjekt = konf.dajKonf();
+  let restport = jsonobjekt["rest.port"]
+  console.log("restport " + restport);
+  port = restport;
 
   server.use((zahtjev, odgovor) => {
     odgovor.status(404);

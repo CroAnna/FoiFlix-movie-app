@@ -62,7 +62,6 @@ VALUES (10402, 65),
 
 
 
-
 CREATE TABLE IF NOT EXISTS `film` (
   id INTEGER NOT NULL,
   adult INTEGER NOT NULL,
@@ -101,7 +100,9 @@ INSERT INTO `film` (`id`, `adult`, `backdrop_path`, `budget`, `homepage`, `imdb_
 
 
 
-/* mislim da tu vanjski kljucevi trebaju ic nekak drukcije da crasha ak taj zanr id ne postoji */
+
+
+
 /*
 CREATE TABLE IF NOT EXISTS `film_zanr` (
   zanr_id INT NOT NULL,
@@ -111,17 +112,19 @@ CREATE TABLE IF NOT EXISTS `film_zanr` (
 );*/
 
 
+/* mislim da tu vanjski kljucevi trebaju ic nekak drukcije da crasha ak taj zanr id ne postoji */
 CREATE TABLE `film_zanr` (
-  `zanr_id` INTEGER NOT NULL,
-  `film_id` INTEGER NOT NULL,
+  `zanr_id` NOT NULL,
+  `film_id` NOT NULL,
   PRIMARY KEY (zanr_id, film_id)
-  FOREIGN KEY (zanr_id) REFERENCES zanr(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  FOREIGN KEY (film_id) REFERENCES film(id) ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (film_id) REFERENCES `film`(id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (zanr_id) REFERENCES `zanr`(id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 INSERT INTO `film_zanr` (`zanr_id`, `film_id`) VALUES
 (80, 3);
 
+SELECT * FROM zanr;
 SELECT * FROM film;
 SELECT * FROM film_zanr;
 
@@ -132,44 +135,3 @@ SELECT * FROM `film_zanr`;
 INSERT INTO `film_zanr` (`zanr_id`, `film_id`) VALUES
 (12, 19995);
 
-
-/* novo */
-/*
-CREATE TABLE `film_zanr` (
-  zanr_id INTEGER NOT NULL,
-  film_id INTEGER NOT NULL,
-  PRIMARY KEY (zanr_id, film_id)
-);
-
-CREATE INDEX fk_zanr_has_film_film1_idx ON `film_zanr` (film_id);
-CREATE INDEX fk_zanr_has_film_zanr1_idx ON `film_zanr` (zanr_id);
-
-
-
-CREATE TRIGGER film_zanr_delete
-AFTER DELETE ON `film`
-FOR EACH ROW
-BEGIN
-  DELETE FROM `film_zanr` WHERE film_id = OLD.id;
-END;
-
-CREATE TRIGGER film_zanr_update
-AFTER UPDATE OF `id` ON `film`
-FOR EACH ROW
-BEGIN
-  UPDATE `film_zanr` SET film_id = NEW.id WHERE film_id = OLD.id;
-END;
-
-CREATE TRIGGER zanr_delete
-AFTER DELETE ON `zanr`
-FOR EACH ROW
-BEGIN
-  DELETE FROM `film_zanr` WHERE zanr_id = OLD.id;
-END;
-
-CREATE TRIGGER zanr_update
-AFTER UPDATE OF `id` ON `zanr`
-FOR EACH ROW
-BEGIN
-  UPDATE `film_zanr` SET zanr_id = NEW.id WHERE zanr_id = OLD.id;
-END;*/
