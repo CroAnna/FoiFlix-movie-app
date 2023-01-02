@@ -57,6 +57,8 @@ exports.putZanr = function (zahtjev, odgovor) {
   let id = zahtjev.params.id;
   let podaci = zahtjev.body;
   let zdao = new ZanrDAO();
+  console.log(id + " " + podaci);
+
   zdao.azuriraj(id, podaci).then((poruka) => {
     odgovor.send(JSON.stringify(poruka));
   });

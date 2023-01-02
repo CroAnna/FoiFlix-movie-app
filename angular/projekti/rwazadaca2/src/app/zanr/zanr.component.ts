@@ -9,9 +9,11 @@ import { ZanroviService } from '../servisi/zanrovi.service';
 export class ZanrComponent {
   zanroviMoji: any;
   zanroviTMDB: any;
-  odabraniRadioName: string = '';
-  odabraniRadioId: number = 0; // neki defaultni broj
-
+  odabraniRadioNameTmdb: string = '';
+  odabraniRadioIdTmdb: number = 0; // neki defaultni broj
+  odabraniRadioNameMoj: string = '';
+  odabraniRadioIdMoj: number = 0; // neki defaultni broj
+  noviNaziv: any; // two way binding
   constructor(private zanroviService: ZanroviService) {}
 
   async prikaziMojeZanrove() {
@@ -22,18 +24,27 @@ export class ZanrComponent {
     this.zanroviTMDB = await this.zanroviService.dajPodatke();
   }
 
-  onChange(event: any, id: number) {
+  onChangeOdabraniRadioTmdb(event: any, id: number) {
     // koji je trenutno odabran
-    this.odabraniRadioName = event.target.value;
-    this.odabraniRadioId = id;
+    this.odabraniRadioNameTmdb = event.target.value;
+    this.odabraniRadioIdTmdb = id;
   }
 
+  onChangeOdabraniRadioMoj(event: any, id: number) {
+    this.odabraniRadioNameMoj = event.target.value;
+    this.odabraniRadioIdMoj = id;
+  }
+
+  // TODO provjeri jel vec postoji u bazi taj
   dodajTMDBPodatke() {
-    console.log('kliknut sam');
     this.zanroviService.dodajIzTMDBAuMojuBazu(
-      this.odabraniRadioId,
-      this.odabraniRadioName
+      this.odabraniRadioIdTmdb,
+      this.odabraniRadioNameTmdb
     );
+  }
+
+  promijeniNaziv() {
+    this.zanroviService.updateajZanr(this.odabraniRadioIdMoj, this.noviNaziv);
   }
 
   async dajMojePodatkeBrisanje() {

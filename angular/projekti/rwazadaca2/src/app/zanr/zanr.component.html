@@ -8,7 +8,7 @@
   <button class="lijepiGumb" id="dodajTMDBPodatke" (click)="dodajTMDBPodatke()">
     Dodaj iz TMDB-a u moju bazu
   </button>
-  <button class="lijepiGumb" id="promijeniNaziv">
+  <button class="lijepiGumb" id="promijeniNaziv" (click)="promijeniNaziv()">
     Promijeni naziv odabranog
   </button>
   <button
@@ -19,8 +19,6 @@
     Izbrisi sve zanrove bez filmova
   </button>
 </div>
-<input type="text" id="inputPromjenaNaziva" />
-
 <div id="zanrovi-container">
   <ul *ngFor="let zanr of zanroviTMDB">
     <li>
@@ -29,7 +27,7 @@
         id="{{ zanr.id }}"
         name="tmdb-zanrovi"
         value="{{ zanr.name }}"
-        (change)="onChange($event, zanr.id)"
+        (change)="onChangeOdabraniRadioTmdb($event, zanr.id)"
       />
       {{ zanr.name }} {{ zanr.id }}
     </li>
@@ -43,9 +41,11 @@
         id="{{ zanr.id }}"
         name="moji-zanrovi"
         value="{{ zanr.name }}"
+        (change)="onChangeOdabraniRadioMoj($event, zanr.id)"
       />
       {{ zanr.name }} {{ zanr.id }}
     </li>
   </ul>
 </div>
 <div id="informacije-zanrovi"></div>
+<input type="text" id="inputPromjenaNaziva" [(ngModel)]="noviNaziv" />

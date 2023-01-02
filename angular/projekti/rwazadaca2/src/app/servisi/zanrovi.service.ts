@@ -22,7 +22,6 @@ export class ZanroviService {
   }
 
   async dodajIzTMDBAuMojuBazu(novi_id: number, novi_naziv: string) {
-    console.log(novi_id + ' ' + novi_naziv);
     let tijelo = {
       id: novi_id,
       name: novi_naziv,
@@ -43,6 +42,25 @@ export class ZanroviService {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  async updateajZanr(id: number, novi_naziv: string) {
+    let tijelo = {
+      id: id,
+      name: novi_naziv,
+    };
+
+    let header = new Headers();
+    header.set('Content-Type', 'application/json');
+
+    let parametri = {
+      method: 'PUT',
+      body: JSON.stringify(tijelo),
+      headers: header,
+    };
+
+    let podatki = await fetch('http://localhost:9000/api/zanr/:id', parametri);
+    await podatki.text();
   }
 
   async izbrisiBezFilmova(podaci: any) {
