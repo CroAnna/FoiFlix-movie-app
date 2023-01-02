@@ -17,6 +17,8 @@ server.use(express.static("./html"));
 server.use("/fotografije", express.static("./fotografije"));
 server.use("/dokumentacija", express.static("../dokumentacija"));
 */
+
+// za automatsko pokretanje aplikacije sa npm start
 server.use(express.static(__dirname + "/angular"));
 
 

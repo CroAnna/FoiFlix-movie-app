@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ZanroviService } from '../zanrovi.service';
+import { ZanroviService } from '../servisi/zanrovi.service';
 
 @Component({
   selector: 'app-zanr',
@@ -8,17 +8,15 @@ import { ZanroviService } from '../zanrovi.service';
 })
 export class ZanrComponent {
   zanroviMoji: any;
+  zanroviTMDB: any;
 
   constructor(private zanroviService: ZanroviService) {}
 
-  /*
-  async postavi(): Promise<void> { // drugi nacin 
-    console.log('u postavi');
-    this.zanroviMoji = await this.zanroviService.dajMojePodatke();
-  }*/
-
   async prikaziMojeZanrove() {
-    const heroes = await this.zanroviService.dajMojePodatke();
-    this.zanroviMoji = heroes;
+    this.zanroviMoji = await this.zanroviService.dajMojePodatke();
+  }
+
+  async prikaziTMDBZanrove() {
+    this.zanroviTMDB = await this.zanroviService.dajPodatke();
   }
 }

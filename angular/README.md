@@ -1,5 +1,9 @@
 # Angular
 
+Pokretanje - uđi u \server\aplikacija i `npm start` i u \server\servis i `npm start`. Pokreni localhost:9000
+
+Ak ti ne dela, nemas globalno instalirano sve kaj moras imat i cors (npm -g install cors)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server
