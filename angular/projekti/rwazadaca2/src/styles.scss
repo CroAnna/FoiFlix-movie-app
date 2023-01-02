@@ -24,17 +24,18 @@ $font-family_2: "Poppins", sans-serif;
 body {
   background: rgb(0, 0, 0);
   background-attachment: fixed;
-  background: radial-gradient(
-    /*ovo nije originalna boja*/ circle,
-    rgb(180, 180, 180) 0%,
-    rgb(249, 125, 125) 100%
-  );
 
-  /*background: radial-gradient(
+  //background: radial-gradient(
+  /*ovo nije originalna boja*/ //circle,
+  //  rgb(180, 180, 180) 0%,
+  //  rgb(249, 125, 125) 100%
+  // );
+
+  background: radial-gradient(
     circle,
     rgba(218, 0, 55, 1) 0%,
     rgba(23, 23, 23, 1) 100%
-  );*/
+  );
 }
 .o-studentu {
   margin: 20px auto;
@@ -711,5 +712,9 @@ td {
   position: sticky;
 }
 .podaci-prijava {
+  color: $color_white;
+}
+
+.zanr-item {
   color: $color_white;
 }

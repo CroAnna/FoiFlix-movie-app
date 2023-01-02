@@ -16,6 +16,7 @@ exports.putFilmovi = function (zahtjev, odgovor) {
     let poruka = { greska: "metoda nije implementirana 501" };
     odgovor.send(JSON.stringify(poruka));
 };
+
 exports.deleteFilmovi = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     odgovor.status(501);

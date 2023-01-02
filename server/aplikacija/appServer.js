@@ -7,16 +7,26 @@ const Konfiguracija = require("../konfiguracija");
 const htmlUpravitelj = require("./htmlUpravitelj.js");
 const fetchUpravitelj = require("./fetchUpravitelj.js");
 const port = 9001;
-const server = express();
 
+const cors = require('cors');
+
+const server = express();
+server.use(cors());
+/*
 server.use(express.static("./html"));
 server.use("/fotografije", express.static("./fotografije"));
 server.use("/dokumentacija", express.static("../dokumentacija"));
+*/
+server.use(express.static(__dirname + "/angular"));
+
+
+
 
 function pokreniServer() {
   server.use(express.urlencoded({ extended: true }));
   server.use(express.json());
   server.use(kolacici());
+
   server.use(
     sesija({
       secret: konst.tajniKljucSesija,

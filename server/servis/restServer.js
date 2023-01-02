@@ -14,8 +14,11 @@ const RestTMDB = require("./restTMDB.js");
 const fsPromise = require("fs/promises");
 
 
+const cors = require('cors');
+
 
 const server = express();
+server.use(cors());
 
 let konf = new Konfiguracija();
 konf
@@ -25,7 +28,7 @@ konf
     console.error(err);
     if (process.argv.length == 2)
       console.error("Potrebno je unjeti i naziv konfiguracija");
-    else console.error("Ne moguce otvoriti datoteku");
+    else console.error("Nemoguce otvoriti datoteku");
     process.exit();
   });
 

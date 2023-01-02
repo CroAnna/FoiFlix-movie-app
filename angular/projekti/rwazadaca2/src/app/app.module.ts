@@ -7,9 +7,16 @@ import { AppComponent } from './app.component';
 import { ZanrComponent } from './zanr/zanr.component';
 import { NavigacijaComponent } from './navigacija/navigacija.component';
 import { PregledFilmovaComponent } from './pregled-filmova/pregled-filmova.component';
+import { PrijavaComponent } from './prijava/prijava.component';
 
 @NgModule({
-  declarations: [AppComponent, ZanrComponent, NavigacijaComponent, PregledFilmovaComponent],
+  declarations: [
+    AppComponent,
+    ZanrComponent,
+    NavigacijaComponent,
+    PregledFilmovaComponent,
+    PrijavaComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
