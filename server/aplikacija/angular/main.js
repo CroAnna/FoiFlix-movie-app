@@ -336,6 +336,47 @@ class ZanroviService {
       return tmdbZanrovi;
     })();
   }
+  dodajIzTMDBAuMojuBazu(novi_id, novi_naziv) {
+    return (0,C_Users_Ana_Desktop_rwa_ana_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      console.log(novi_id + ' ' + novi_naziv);
+      let tijelo = {
+        id: novi_id,
+        name: novi_naziv
+      };
+      const headers = new Headers({
+        'Content-Type': 'application/json'
+      });
+      const params = {
+        method: 'POST',
+        body: JSON.stringify(tijelo),
+        headers: headers
+      };
+      try {
+        const odgovor = yield fetch('http://localhost:9000/api/zanr', params);
+        const data = yield odgovor.text();
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }
+  izbrisiBezFilmova(podaci) {
+    return (0,C_Users_Ana_Desktop_rwa_ana_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      let zanrovi_parse = JSON.parse(podaci);
+      let tijelo = {
+        zanrovi: zanrovi_parse
+      };
+      let header = new Headers();
+      header.set('Content-Type', 'application/json');
+      let parametri = {
+        method: 'DELETE',
+        body: JSON.stringify(tijelo),
+        headers: header
+      };
+      let podatki = yield fetch('http://localhost:9000/api/zanr', parametri);
+      yield podatki.text();
+    })();
+  }
 }
 ZanroviService.ɵfac = function ZanroviService_Factory(t) {
   return new (t || ZanroviService)();
@@ -431,27 +472,19 @@ class ZanrComponent {
   }
   dodajTMDBPodatke() {
     console.log('kliknut sam');
-    this.dodajIzTMDBAuMojuBazu(this.odabraniRadioId, this.odabraniRadioName);
+    this.zanroviService.dodajIzTMDBAuMojuBazu(this.odabraniRadioId, this.odabraniRadioName);
   }
-  dodajIzTMDBAuMojuBazu(novi_id, novi_naziv) {
+  dajMojePodatkeBrisanje() {
+    var _this3 = this;
     return (0,C_Users_Ana_Desktop_rwa_ana_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      console.log(novi_id + ' ' + novi_naziv);
-      let tijelo = {
-        id: novi_id,
-        name: novi_naziv
-      };
-      const headers = new Headers({
-        'Content-Type': 'application/json'
-      });
-      const params = {
-        method: 'POST',
-        body: JSON.stringify(tijelo),
-        headers: headers
-      };
       try {
-        const odgovor = yield fetch('http://localhost:9000/api/zanr', params);
-        const data = yield odgovor.text();
-        console.log(data);
+        let odgovor = yield fetch('http://localhost:9000/api/zanr');
+        if (odgovor.status === 200) {
+          const podaci = yield odgovor.text();
+          _this3.zanroviService.izbrisiBezFilmova(podaci);
+        } else {
+          alert(`Problem kod preuzimanja podataka: ${odgovor.statusText}`);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -466,7 +499,7 @@ ZanrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
   selectors: [["app-zanr"]],
   decls: 17,
   vars: 2,
-  consts: [[1, "zanrovi-gumbi"], ["id", "dajPodatke", 1, "lijepiGumb", 3, "click"], ["id", "dajMojePodatke", 1, "lijepiGumb", 3, "click"], ["id", "dodajTMDBPodatke", 1, "lijepiGumb", 3, "click"], ["id", "promijeniNaziv", 1, "lijepiGumb"], ["id", "izbrisiBezFilmova", 1, "lijepiGumb"], ["type", "text", "id", "inputPromjenaNaziva"], ["id", "zanrovi-container"], [4, "ngFor", "ngForOf"], ["id", "zanrovi-container-moje"], ["id", "informacije-zanrovi"], ["type", "radio", "name", "tmdb-zanrovi", 3, "id", "value", "change"], ["type", "radio", "name", "moji-zanrovi", 3, "id", "value"]],
+  consts: [[1, "zanrovi-gumbi"], ["id", "dajPodatke", 1, "lijepiGumb", 3, "click"], ["id", "dajMojePodatke", 1, "lijepiGumb", 3, "click"], ["id", "dodajTMDBPodatke", 1, "lijepiGumb", 3, "click"], ["id", "promijeniNaziv", 1, "lijepiGumb"], ["id", "izbrisiBezFilmova", 1, "lijepiGumb", 3, "click"], ["type", "text", "id", "inputPromjenaNaziva"], ["id", "zanrovi-container"], [4, "ngFor", "ngForOf"], ["id", "zanrovi-container-moje"], ["id", "informacije-zanrovi"], ["type", "radio", "name", "tmdb-zanrovi", 3, "id", "value", "change"], ["type", "radio", "name", "moji-zanrovi", 3, "id", "value"]],
   template: function ZanrComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "button", 1);
@@ -491,6 +524,9 @@ ZanrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, " Promijeni naziv odabranog ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "button", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ZanrComponent_Template_button_click_9_listener() {
+        return ctx.dajMojePodatkeBrisanje();
+      });
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, " Izbrisi sve zanrove bez filmova ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "input", 6);
