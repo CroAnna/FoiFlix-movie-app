@@ -416,6 +416,7 @@ label {
   padding: 50px;
   border-radius: 30px;
   color: #ededed;
+  list-style: none;
 }
 
 #zanrovi-container {
@@ -425,6 +426,7 @@ label {
   padding: 50px;
   border-radius: 30px;
   color: #ededed;
+  list-style: none;
 }
 
 #profil-korime {

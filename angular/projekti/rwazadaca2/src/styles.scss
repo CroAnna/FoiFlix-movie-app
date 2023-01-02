@@ -402,6 +402,7 @@ label {
     font-size: 1.5rem;
   }
 }
+
 #zanrovi-container-moje {
   background-color: $color_dark_gray;
   width: 70%;
@@ -409,7 +410,9 @@ label {
   padding: 50px;
   border-radius: 30px;
   color: $color_white;
+  list-style: none;
 }
+
 #zanrovi-container {
   background-color: $color_dark_gray;
   width: 70%;
@@ -417,7 +420,9 @@ label {
   padding: 50px;
   border-radius: 30px;
   color: $color_white;
+  list-style: none;
 }
+
 #profil-korime {
   background: rgb(155, 155, 155, 0.6);
   &:focus {
