@@ -30,8 +30,14 @@ export class KorisniciService {
 
     if (odgovor.status == 200) {
       console.log('uspjesna prijava');
-      this.router.navigate(['/zanrovi']);
-      return await odgovor.text();
+      this.router.navigate(['/pocetna']);
+
+      let podaci = await odgovor.text();
+      console.log('podaci ' + podaci);
+
+      return JSON.parse(podaci);
+
+      //return JSON.parse(await odgovor.text());
     } else {
       return false;
     }

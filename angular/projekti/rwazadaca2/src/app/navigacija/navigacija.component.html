@@ -1,6 +1,5 @@
 <nav>
   <ul>
-    <!--// pocetna verzija za routing-->
     <li>
       <a
         routerLink="/zanrovi"
@@ -14,24 +13,30 @@
         routerLink="/pregledFilmova"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        >Pregled filmova</a
+        *ngIf="prijavljen == '2' || prijavljen == '1'"
       >
+        Pregled filmova
+      </a>
     </li>
     <li>
       <a
         routerLink="/prijava"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        >Prijava</a
+        *ngIf="!prijavljen"
       >
+        Prijava
+      </a>
     </li>
     <li>
       <a
         routerLink="/prijedloziFilmova"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        >Prijedlozi</a
+        *ngIf="prijavljen == '1'"
       >
+        Prijedlozi
+      </a>
     </li>
     <li>
       <a
@@ -39,6 +44,16 @@
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
         >Pocetna</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/pocetna"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        (click)="odjaviKorisnika()"
+        *ngIf="prijavljen == '1' || prijavljen == '2'"
+        >Odjava</a
       >
     </li>
   </ul>
