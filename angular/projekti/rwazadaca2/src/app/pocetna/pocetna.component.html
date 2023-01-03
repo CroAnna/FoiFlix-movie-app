@@ -2,14 +2,8 @@
   <h2>Početna 🎬</h2>
   <h3>Preporučeni filmovi po Vašim žanrovima:</h3>
   <div class="generirani-kontejner">
-    <div *ngFor="let film of film">
-      <div class="moji-filmovi">
-        <div class="moj-film" *ngIf="film.odobreno == 0">
-          {{ film.title }} {{ film.id }}
-          <button id="btnOdobri" (click)="odobriFilm(film.id)">Odobri</button>
-          <button id="btnOdbaci" (click)="odbaciFilm(film.id)">Odbaci</button>
-        </div>
-      </div>
-    </div>
+    <ul *ngFor="let zanr of zanroviMoji">
+      <li class="moji-filmovi">{{ zanr.name }}</li>
+    </ul>
   </div>
 </div>
