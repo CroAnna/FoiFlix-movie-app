@@ -12,6 +12,20 @@ export class FilmoviService {
     return JSON.parse(await odgovor.text());
   }
 
+  async dajOdabraniFilm(idFilma: string) {
+    console.log('id filma -----> ' + idFilma);
+
+    let odgovor = await fetch('http://localhost:9000/api/filmovi/' + idFilma);
+    if (odgovor.status == 200) {
+      let podaci = await odgovor.text();
+      console.log('podaci ' + podaci);
+
+      return JSON.parse(podaci);
+    } else {
+      alert('Problem kod preuzimanja podataka:\n' + odgovor.statusText);
+    }
+  }
+
   async odobri(idFilma: Number) {
     let tijelo = {
       id: idFilma,

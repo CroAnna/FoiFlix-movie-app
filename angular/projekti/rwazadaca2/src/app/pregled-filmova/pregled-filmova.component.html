@@ -12,7 +12,11 @@
     <div *ngFor="let film of filmoviOdobreni">
       <div class="moji-filmovi">
         <!-- TODO da se klikne i odvede dalje na taj film -->
-        <div class="moj-film" *ngIf="film.odobreno == 1">
+        <div
+          class="moj-film"
+          *ngIf="film.odobreno == 1"
+          routerLink="/pregledFilmova/film/{{ film.id }}"
+        >
           ---> {{ film.title }} {{ film.id }}
         </div>
       </div>

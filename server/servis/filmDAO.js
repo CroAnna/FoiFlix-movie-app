@@ -29,7 +29,7 @@ class FilmDAO {
         let sql = "DELETE FROM film WHERE id=?;";
         var podaci = await this.baza.izvrsiUpit(sql, [film.id]);
         this.baza.zatvoriVezu();
-        console.log("izbrisan je film s id " + id);
+        // console.log("izbrisan je film s id " + id);
         return true;
     };
 

@@ -66,8 +66,12 @@ exports.deleteFilm = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     let fdao = new FilmDAO();
     let id = zahtjev.params.id;
+    console.log("ZHTJEV PARAMNS " + zahtjev.params.id);
+
     let podaci = zahtjev.body;
     fdao.brisi(id, podaci).then((film) => {
         odgovor.send(JSON.stringify(film));
     });
+
+
 }
