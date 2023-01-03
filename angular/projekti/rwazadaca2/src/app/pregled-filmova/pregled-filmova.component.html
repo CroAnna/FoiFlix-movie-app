@@ -1,1 +1,21 @@
 <p>Svi filmovi iz moje baze</p>
+<div class="pregled">
+  <select id="sort">
+    <option value="Naziv">Naziv</option>
+    <option value="Datum">Datum</option>
+    <option value="Zanr">Zanr</option>
+  </select>
+  <div id="stranicenje"></div>
+  <h2>Pregled filmova</h2>
+
+  <div id="moji-filmovi-kontejner">
+    <div *ngFor="let film of filmoviOdobreni">
+      <div class="moji-filmovi">
+        <!-- TODO da se klikne i odvede dalje na taj film -->
+        <div class="moj-film" *ngIf="film.odobreno == 1">
+          ---> {{ film.title }} {{ film.id }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

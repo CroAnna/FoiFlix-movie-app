@@ -11,11 +11,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _pregled_filmova_pregled_filmova_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pregled-filmova/pregled-filmova.component */ 6850);
 /* harmony import */ var _prijava_prijava_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./prijava/prijava.component */ 4167);
-/* harmony import */ var _zanr_zanr_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./zanr/zanr.component */ 3742);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _prijedlozi_prijedlozi_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./prijedlozi/prijedlozi.component */ 7906);
+/* harmony import */ var _zanr_zanr_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zanr/zanr.component */ 3742);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 
 
@@ -24,29 +26,36 @@ __webpack_require__.r(__webpack_exports__);
 
 // pocetna verzija za routing
 const routes = [{
+  path: '',
+  redirectTo: '/pocetna',
+  pathMatch: 'full'
+}, {
   path: 'zanrovi',
-  component: _zanr_zanr_component__WEBPACK_IMPORTED_MODULE_2__.ZanrComponent
+  component: _zanr_zanr_component__WEBPACK_IMPORTED_MODULE_3__.ZanrComponent
 }, {
   path: 'prijava',
   component: _prijava_prijava_component__WEBPACK_IMPORTED_MODULE_1__.PrijavaComponent
 }, {
   path: 'pregledFilmova',
   component: _pregled_filmova_pregled_filmova_component__WEBPACK_IMPORTED_MODULE_0__.PregledFilmovaComponent
+}, {
+  path: 'prijedloziFilmova',
+  component: _prijedlozi_prijedlozi_component__WEBPACK_IMPORTED_MODULE_2__.PrijedloziComponent
 }];
 class AppRoutingModule {}
 AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) {
   return new (t || AppRoutingModule)();
 };
-AppRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
+AppRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
   type: AppRoutingModule
 });
-AppRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-  imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forRoot(routes), _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
+AppRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
+  imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule.forRoot(routes), _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
 });
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](AppRoutingModule, {
-    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule],
-    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](AppRoutingModule, {
+    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule],
+    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
   });
 })();
 
@@ -106,15 +115,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ 2508);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 2508);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 81);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 5319);
 /* harmony import */ var _zanr_zanr_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./zanr/zanr.component */ 3742);
 /* harmony import */ var _navigacija_navigacija_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navigacija/navigacija.component */ 749);
 /* harmony import */ var _pregled_filmova_pregled_filmova_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pregled-filmova/pregled-filmova.component */ 6850);
 /* harmony import */ var _prijava_prijava_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./prijava/prijava.component */ 4167);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _prijedlozi_prijedlozi_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./prijedlozi/prijedlozi.component */ 7906);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 
 
@@ -128,17 +139,17 @@ class AppModule {}
 AppModule.ɵfac = function AppModule_Factory(t) {
   return new (t || AppModule)();
 };
-AppModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({
+AppModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({
   type: AppModule,
   bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent]
 });
-AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({
-  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule]
+AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({
+  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule]
 });
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](AppModule, {
-    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _zanr_zanr_component__WEBPACK_IMPORTED_MODULE_2__.ZanrComponent, _navigacija_navigacija_component__WEBPACK_IMPORTED_MODULE_3__.NavigacijaComponent, _pregled_filmova_pregled_filmova_component__WEBPACK_IMPORTED_MODULE_4__.PregledFilmovaComponent, _prijava_prijava_component__WEBPACK_IMPORTED_MODULE_5__.PrijavaComponent],
-    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵsetNgModuleScope"](AppModule, {
+    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _zanr_zanr_component__WEBPACK_IMPORTED_MODULE_2__.ZanrComponent, _navigacija_navigacija_component__WEBPACK_IMPORTED_MODULE_3__.NavigacijaComponent, _pregled_filmova_pregled_filmova_component__WEBPACK_IMPORTED_MODULE_4__.PregledFilmovaComponent, _prijava_prijava_component__WEBPACK_IMPORTED_MODULE_5__.PrijavaComponent, _prijedlozi_prijedlozi_component__WEBPACK_IMPORTED_MODULE_6__.PrijedloziComponent],
+    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule]
   });
 })();
 
@@ -165,9 +176,9 @@ NavigacijaComponent.ɵfac = function NavigacijaComponent_Factory(t) {
 NavigacijaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NavigacijaComponent,
   selectors: [["app-navigacija"]],
-  decls: 11,
+  decls: 14,
   vars: 0,
-  consts: [["routerLink", "/zanrovi", "routerLinkActive", "active", "ariaCurrentWhenActive", "page"], ["routerLink", "/pregledFilmova", "routerLinkActive", "active", "ariaCurrentWhenActive", "page"], ["routerLink", "/prijava", "routerLinkActive", "active", "ariaCurrentWhenActive", "page"]],
+  consts: [["routerLink", "/zanrovi", "routerLinkActive", "active", "ariaCurrentWhenActive", "page"], ["routerLink", "/pregledFilmova", "routerLinkActive", "active", "ariaCurrentWhenActive", "page"], ["routerLink", "/prijava", "routerLinkActive", "active", "ariaCurrentWhenActive", "page"], ["routerLink", "/prijedloziFilmova", "routerLinkActive", "active", "ariaCurrentWhenActive", "page"]],
   template: function NavigacijaComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav")(1, "ul")(2, "li")(3, "a", 0);
@@ -178,6 +189,9 @@ NavigacijaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "li")(9, "a", 2);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Prijava");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "li")(12, "a", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Prijedlozi");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()();
     }
   },
@@ -197,73 +211,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PregledFilmovaComponent": () => (/* binding */ PregledFilmovaComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _servisi_filmovi_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../servisi/filmovi.service */ 9702);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 4666);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 2508);
+/* harmony import */ var C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _servisi_filmovi_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../servisi/filmovi.service */ 9702);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 4666);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 2508);
 
 
 
 
-function PregledFilmovaComponent_ul_15_Template(rf, ctx) {
+
+function PregledFilmovaComponent_div_14_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ul")(1, "li", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const film_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"](" ---> ", film_r1.title, " ", film_r1.id, " ");
+  }
+}
+function PregledFilmovaComponent_div_14_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div")(1, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, PregledFilmovaComponent_div_14_div_2_Template, 2, 2, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
     const film_r1 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate2"]("", film_r1.name, " ", film_r1.id, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", film_r1.odobreno == 1);
   }
 }
 class PregledFilmovaComponent {
   constructor(filmoviService) {
     this.filmoviService = filmoviService;
+    this.filter = {
+      odobreno: 1
+    };
   }
   ngOnInit() {
-    console.log('on init');
+    var _this = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      console.log('on init');
+      _this.filmoviOdobreni = yield _this.filmoviService.dajMojeFilmove();
+    })();
   }
 }
 PregledFilmovaComponent.ɵfac = function PregledFilmovaComponent_Factory(t) {
-  return new (t || PregledFilmovaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_servisi_filmovi_service__WEBPACK_IMPORTED_MODULE_0__.FilmoviService));
+  return new (t || PregledFilmovaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_servisi_filmovi_service__WEBPACK_IMPORTED_MODULE_1__.FilmoviService));
 };
-PregledFilmovaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+PregledFilmovaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: PregledFilmovaComponent,
   selectors: [["app-pregled-filmova"]],
-  decls: 16,
+  decls: 15,
   vars: 1,
-  consts: [[1, "pregled"], ["id", "sort"], ["value", "Naziv"], ["value", "Datum"], ["value", "Zanr"], ["id", "stranicenje"], ["id", "moji-filmovi-kontejner"], [4, "ngFor", "ngForOf"], [1, "moji-filmovi"]],
+  consts: [[1, "pregled"], ["id", "sort"], ["value", "Naziv"], ["value", "Datum"], ["value", "Zanr"], ["id", "stranicenje"], ["id", "moji-filmovi-kontejner"], [4, "ngFor", "ngForOf"], [1, "moji-filmovi"], ["class", "moj-film", 4, "ngIf"], [1, "moj-film"]],
   template: function PregledFilmovaComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Svi filmovi iz moje baze");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 0)(3, "select", 1)(4, "option", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Naziv");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "option", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "Datum");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "option", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Zanr");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](10, "div", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "h2");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "Pregled filmova");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](13, "div", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "div", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](15, PregledFilmovaComponent_ul_15_Template, 3, 2, "ul", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Svi filmovi iz moje baze");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "div", 0)(3, "select", 1)(4, "option", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "Naziv");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "option", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Datum");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "option", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, "Zanr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](10, "div", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "h2");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](12, "Pregled filmova");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "div", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](14, PregledFilmovaComponent_div_14_Template, 3, 1, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.filmoviOdobreni);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.filmoviOdobreni);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgSelectMultipleOption"]],
-  styles: ["*[_ngcontent-%COMP%] {\n  background-color: pink;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2pla3RpL3J3YXphZGFjYTIvc3JjL2FwcC9wcmVnbGVkLWZpbG1vdmEvcHJlZ2xlZC1maWxtb3ZhLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usc0JBQUE7QUFDRiIsInNvdXJjZXNDb250ZW50IjpbIioge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHBpbms7XHJcbn1cclxuIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgSelectMultipleOption"]],
+  styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
 /***/ }),
@@ -489,6 +523,110 @@ PrijavaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__
 
 /***/ }),
 
+/***/ 7906:
+/*!************************************************************************!*\
+  !*** ./projekti/rwazadaca2/src/app/prijedlozi/prijedlozi.component.ts ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PrijedloziComponent": () => (/* binding */ PrijedloziComponent)
+/* harmony export */ });
+/* harmony import */ var C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _servisi_filmovi_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../servisi/filmovi.service */ 9702);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 4666);
+
+
+
+
+function PrijedloziComponent_div_1_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function PrijedloziComponent_div_1_div_2_Template_button_click_2_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r5);
+      const film_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r3.odobriFilm(film_r1.id));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Odobri");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function PrijedloziComponent_div_1_div_2_Template_button_click_4_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r5);
+      const film_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r6.odbaciFilm(film_r1.id));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "Odbaci");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const film_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"](" ", film_r1.title, " ", film_r1.id, " ");
+  }
+}
+function PrijedloziComponent_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div")(1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, PrijedloziComponent_div_1_div_2_Template, 6, 2, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const film_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", film_r1.odobreno == 0);
+  }
+}
+class PrijedloziComponent {
+  constructor(filmoviService) {
+    this.filmoviService = filmoviService;
+    this.filter = {
+      odobreno: 1
+    };
+  }
+  ngOnInit() {
+    var _this = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      console.log('on init');
+      // dohvati sve filmove
+      _this.filmoviNeodobreni = yield _this.filmoviService.dajMojeFilmove();
+    })();
+  }
+  odobriFilm(idFilma) {}
+  odbaciFilm(idFilma) {}
+}
+PrijedloziComponent.ɵfac = function PrijedloziComponent_Factory(t) {
+  return new (t || PrijedloziComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_servisi_filmovi_service__WEBPACK_IMPORTED_MODULE_1__.FilmoviService));
+};
+PrijedloziComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+  type: PrijedloziComponent,
+  selectors: [["app-prijedlozi"]],
+  decls: 2,
+  vars: 1,
+  consts: [["id", "prijedlozi-kontejner"], [4, "ngFor", "ngForOf"], [1, "moji-filmovi"], ["class", "moj-film", 4, "ngIf"], [1, "moj-film"], ["id", "btnOdobri", 3, "click"], ["id", "btnOdbaci", 3, "click"]],
+  template: function PrijedloziComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, PrijedloziComponent_div_1_Template, 3, 1, "div", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    }
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.filmoviNeodobreni);
+    }
+  },
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf],
+  styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
+});
+
+/***/ }),
+
 /***/ 9702:
 /*!****************************************************************!*\
   !*** ./projekti/rwazadaca2/src/app/servisi/filmovi.service.ts ***!
@@ -499,15 +637,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FilmoviService": () => (/* binding */ FilmoviService)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 class FilmoviService {
   constructor() {}
+  dajMojeFilmove() {
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      console.log(' u daj moje');
+      /*
+      let mojiFilmovi = new Array<FilmoviI>();
+      let odgovor = await fetch('http://localhost:9000/api/filmovi');
+      mojiFilmovi = JSON.parse(await odgovor.text());
+      //as Array<FilmoviI>;
+      console.log('MOJI ' + mojiFilmovi);*/
+      let odgovor = yield fetch('http://localhost:9000/api/filmovi');
+      let podaci = yield odgovor.text();
+      let mojiFilmovi = JSON.parse(podaci);
+      return mojiFilmovi;
+    })();
+  }
 }
 FilmoviService.ɵfac = function FilmoviService_Factory(t) {
   return new (t || FilmoviService)();
 };
-FilmoviService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+FilmoviService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
   token: FilmoviService,
   factory: FilmoviService.ɵfac,
   providedIn: 'root'

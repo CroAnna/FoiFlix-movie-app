@@ -470,11 +470,16 @@ label {
   list-style: none;
 }
 .pregled .moji-filmovi {
-  padding: 5px;
   cursor: pointer;
+  display: flex;
 }
 .pregled .moji-filmovi:hover {
   background-color: #da0037;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.pregled .moji-filmovi .moj-film {
+  padding: 10px;
   width: -moz-fit-content;
   width: fit-content;
 }

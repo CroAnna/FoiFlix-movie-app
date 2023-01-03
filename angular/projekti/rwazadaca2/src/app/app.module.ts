@@ -10,6 +10,7 @@ import { ZanrComponent } from './zanr/zanr.component';
 import { NavigacijaComponent } from './navigacija/navigacija.component';
 import { PregledFilmovaComponent } from './pregled-filmova/pregled-filmova.component';
 import { PrijavaComponent } from './prijava/prijava.component';
+import { PrijedloziComponent } from './prijedlozi/prijedlozi.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PrijavaComponent } from './prijava/prijava.component';
     NavigacijaComponent,
     PregledFilmovaComponent,
     PrijavaComponent,
+    PrijedloziComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

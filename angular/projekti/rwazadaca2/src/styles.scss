@@ -460,10 +460,14 @@ label {
     list-style: none;
   }
   .moji-filmovi {
-    padding: 5px;
     cursor: pointer;
+    display: flex;
     &:hover {
       background-color: $color_red;
+      width: fit-content;
+    }
+    & .moj-film {
+      padding: 10px;
       width: fit-content;
     }
   }
