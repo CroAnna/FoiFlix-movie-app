@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavigacijaComponent } from './navigacija/navigacija.component';
+import { PocetnaComponent } from './pocetna/pocetna.component';
 import { PregledFilmovaComponent } from './pregled-filmova/pregled-filmova.component';
 import { PrijavaComponent } from './prijava/prijava.component';
 import { PrijedloziComponent } from './prijedlozi/prijedlozi.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'prijava', component: PrijavaComponent },
   { path: 'pregledFilmova', component: PregledFilmovaComponent },
   { path: 'prijedloziFilmova', component: PrijedloziComponent },
+  { path: 'pocetna', component: PocetnaComponent },
 ];
 
 @NgModule({

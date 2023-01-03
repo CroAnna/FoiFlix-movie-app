@@ -13,12 +13,14 @@ export class PrijedloziComponent implements OnInit {
   constructor(private filmoviService: FilmoviService) {}
 
   async ngOnInit() {
-    console.log('on init');
-    // dohvati sve filmove
     this.filmoviNeodobreni = await this.filmoviService.dajMojeFilmove();
   }
 
-  odobriFilm(idFilma: Number) {}
+  odobriFilm(id: Number) {
+    this.filmoviService.odobri(id);
+  }
 
-  odbaciFilm(idFilma: Number) {}
+  odbaciFilm(id: Number) {
+    this.filmoviService.odbaci(id);
+  }
 }
