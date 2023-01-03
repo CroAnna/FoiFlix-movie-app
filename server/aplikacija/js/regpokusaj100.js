@@ -33,10 +33,9 @@ window.addEventListener("load", async () => {
             headers: header
         }
 
-        //let podaci = await fetch("http://spider.foi.hr:12204/registracija", parametri);
-        let podaci = await fetch("http://localhost:9001/registracija", parametri);
+        let odgovor = await fetch("http://localhost:9000/api/korisnici", parametri);
 
-        await podaci.text();
+        return await odgovor.text();
     }
 })
 

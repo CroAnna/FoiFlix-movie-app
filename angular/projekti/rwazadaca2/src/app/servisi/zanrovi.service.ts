@@ -27,16 +27,16 @@ export class ZanroviService {
       name: novi_naziv,
     };
 
-    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const zaglavlje = new Headers({ 'Content-Type': 'application/json' });
 
-    const params = {
+    const parametri = {
       method: 'POST',
       body: JSON.stringify(tijelo),
-      headers: headers,
+      headers: zaglavlje,
     };
 
     try {
-      const odgovor = await fetch('http://localhost:9000/api/zanr', params);
+      const odgovor = await fetch('http://localhost:9000/api/zanr', parametri);
       const data = await odgovor.text();
       console.log(data);
     } catch (error) {
@@ -45,18 +45,20 @@ export class ZanroviService {
   }
 
   async updateajZanr(id: number, novi_naziv: string) {
+    // TODO da se automatski azurira i obrise text input field
+
     let tijelo = {
       id: id,
       name: novi_naziv,
     };
 
-    let header = new Headers();
-    header.set('Content-Type', 'application/json');
+    let zaglavlje = new Headers();
+    zaglavlje.set('Content-Type', 'application/json');
 
     let parametri = {
       method: 'PUT',
       body: JSON.stringify(tijelo),
-      headers: header,
+      headers: zaglavlje,
     };
 
     let podatki = await fetch('http://localhost:9000/api/zanr/:id', parametri);
@@ -69,13 +71,13 @@ export class ZanroviService {
       zanrovi: zanrovi_parse,
     };
 
-    let header = new Headers();
-    header.set('Content-Type', 'application/json');
+    let zaglavlje = new Headers();
+    zaglavlje.set('Content-Type', 'application/json');
 
     let parametri = {
       method: 'DELETE',
       body: JSON.stringify(tijelo),
-      headers: header,
+      headers: zaglavlje,
     };
 
     let podatki = await fetch('http://localhost:9000/api/zanr', parametri);

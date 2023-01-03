@@ -37,19 +37,19 @@ function pokreniServer() {
       resave: false,
     })
   );
-
-  pripremiPutanjePocetna();
-  pripremiPutanjeAutentifikacija();
-  pripremiPutanjePretrazivanjeFilmova();
-  pripremiPutanjeDokumentacija();
-  pripremiPutanjeZanrovi();
-  pripremiPutanjeFilmovi();
-  pripremiPutanjeProfil();
-  pripremiPutanjeKorisnici();
-  pripremiPutanjeSlike();
-  pripremiPutanjeFilmoviPrijedlozi();
-  pripremiPutanjeGalerijaSlika();
-
+  /*
+    pripremiPutanjePocetna();
+    pripremiPutanjeAutentifikacija();
+    pripremiPutanjePretrazivanjeFilmova();
+    pripremiPutanjeDokumentacija();
+    pripremiPutanjeZanrovi();
+    pripremiPutanjeFilmovi();
+    pripremiPutanjeProfil();
+    pripremiPutanjeKorisnici();
+    pripremiPutanjeSlike();
+    pripremiPutanjeFilmoviPrijedlozi();
+    pripremiPutanjeGalerijaSlika();
+  */
 
 
   server.use("/js", express.static(__dirname + "/js"));
