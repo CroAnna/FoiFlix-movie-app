@@ -1,4 +1,3 @@
-<p>Svi filmovi iz moje baze</p>
 <div class="pregled">
   <select id="sort">
     <option value="Naziv">Naziv</option>
@@ -11,7 +10,6 @@
   <div id="moji-filmovi-kontejner">
     <div *ngFor="let film of filmoviOdobreni">
       <div class="moji-filmovi">
-        <!-- TODO da se klikne i odvede dalje na taj film -->
         <div
           class="moj-film"
           *ngIf="film.odobreno == 1"

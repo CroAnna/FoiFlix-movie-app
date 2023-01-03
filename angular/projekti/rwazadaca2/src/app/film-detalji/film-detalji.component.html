@@ -1,17 +1,16 @@
-<p>film-detalji works!</p>
 <div class="podaci-filma-kontejner">
-  <label for="film-title">Title</label>
-  <input id="film-title" type="text" readonly [(ngModel)]="odabraniFilm" />
   <div class="pregled">
-    <a href="/filmoviPregled">
+    <div id="film-slika">
+      <!-- TODO ovde u console logu baca error jer se html ucitava prije nego kaj se dobije podatak o putanji slike pa je crveno sve -->
       <img
-        src="../fotografije/previous_icon_light.png"
-        alt="back"
-        class="back-icon"
-        title="Na pregled filmova"
+        src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
+          odabraniFilm.poster_path
+        }}"
+        alt="slika-poster"
+        id="slika-poster"
+        alt="{{ odabraniFilm.poster_path }}"
       />
-    </a>
-    <div id="film-slika"></div>
+    </div>
     <div class="podaci-filma-kontejner">
       <form>
         <label for="film-title">Title</label>
@@ -108,8 +107,6 @@
           readonly
           value="{{ odabraniFilm.datum_unosa }}"
         />
-        <!-- <label for="film-budget">Budget</label>
-        <input id="film-budget" type="text" readonly /> -->
         <label for="film-homepage">Homepage</label>
         <input
           id="film-homepage"
@@ -124,10 +121,6 @@
           readonly
           value="{{ odabraniFilm.imdb_id }}"
         />
-        <!-- <label for="film-revenue">Revenue</label>
-        <input id="film-revenue" type="text" readonly />
-        <label for="film-runtime">Runtime</label>
-        <input id="film-runtime" type="text" readonly /> -->
         <label for="film-status">Status</label>
         <input
           id="film-status"
