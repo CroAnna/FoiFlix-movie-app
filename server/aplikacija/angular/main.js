@@ -954,7 +954,6 @@ function NavigacijaComponent_li_12_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
   }
 }
-//import { ChangeDetectorRef } from '@angular/core'; // rerenderanje
 class NavigacijaComponent {
   constructor(korisniciService) {
     this.korisniciService = korisniciService;
@@ -1360,9 +1359,7 @@ class PrijavaComponent {
     var _this = this;
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let odgovor = yield _this.korisniciService.prijaviKorisnika(_this.inputKorime, _this.inputLozinka);
-      console.log('ofg' + odgovor);
       if (odgovor == false) {
-        console.log('krivi podaci');
         window.alert('Neispravni podaci!');
       } else {
         sessionStorage.setItem('prijavljeniKorisnik', odgovor.uloga_id);

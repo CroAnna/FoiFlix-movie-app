@@ -26,11 +26,7 @@ export class PrijavaComponent {
       this.inputKorime,
       this.inputLozinka
     );
-    console.log('ofg' + odgovor);
-
     if (odgovor == false) {
-      console.log('krivi podaci');
-
       window.alert('Neispravni podaci!');
     } else {
       sessionStorage.setItem('prijavljeniKorisnik', odgovor.uloga_id);

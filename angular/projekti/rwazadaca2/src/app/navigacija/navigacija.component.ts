@@ -1,13 +1,5 @@
-import {
-  AfterContentChecked,
-  Component,
-  OnChanges,
-  OnInit,
-} from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
 import { KorisniciService } from '../servisi/korisnici.service';
-
-//import { ChangeDetectorRef } from '@angular/core'; // rerenderanje
 
 @Component({
   selector: 'app-navigacija',

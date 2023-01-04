@@ -47,7 +47,7 @@ exports.odjava = async function (zahtjev, odgovor) {
 };
 */
 exports.prijava = async function (zahtjev, odgovor) {
-    let greska = ""
+    // let greska = ""
     if (zahtjev.method == "POST") {
         var korime = zahtjev.body.korime;
         var lozinka = zahtjev.body.lozinka;
@@ -65,7 +65,7 @@ exports.prijava = async function (zahtjev, odgovor) {
             else if (!totp.provjeriTOTP(totpKod, totpKljuc)) {
                 greska = "TOTP nije dobar!"
             } else {*/
-            var nekak = JSON.parse(korisnik);
+            /*var nekak = JSON.parse(korisnik);
             console.log("KORISNIK 1 " + korisnik); // ovaj je dobar!
             console.log("KORISNIK 2 " + nekak);
             zahtjev.session.jwt = jwt.kreirajToken(korisnik)
@@ -74,12 +74,13 @@ exports.prijava = async function (zahtjev, odgovor) {
             zahtjev.session.korisnik_id = nekak.id;
             zahtjev.session.korime = nekak.korime;
             console.log("KORISNIK 3 " + nekak);
-
+*/
             //odgovor.redirect("/");
-            odgovor.send(nekak);
+            odgovor.send(JSON.parse(korisnik));
 
         } else {
-            greska = "Netocni podaci!";
+            odgovor.send(false);
+            // greska = "Netocni podaci!";
         }
     }
 }
