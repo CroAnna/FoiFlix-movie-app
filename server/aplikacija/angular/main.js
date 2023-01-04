@@ -184,6 +184,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _servisi_filmovi_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../servisi/filmovi.service */ 9702);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 2508);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 4666);
+
 
 
 
@@ -210,8 +212,8 @@ FilmDetaljiComponent.ɵfac = function FilmDetaljiComponent_Factory(t) {
 FilmDetaljiComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: FilmDetaljiComponent,
   selectors: [["app-film-detalji"]],
-  decls: 62,
-  vars: 20,
+  decls: 63,
+  vars: 23,
   consts: [[1, "podaci-filma-kontejner"], [1, "pregled"], ["id", "film-slika"], ["alt", "slika-poster", "id", "slika-poster", 3, "src", "alt"], ["for", "film-title"], ["id", "film-title", "type", "text", "readonly", "", 3, "value"], ["for", "film-original-language"], ["id", "film-original-language", "type", "text", "readonly", "", 3, "value"], ["for", "film-original-title"], ["id", "film-original-title", "type", "text", "readonly", "", 3, "value"], ["for", "film-overview"], ["readonly", "", "name", "film-overview", "id", "film-overview", "cols", "30", "rows", "10", 3, "value"], ["for", "film-id"], ["id", "film-id", "type", "text", "readonly", "", 3, "value"], ["for", "film-adult"], ["id", "film-adult", "type", "text", "readonly", "", 3, "value"], ["for", "film-popularity"], ["id", "film-popularity", "type", "text", "readonly", "", 3, "value"], ["for", "film-release-date"], ["id", "film-release-date", "type", "text", "readonly", "", 3, "value"], ["for", "film-backdroppath"], ["id", "film-backdroppath", "type", "text", "readonly", "", 3, "value"], ["for", "film-video"], ["id", "film-video", "type", "text", "readonly", "", 3, "value"], ["for", "film-vote-average"], ["id", "film-vote-average", "type", "text", "readonly", "", 3, "value"], ["for", "film-vote-count"], ["id", "film-vote-count", "type", "text", "readonly", "", 3, "value"], ["for", "film-datum-unosa"], ["id", "film-datum-unosa", "type", "text", "readonly", "", 3, "value"], ["for", "film-homepage"], ["id", "film-homepage", "type", "text", "readonly", "", 3, "value"], ["for", "film-imdb-id"], ["id", "film-imdb-id", "type", "text", "readonly", "", 3, "value"], ["for", "film-status"], ["id", "film-status", "type", "text", "readonly", "", 3, "value"], ["for", "film-tagline"], ["id", "film-tagline", "type", "text", "readonly", "", 3, "value"], ["for", "film-korisnik-id"], ["id", "film-korisnik-id", "type", "text", "readonly", "", 3, "value"], [1, "lijepiGumb"]],
   template: function FilmDetaljiComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -250,49 +252,50 @@ FilmDetaljiComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](28, "Release-date");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](29, "input", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](30, "label", 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](31, "Backdroppath");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](30, "date");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](31, "label", 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](32, "Backdroppath");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](32, "input", 21);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](33, "label", 22);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](34, "Video");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](33, "input", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](34, "label", 22);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](35, "Video");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](35, "input", 23);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](36, "label", 24);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](37, "Vote average");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](36, "input", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](37, "label", 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](38, "Vote average");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](38, "input", 25);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](39, "label", 26);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](40, "Vote count");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](39, "input", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](40, "label", 26);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](41, "Vote count");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](41, "input", 27);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](42, "label", 28);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](43, "Datum unosa");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](42, "input", 27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](43, "label", 28);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](44, "Datum unosa");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](44, "input", 29);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](45, "label", 30);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](46, "Homepage");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](45, "input", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](46, "label", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](47, "Homepage");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](47, "input", 31);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](48, "label", 32);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](49, "Imdb id");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](48, "input", 31);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](49, "label", 32);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](50, "Imdb id");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](50, "input", 33);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](51, "label", 34);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](52, "Status");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](51, "input", 33);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](52, "label", 34);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](53, "Status");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](53, "input", 35);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](54, "label", 36);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](55, "Tagline");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](54, "input", 35);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](55, "label", 36);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](56, "Tagline");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](56, "input", 37);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](57, "label", 38);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](58, "Korisnik id");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](57, "input", 37);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](58, "label", 38);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](59, "Korisnik id");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](59, "input", 39);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](60, "input", 39);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](60, "button", 40);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](61, "Na galeriju");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](61, "button", 40);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](62, "Na galeriju");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
     }
     if (rf & 2) {
@@ -314,8 +317,8 @@ FilmDetaljiComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("value", ctx.odabraniFilm.popularity);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("value", ctx.odabraniFilm.release_date);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind2"](30, 20, ctx.odabraniFilm.release_date, "dd.MM.yyyy. hh:mm:ss"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("value", ctx.odabraniFilm.backdrop_path);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("value", ctx.odabraniFilm.video);
@@ -337,7 +340,7 @@ FilmDetaljiComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("value", ctx.odabraniFilm.korisnik_id);
     }
   },
-  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgForm],
+  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgForm, _angular_common__WEBPACK_IMPORTED_MODULE_5__.DatePipe],
   styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
@@ -393,24 +396,25 @@ function NavigacijaComponent_a_15_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
 }
+//import { ChangeDetectorRef } from '@angular/core'; // rerenderanje
 class NavigacijaComponent {
-  constructor(cdr) {
-    this.cdr = cdr;
+  constructor() {
     this.prijavljen = sessionStorage.getItem('prijavljeniKorisnik');
   }
+  //constructor(private cdr: ChangeDetectorRef) {}
   odjaviKorisnika() {
     sessionStorage.setItem('prijavljeniKorisnik', ''); //nema prijavljenog
   }
 
   ngAfterContentChecked() {
     console.log(' ngAfterContentChecked');
-    this.cdr.detectChanges();
+    //();
     // ovo se svako malo pozove
   }
 }
 
 NavigacijaComponent.ɵfac = function NavigacijaComponent_Factory(t) {
-  return new (t || NavigacijaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectorRef));
+  return new (t || NavigacijaComponent)();
 };
 NavigacijaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NavigacijaComponent,

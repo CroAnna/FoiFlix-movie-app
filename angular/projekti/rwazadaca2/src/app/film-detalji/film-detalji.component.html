@@ -69,7 +69,9 @@
           id="film-release-date"
           type="text"
           readonly
-          value="{{ odabraniFilm.release_date }}"
+          value="{{
+            odabraniFilm.release_date | date : 'dd.MM.yyyy. hh:mm:ss'
+          }}"
         />
         <label for="film-backdroppath">Backdroppath</label>
 
