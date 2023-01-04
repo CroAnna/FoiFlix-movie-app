@@ -974,16 +974,16 @@ class NavigacijaComponent {
     this.korisniciService = korisniciService;
   }
   get prijavljenAdmin() {
-    return sessionStorage.getItem('prijavljeniKorisnik') == '1';
+    return sessionStorage.getItem('prijavljenaUloga') == '1';
   }
   get prijavljenKorisnik() {
-    return sessionStorage.getItem('prijavljeniKorisnik') == '2';
+    return sessionStorage.getItem('prijavljenaUloga') == '2';
   }
   odjaviKorisnika() {
-    sessionStorage.setItem('prijavljeniKorisnik', ''); //nema prijavljenog
+    sessionStorage.setItem('prijavljenaUloga', ''); // nema prijavljenog
+    sessionStorage.setItem('prijavljeniKorisnikKorime', '');
   }
 }
-
 NavigacijaComponent.ɵfac = function NavigacijaComponent_Factory(t) {
   return new (t || NavigacijaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_servisi_korisnici_service__WEBPACK_IMPORTED_MODULE_0__.KorisniciService));
 };
@@ -1129,9 +1129,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function PregledFilmovaComponent_div_12_div_2_Template(rf, ctx) {
+function PregledFilmovaComponent_div_15_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
@@ -1142,10 +1142,10 @@ function PregledFilmovaComponent_div_12_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"](" ---> ", film_r1.title, " ", film_r1.id, " ");
   }
 }
-function PregledFilmovaComponent_div_12_Template(rf, ctx) {
+function PregledFilmovaComponent_div_15_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div")(1, "div", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, PregledFilmovaComponent_div_12_div_2_Template, 2, 3, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div")(1, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, PregledFilmovaComponent_div_15_div_2_Template, 2, 3, "div", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
@@ -1157,15 +1157,36 @@ function PregledFilmovaComponent_div_12_Template(rf, ctx) {
 class PregledFilmovaComponent {
   constructor(filmoviService) {
     this.filmoviService = filmoviService;
-    this.filter = {
-      odobreno: 1
-    };
+    this.filterOdabrani = 'Svi';
+    this.tekstFiltriranje = '';
+  }
+  get odabraniFilter() {
+    return this.filterOdabrani;
+  }
+  set odabraniFilter(value) {
+    // zove se svaki put kad se promijeni
+    this.filterOdabrani = value;
+    console.log('value ' + value);
+    if (value == 'Svi') {
+      this.prikaziSve();
+    } else if (value == 'Naziv') {
+      this.prikaziPoNazivu();
+    } else if (value == '') {}
+    // promjena polja prikaza
+  }
+
+  prikaziPoNazivu() {
+    this.filmoviFiltrirani = this.filmoviOdobreni.filter(f => f.original_title.toLowerCase().includes(this.tekstFiltriranje.toLowerCase()));
+  }
+  prikaziSve() {
+    this.filmoviFiltrirani = this.filmoviOdobreni;
   }
   ngOnInit() {
     var _this = this;
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       console.log('on init');
       _this.filmoviOdobreni = yield _this.filmoviService.dajMojeFilmove();
+      _this.prikaziSve();
     })();
   }
 }
@@ -1175,34 +1196,50 @@ PregledFilmovaComponent.ɵfac = function PregledFilmovaComponent_Factory(t) {
 PregledFilmovaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: PregledFilmovaComponent,
   selectors: [["app-pregled-filmova"]],
-  decls: 13,
-  vars: 1,
-  consts: [[1, "pregled"], ["id", "sort"], ["value", "Naziv"], ["value", "Datum"], ["value", "Zanr"], ["id", "stranicenje"], ["id", "moji-filmovi-kontejner"], [4, "ngFor", "ngForOf"], [1, "moji-filmovi"], ["class", "moj-film", 3, "routerLink", 4, "ngIf"], [1, "moj-film", 3, "routerLink"]],
+  decls: 16,
+  vars: 3,
+  consts: [[1, "pregled"], ["type", "text", 3, "ngModel", "ngModelChange"], ["id", "sort", 3, "ngModel", "ngModelChange"], ["value", "Svi", "selected", "selected"], ["value", "Naziv"], ["value", "Datum"], ["value", "Zanr"], ["id", "stranicenje"], ["id", "moji-filmovi-kontejner"], [4, "ngFor", "ngForOf"], [1, "moji-filmovi"], ["class", "moj-film", 3, "routerLink", 4, "ngIf"], [1, "moj-film", 3, "routerLink"]],
   template: function PregledFilmovaComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "select", 1)(2, "option", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Naziv");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "input", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function PregledFilmovaComponent_Template_input_ngModelChange_1_listener($event) {
+        return ctx.tekstFiltriranje = $event;
+      });
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "option", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "Datum");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "select", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function PregledFilmovaComponent_Template_select_ngModelChange_2_listener($event) {
+        return ctx.odabraniFilter = $event;
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "option", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "Svi");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "option", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Zanr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "option", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](6, " Naziv (prvo unesi rije\u010D pa odaberi ovo -pazi na malo veliko slovo) ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "option", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, "Datum");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "option", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, "Zanr");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](8, "div", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "h2");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, "Pregled filmova");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "h2");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13, "Pregled filmova");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "div", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, PregledFilmovaComponent_div_12_Template, 3, 1, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "div", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](15, PregledFilmovaComponent_div_15_Template, 3, 1, "div", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.filmoviOdobreni);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.tekstFiltriranje);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.odabraniFilter);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.filmoviFiltrirani);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterLink, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgSelectMultipleOption"]],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterLink, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgModel],
   styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
@@ -1379,7 +1416,7 @@ class PrijavaComponent {
       if (odgovor == false) {
         window.alert('Neispravni podaci!');
       } else {
-        sessionStorage.setItem('prijavljeniKorisnik', odgovor.uloga_id);
+        sessionStorage.setItem('prijavljenaUloga', odgovor.uloga_id);
         sessionStorage.setItem('prijavljeniKorisnikKorime', odgovor.korime);
       }
     })();
@@ -1583,9 +1620,7 @@ class ProfilComponent {
     })();
   }
   onSubmit(event) {
-    this.profilIme = event.target.ime.value;
-    this.profilPrezime = event.target.prezime.value;
-    this.korisniciServis.updateajKorisnika(this.korime, this.profilIme, this.profilPrezime);
+    this.korisniciServis.updateajKorisnika(this.korime, event.target.ime.value, event.target.prezime.value);
   }
   odustani() {
     this.router.navigate(['/pocetna']);

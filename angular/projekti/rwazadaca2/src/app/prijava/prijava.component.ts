@@ -28,7 +28,7 @@ export class PrijavaComponent {
     if (odgovor == false) {
       window.alert('Neispravni podaci!');
     } else {
-      sessionStorage.setItem('prijavljeniKorisnik', odgovor.uloga_id);
+      sessionStorage.setItem('prijavljenaUloga', odgovor.uloga_id);
       sessionStorage.setItem('prijavljeniKorisnikKorime', odgovor.korime);
     }
   }

@@ -10,13 +10,14 @@ export class NavigacijaComponent {
   constructor(private korisniciService: KorisniciService) {}
 
   get prijavljenAdmin() {
-    return sessionStorage.getItem('prijavljeniKorisnik') == '1';
+    return sessionStorage.getItem('prijavljenaUloga') == '1';
   }
   get prijavljenKorisnik() {
-    return sessionStorage.getItem('prijavljeniKorisnik') == '2';
+    return sessionStorage.getItem('prijavljenaUloga') == '2';
   }
 
   odjaviKorisnika() {
-    sessionStorage.setItem('prijavljeniKorisnik', ''); //nema prijavljenog
+    sessionStorage.setItem('prijavljenaUloga', ''); // nema prijavljenog
+    sessionStorage.setItem('prijavljeniKorisnikKorime', '');
   }
 }

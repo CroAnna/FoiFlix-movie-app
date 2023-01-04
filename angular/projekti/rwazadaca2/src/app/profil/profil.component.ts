@@ -10,8 +10,6 @@ import { KorisniciService } from '../servisi/korisnici.service';
 export class ProfilComponent implements OnInit {
   logiraniKorisnik: any = ''; // da ne baca error pri loadanju da je undefined
 
-  profilIme: any;
-  profilPrezime: any;
   korime: any;
 
   constructor(
@@ -29,12 +27,10 @@ export class ProfilComponent implements OnInit {
   }
 
   onSubmit(event: any) {
-    this.profilIme = event.target.ime.value;
-    this.profilPrezime = event.target.prezime.value;
     this.korisniciServis.updateajKorisnika(
       this.korime,
-      this.profilIme,
-      this.profilPrezime
+      event.target.ime.value,
+      event.target.prezime.value
     );
   }
 

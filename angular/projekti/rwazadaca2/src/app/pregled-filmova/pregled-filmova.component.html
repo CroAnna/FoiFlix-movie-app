@@ -1,6 +1,8 @@
 <div class="pregled">
-  <select id="sort">
-    <option value="Naziv">Naziv</option>
+  <input type="text" [(ngModel)]="tekstFiltriranje" />
+  <select id="sort" [(ngModel)]="odabraniFilter">
+    <option value="Svi" selected="selected">Svi</option>
+    <option value="Naziv">Naziv (prvo unesi riječ pa odaberi ovo)</option>
     <option value="Datum">Datum</option>
     <option value="Zanr">Zanr</option>
   </select>
@@ -8,7 +10,7 @@
   <h2>Pregled filmova</h2>
 
   <div id="moji-filmovi-kontejner">
-    <div *ngFor="let film of filmoviOdobreni">
+    <div *ngFor="let film of filmoviFiltrirani">
       <div class="moji-filmovi">
         <div
           class="moj-film"
