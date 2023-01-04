@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DokumentacijaComponent } from './dokumentacija/dokumentacija.component';
 import { FilmDetaljiComponent } from './film-detalji/film-detalji.component';
+import { FilmoviPretrazivanjeComponent } from './filmovi-pretrazivanje/filmovi-pretrazivanje.component';
 import { PocetnaComponent } from './pocetna/pocetna.component';
 import { PregledFilmovaComponent } from './pregled-filmova/pregled-filmova.component';
 import { PrijavaComponent } from './prijava/prijava.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'pregledFilmova/film/:id', component: FilmDetaljiComponent },
   { path: 'dokumentacija', component: DokumentacijaComponent },
   { path: 'profil', component: ProfilComponent },
+  { path: 'pretrazivanje', component: FilmoviPretrazivanjeComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,34 @@
+<div class="pretrazivanje-gore">
+  <input
+    type="text"
+    id="filterPRCMAN"
+    class="search"
+    placeholder="Kljucne rijeci"
+  />
+  <br />
+  <h1 class="pretrazivanje">Pretraživanje filmova</h1>
+</div>
+<div class="pretrazivanje-kontejner">
+  <div id="poruka"></div>
+  <br />
+  <div id="stranicenje"></div>
+  <div id="sadrzaj">
+    <div *ngFor="let film of dohvaceniFilmovi" class="grid">
+      <div class="dohvFilm">
+        <h4>{{ film.original_title }}</h4>
+        <div class="img-div">
+          <img
+            src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
+              film.poster_path
+            }}"
+            alt="poster"
+          />
+        </div>
+        <div class="tekst">
+          {{ film.overview }}
+        </div>
+        <button (click)="dodaj()">Dodaj u bazu</button>
+      </div>
+    </div>
+  </div>
+</div>

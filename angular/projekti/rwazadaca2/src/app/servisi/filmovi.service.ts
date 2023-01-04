@@ -12,6 +12,13 @@ export class FilmoviService {
     return JSON.parse(await odgovor.text());
   }
 
+  async dajTmdbFilmove() {
+    let odgovor = await fetch(
+      'http://localhost:9000/api/tmdb/filmovi?kljucnaRijec=love&stranica=1'
+    );
+    return JSON.parse(await odgovor.text()).results;
+  }
+
   async dajOdabraniFilm(idFilma: string) {
     console.log('id filma -----> ' + idFilma);
 

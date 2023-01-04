@@ -16,7 +16,14 @@
         >Zanrovi</a
       >
     </li>
-
+    <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
+      <a
+        routerLink="/pretrazivanje"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Pretrazivanje</a
+      >
+    </li>
     <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
       <a
         routerLink="/profil"
