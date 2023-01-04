@@ -1,13 +1,21 @@
 <div class="pretrazivanje-gore">
+  <div id="stranicenje">
+    <button class="btnStranicenje" (click)="strPrva()"><<</button>
+    <button class="btnStranicenje" (click)="strNatrag()"><</button>
+    <button class="btnStranicenje" (click)="strDalje()">></button>
+    <button class="btnStranicenje" (click)="strZadnja()">>></button>
+  </div>
+  <h1 class="pretrazivanje">Pretraživanje filmova</h1>
   <input
     type="text"
     id="filterPRCMAN"
     class="search"
     placeholder="Kljucne rijeci"
+    name="rijeci"
+    (input)="onSearchChange($event)"
   />
-  <br />
-  <h1 class="pretrazivanje">Pretraživanje filmova</h1>
 </div>
+
 <div class="pretrazivanje-kontejner">
   <div id="poruka"></div>
   <br />
@@ -27,7 +35,7 @@
         <div class="tekst">
           {{ film.overview }}
         </div>
-        <button (click)="dodaj()">Dodaj u bazu</button>
+        <button (click)="dodaj(film.id)">Dodaj u bazu</button>
       </div>
     </div>
   </div>

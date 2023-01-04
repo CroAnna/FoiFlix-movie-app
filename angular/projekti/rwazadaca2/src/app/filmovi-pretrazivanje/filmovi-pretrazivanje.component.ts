@@ -9,32 +9,51 @@ import { FilmoviService } from '../servisi/filmovi.service';
 export class FilmoviPretrazivanjeComponent implements OnInit {
   constructor(private filmoviService: FilmoviService) {}
   dohvaceniFilmovi: any;
+  rijeciSearch: string = '';
+  stranica: Number = 1;
+
+  async onSearchChange(event: any) {
+    console.log(event.target.value);
+
+    this.rijeciSearch = event.target.value;
+    this.prikaziFilmove();
+  }
 
   async ngOnInit() {
     console.log('on init');
-    this.dohvaceniFilmovi = await this.filmoviService.dajTmdbFilmove();
+    this.prikaziFilmove();
   }
 
-  dodaj() {}
+  get odabraniFilter() {
+    return this.rijeciSearch;
+  }
 
-  /*
-  async dajFilmove(str: Number) {
-    let parametri = { method: 'POST' };
-    /* let odgovor = await fetch(
-      '/filmoviPretrazivanje?str=' + str + '&filter=' + dajFilter(),
-      parametri
-    );*/
-  /*
-    let odgovor = await fetch(
-      'http://localhost:9000/api/tmdb/filmovi?kljucnaRijec=love&stranica=1',
-      parametri
+  dodaj(idFilma: Number) {
+    this.filmoviService.dodajUbazu(idFilma);
+  }
+
+  strPrva() {
+    this.stranica = 1;
+  }
+  strNatrag() {
+    //TODO
+  }
+  async strDalje() {
+    this.stranica = 2; //TODO
+    this.prikaziFilmove();
+  }
+  strZadnja() {
+    //TODO
+  }
+
+  async prikaziFilmove() {
+    this.dohvaceniFilmovi = await this.filmoviService.dajTmdbFilmove(
+      this.rijeciSearch,
+      this.stranica
     );
-
-    if (odgovor.status == 200) {
-      let podaci = await odgovor.text();
-      podaci = JSON.parse(podaci);
-      prikaziFilmove(podaci.results);
-      prikaziStranicenje(podaci.page, podaci.total_pages, 'dajFilmove');
-    }
-  }*/
+    sessionStorage.setItem(
+      'dohvaceniFilmovi',
+      JSON.stringify(this.dohvaceniFilmovi)
+    );
+  }
 }

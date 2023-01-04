@@ -191,6 +191,10 @@ nav ul li:hover {
 
 .pretrazivanje-gore {
   position: relative;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
 }
 
 .search {
@@ -199,8 +203,7 @@ nav ul li:hover {
   height: 40px;
   padding: 10px;
   width: 400px;
-  float: right;
-  position: absolute;
+  margin-top: 15px;
   right: 50px;
   border-radius: 15px;
   box-shadow: 0px 0px 15px var(--red);
@@ -617,12 +620,11 @@ ul {
 }
 
 h1.pretrazivanje {
-  margin-top: 30px;
   font-size: 2rem;
   text-align: center;
   color: #ededed;
   position: relative;
-  margin-bottom: 20px;
+  margin: 15px 40px;
 }
 
 #stranicenje {

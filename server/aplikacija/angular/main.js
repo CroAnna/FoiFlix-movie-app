@@ -928,23 +928,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function FilmoviPretrazivanjeComponent_div_10_Template(rf, ctx) {
+function FilmoviPretrazivanjeComponent_div_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 8)(1, "div", 9)(2, "h4");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 9)(1, "div", 10)(2, "h4");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "img", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "img", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "div", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "button", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function FilmoviPretrazivanjeComponent_div_10_Template_button_click_8_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "button", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function FilmoviPretrazivanjeComponent_div_18_Template_button_click_8_listener() {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r3);
+      const film_r1 = restoredCtx.$implicit;
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r2.dodaj());
+      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r2.dodaj(film_r1.id));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, "Dodaj u bazu");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
@@ -962,15 +963,53 @@ function FilmoviPretrazivanjeComponent_div_10_Template(rf, ctx) {
 class FilmoviPretrazivanjeComponent {
   constructor(filmoviService) {
     this.filmoviService = filmoviService;
+    this.rijeciSearch = '';
+    this.stranica = 1;
   }
-  ngOnInit() {
+  onSearchChange(event) {
     var _this = this;
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      console.log('on init');
-      _this.dohvaceniFilmovi = yield _this.filmoviService.dajTmdbFilmove();
+      console.log(event.target.value);
+      _this.rijeciSearch = event.target.value;
+      _this.prikaziFilmove();
     })();
   }
-  dodaj() {}
+  ngOnInit() {
+    var _this2 = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      console.log('on init');
+      _this2.prikaziFilmove();
+    })();
+  }
+  get odabraniFilter() {
+    return this.rijeciSearch;
+  }
+  dodaj(idFilma) {
+    this.filmoviService.dodajUbazu(idFilma);
+  }
+  strPrva() {
+    this.stranica = 1;
+  }
+  strNatrag() {
+    //TODO
+  }
+  strDalje() {
+    var _this3 = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this3.stranica = 2; //TODO
+      _this3.prikaziFilmove();
+    })();
+  }
+  strZadnja() {
+    //TODO
+  }
+  prikaziFilmove() {
+    var _this4 = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this4.dohvaceniFilmovi = yield _this4.filmoviService.dajTmdbFilmove(_this4.rijeciSearch, _this4.stranica);
+      sessionStorage.setItem('dohvaceniFilmovi', JSON.stringify(_this4.dohvaceniFilmovi));
+    })();
+  }
 }
 FilmoviPretrazivanjeComponent.ɵfac = function FilmoviPretrazivanjeComponent_Factory(t) {
   return new (t || FilmoviPretrazivanjeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_servisi_filmovi_service__WEBPACK_IMPORTED_MODULE_1__.FilmoviService));
@@ -978,24 +1017,51 @@ FilmoviPretrazivanjeComponent.ɵfac = function FilmoviPretrazivanjeComponent_Fac
 FilmoviPretrazivanjeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: FilmoviPretrazivanjeComponent,
   selectors: [["app-filmovi-pretrazivanje"]],
-  decls: 11,
+  decls: 19,
   vars: 1,
-  consts: [[1, "pretrazivanje-gore"], ["type", "text", "id", "filterPRCMAN", "placeholder", "Kljucne rijeci", 1, "search"], [1, "pretrazivanje"], [1, "pretrazivanje-kontejner"], ["id", "poruka"], ["id", "stranicenje"], ["id", "sadrzaj"], ["class", "grid", 4, "ngFor", "ngForOf"], [1, "grid"], [1, "dohvFilm"], [1, "img-div"], ["alt", "poster", 3, "src"], [1, "tekst"], [3, "click"]],
+  consts: [[1, "pretrazivanje-gore"], ["id", "stranicenje"], [1, "btnStranicenje", 3, "click"], [1, "pretrazivanje"], ["type", "text", "id", "filterPRCMAN", "placeholder", "Kljucne rijeci", "name", "rijeci", 1, "search", 3, "input"], [1, "pretrazivanje-kontejner"], ["id", "poruka"], ["id", "sadrzaj"], ["class", "grid", 4, "ngFor", "ngForOf"], [1, "grid"], [1, "dohvFilm"], [1, "img-div"], ["alt", "poster", 3, "src"], [1, "tekst"], [3, "click"]],
   template: function FilmoviPretrazivanjeComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "input", 1)(2, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "h1", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "Pretra\u017Eivanje filmova");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function FilmoviPretrazivanjeComponent_Template_button_click_2_listener() {
+        return ctx.strPrva();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "<<");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function FilmoviPretrazivanjeComponent_Template_button_click_4_listener() {
+        return ctx.strNatrag();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "<");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function FilmoviPretrazivanjeComponent_Template_button_click_6_listener() {
+        return ctx.strDalje();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, ">");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function FilmoviPretrazivanjeComponent_Template_button_click_8_listener() {
+        return ctx.strZadnja();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, ">>");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "div", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "div", 4)(7, "br")(8, "div", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "div", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, FilmoviPretrazivanjeComponent_div_10_Template, 10, 3, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "h1", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11, "Pretra\u017Eivanje filmova");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "input", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("input", function FilmoviPretrazivanjeComponent_Template_input_input_12_listener($event) {
+        return ctx.onSearchChange($event);
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "div", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](14, "div", 6)(15, "br")(16, "div", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](18, FilmoviPretrazivanjeComponent_div_18_Template, 10, 3, "div", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](18);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.dohvaceniFilmovi);
     }
   },
@@ -1821,9 +1887,9 @@ class FilmoviService {
       return JSON.parse(yield odgovor.text());
     })();
   }
-  dajTmdbFilmove() {
+  dajTmdbFilmove(rijec, str) {
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let odgovor = yield fetch('http://localhost:9000/api/tmdb/filmovi?kljucnaRijec=love&stranica=1');
+      let odgovor = yield fetch(`http://localhost:9000/api/tmdb/filmovi?kljucnaRijec=${rijec}&stranica=${str}`);
       return JSON.parse(yield odgovor.text()).results;
     })();
   }
@@ -1870,6 +1936,40 @@ class FilmoviService {
       };
       let podatki = yield fetch('http://localhost:9000/api/filmovi/:id', parametri);
       yield podatki.text();
+    })();
+  }
+  dodajUbazu(idFilma) {
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      let sesija = sessionStorage.getItem('dohvaceniFilmovi');
+      console.log(`sessjia ${sesija}`);
+      let filmovi;
+      if (sesija) {
+        filmovi = JSON.parse(sesija);
+      }
+      //filmovi = JSON.parse(sessionStorage.getItem('dohvaceniFilmovi'));
+      for (let film of filmovi) {
+        if (idFilma == film.id) {
+          let header = new Headers();
+          header.set('Content-Type', 'application/json');
+          console.log('id filma ' + idFilma);
+          let parametri = {
+            method: 'POST',
+            body: JSON.stringify(film),
+            headers: header
+          };
+          let odgovor = yield fetch('http://localhost:9000/api/filmovi', parametri);
+          if (odgovor.status == 200) {
+            let podaci = yield odgovor.text();
+            console.log('FILM ' + JSON.stringify(podaci));
+            //poruka.innerHTML = 'Film dodan u bazu!';
+          } else if (odgovor.status == 401) {
+            //  poruka.innerHTML = 'Neautorizirani pristup! Prijavite se!';
+          } else {
+            //poruka.innerHTML = 'Greška u dodavanju filma!';
+          }
+          break;
+        }
+      }
     })();
   }
 }
