@@ -8,7 +8,7 @@ import { FilmoviService } from '../servisi/filmovi.service';
   styleUrls: ['./film-detalji.component.scss'],
 })
 export class FilmDetaljiComponent implements OnInit {
-  odabraniFilm: any;
+  odabraniFilm: any = '';
   filmId: any;
 
   constructor(

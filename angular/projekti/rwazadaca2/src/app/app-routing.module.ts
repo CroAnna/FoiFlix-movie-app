@@ -6,6 +6,7 @@ import { PocetnaComponent } from './pocetna/pocetna.component';
 import { PregledFilmovaComponent } from './pregled-filmova/pregled-filmova.component';
 import { PrijavaComponent } from './prijava/prijava.component';
 import { PrijedloziComponent } from './prijedlozi/prijedlozi.component';
+import { ProfilComponent } from './profil/profil.component';
 
 import { ZanrComponent } from './zanr/zanr.component';
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'pocetna', component: PocetnaComponent },
   { path: 'pregledFilmova/film/:id', component: FilmDetaljiComponent },
   { path: 'dokumentacija', component: DokumentacijaComponent },
+  { path: 'profil', component: ProfilComponent },
 ];
 
 @NgModule({

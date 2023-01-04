@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class KorisniciService {
   constructor(private router: Router) {}
-  // private updateMenu = new Subject<void>();
 
-  private loginUloga = new BehaviorSubject<string>(this.checkLoginStatus());
-
-  checkLoginStatus() {
-    return '0';
-  }
-
-  get isLoggedIn() {
-    return sessionStorage.getItem('prijavljeniKorisnik');
+  async dajLogiranog(korime: string) {
+    let odgovor = await fetch('http://localhost:9000/api/korisnici/' + korime);
+    if (odgovor.status == 200) {
+      let podaci = await odgovor.text();
+      console.log(podaci);
+      return JSON.parse(podaci);
+      //prikaziKorisnikovePodatke(podaci);
+    } else {
+      return null;
+      // alert('Problem kod preuzimanja podataka:\n' + odgovor.statusText);
+    }
   }
 
   async prijaviKorisnika(korime: string, lozinka: string) {

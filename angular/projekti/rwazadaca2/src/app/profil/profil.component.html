@@ -1,0 +1,31 @@
+<div class="podaci">
+  <h2>Moj profil</h2>
+  <form>
+    <label for="profil-ime">Ime</label>
+    <input id="profil-ime" type="text" value="{{ logiraniKorisnik.ime }}" />
+    <label for="profil-prezime">Prezime</label>
+    <input
+      id="profil-prezime"
+      type="text"
+      value="{{ logiraniKorisnik.prezime }}"
+    />
+    <label for="profil-korime">Korisnicko ime</label>
+    <input
+      id="profil-korime"
+      type="text"
+      readonly
+      value="{{ logiraniKorisnik.korime }}"
+    />
+    <label for="profil-email">E-mail</label>
+    <input
+      id="profil-email"
+      type="text"
+      readonly
+      value="{{ logiraniKorisnik.email }}"
+    />
+    <div class="gumbi">
+      <button id="btnSpremi" type="submit">Spremi</button>
+      <button id="btnOdustani" type="button">Odustani</button>
+    </div>
+  </form>
+</div>

@@ -30,6 +30,7 @@ export class PrijavaComponent {
       window.alert('Neispravni podaci!');
     } else {
       sessionStorage.setItem('prijavljeniKorisnik', odgovor.uloga_id);
+      sessionStorage.setItem('prijavljeniKorisnikKorime', odgovor.korime);
     }
   }
 

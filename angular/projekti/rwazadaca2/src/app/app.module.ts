@@ -14,6 +14,7 @@ import { PrijedloziComponent } from './prijedlozi/prijedlozi.component';
 import { PocetnaComponent } from './pocetna/pocetna.component';
 import { FilmDetaljiComponent } from './film-detalji/film-detalji.component';
 import { DokumentacijaComponent } from './dokumentacija/dokumentacija.component';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DokumentacijaComponent } from './dokumentacija/dokumentacija.component'
     PocetnaComponent,
     FilmDetaljiComponent,
     DokumentacijaComponent,
+    ProfilComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

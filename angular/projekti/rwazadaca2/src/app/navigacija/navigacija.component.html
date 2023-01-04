@@ -1,5 +1,13 @@
 <nav>
   <ul>
+    <li>
+      <a
+        routerLink="/pocetna"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Pocetna</a
+      >
+    </li>
     <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
       <a
         routerLink="/zanrovi"
@@ -8,13 +16,14 @@
         >Zanrovi</a
       >
     </li>
+
     <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
       <a
-        routerLink="/pregledFilmova"
+        routerLink="/profil"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
       >
-        Pregled filmova
+        Profil
       </a>
     </li>
     <li *ngIf="!prijavljenAdmin && !prijavljenKorisnik">
@@ -26,6 +35,15 @@
         Registracija
       </a>
     </li>
+    <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
+      <a
+        routerLink="/pregledFilmova"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        Pregled filmova
+      </a>
+    </li>
     <li *ngIf="prijavljenAdmin">
       <a
         routerLink="/prijedloziFilmova"
@@ -35,14 +53,7 @@
         Prijedlozi
       </a>
     </li>
-    <li>
-      <a
-        routerLink="/pocetna"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >Pocetna</a
-      >
-    </li>
+
     <li>
       <a
         routerLink="/dokumentacija"
