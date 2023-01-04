@@ -22,14 +22,17 @@ export class PrijavaComponent {
   constructor(private korisniciService: KorisniciService) {}
 
   async prijavi() {
+    console.log('pocetak prijavi');
+
     let odgovor = await this.korisniciService.prijaviKorisnika(
       this.inputKorime,
       this.inputLozinka
     );
     console.log('odgovoro ' + JSON.stringify(odgovor));
     if (odgovor != false) {
+      console.log('kraj');
+
       sessionStorage.setItem('prijavljeniKorisnik', odgovor.uloga_id);
-      //sessionStorage.setItem('logiranBool', 'true');
     }
   }
 

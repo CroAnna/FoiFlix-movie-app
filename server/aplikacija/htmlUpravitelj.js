@@ -10,7 +10,7 @@ exports.pocetna = async function (zahtjev, odgovor) {
     let pocetna = await ucitajStranicu("pocetna")
     odgovor.send(pocetna);
 }
-
+*/
 exports.registracija = async function (zahtjev, odgovor) {
     let greska = "";
     console.log("zasal sam u registraciju,metoda = " + zahtjev.method);
@@ -21,30 +21,31 @@ exports.registracija = async function (zahtjev, odgovor) {
         let uspjeh = await auth.dodajKorisnika(zahtjev.body);
 
         if (uspjeh) {
-            odgovor.redirect("/prijava");
+            // odgovor.redirect("/prijava");
             return;
         } else {
             greska = "Dodavanje nije uspjelo provjerite podatke!";
         }
     }
-
+}
+/*
     let stranica = await ucitajStranicu("registracija", greska);
     odgovor.send(stranica);
 }
-
+ 
 exports.zanrovi = async function (zahtjev, odgovor) {
     let greska = "";
     let stranica = await ucitajStranicu("zanrovi", greska);
     odgovor.send(stranica);
 }
-
+ 
 exports.odjava = async function (zahtjev, odgovor) {
     zahtjev.session.korime = null;
     zahtjev.session.korisnik = null;
     zahtjev.session.uloga_id = null;
     odgovor.redirect("/");
 };
-
+*/
 exports.prijava = async function (zahtjev, odgovor) {
     let greska = ""
     if (zahtjev.method == "POST") {
@@ -52,33 +53,37 @@ exports.prijava = async function (zahtjev, odgovor) {
         var lozinka = zahtjev.body.lozinka;
         var korisnik = await auth.prijaviKorisnika(korime, lozinka);
 
-        if (korisnik) {*/
-/*
-var zaKljucIzBazeIAktivaciju = JSON.parse(korisnik);
-let totpKljuc = zaKljucIzBazeIAktivaciju.tajniTOTPkljuc;
-let totpKod = zahtjev.body.totp;*/
-/*
-if (!totp.provjeriAkt(zaKljucIzBazeIAktivaciju.aktiviran)) {
-    greska = "Nije aktiviran!"
+        if (korisnik) {
+            /*
+            var zaKljucIzBazeIAktivaciju = JSON.parse(korisnik);
+            let totpKljuc = zaKljucIzBazeIAktivaciju.tajniTOTPkljuc;
+            let totpKod = zahtjev.body.totp;*/
+            /*
+            if (!totp.provjeriAkt(zaKljucIzBazeIAktivaciju.aktiviran)) {
+                greska = "Nije aktiviran!"
+            }
+            else if (!totp.provjeriTOTP(totpKod, totpKljuc)) {
+                greska = "TOTP nije dobar!"
+            } else {*/
+            var nekak = JSON.parse(korisnik);
+            console.log("KORISNIK 1 " + korisnik); // ovaj je dobar!
+            console.log("KORISNIK 2 " + nekak);
+            zahtjev.session.jwt = jwt.kreirajToken(korisnik)
+            zahtjev.session.korisnik = nekak.ime + " " + nekak.prezime;
+            zahtjev.session.uloga_id = nekak.uloga_id;
+            zahtjev.session.korisnik_id = nekak.id;
+            zahtjev.session.korime = nekak.korime;
+            console.log("KORISNIK 3 " + nekak);
+
+            //odgovor.redirect("/");
+            odgovor.send(nekak);
+
+        } else {
+            greska = "Netocni podaci!";
+        }
+    }
 }
-else if (!totp.provjeriTOTP(totpKod, totpKljuc)) {
-    greska = "TOTP nije dobar!"
-} else {*/
-/*         var nekak = JSON.parse(korisnik);
-         zahtjev.session.jwt = jwt.kreirajToken(korisnik)
-         zahtjev.session.korisnik = nekak.ime + " " + nekak.prezime;
-         zahtjev.session.uloga_id = nekak.uloga_id;
-         zahtjev.session.korisnik_id = nekak.id;
-         zahtjev.session.korime = nekak.korime;
-
-         odgovor.redirect("/");
-         return;
-         // }
-     } else {
-         greska = "Netocni podaci!";
-     }
- }
-
+/*
  let stranicaNova = await ucitajStranicu("prijava", greska);
  odgovor.send(stranicaNova);
 }

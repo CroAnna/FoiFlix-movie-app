@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class KorisniciService {
   constructor(private router: Router) {}
+  // private updateMenu = new Subject<void>();
 
   async prijaviKorisnika(korime: string, lozinka: string) {
     // lozinka = kodovi.kreirajSHA256(lozinka, 'moja sol');
@@ -22,11 +24,16 @@ export class KorisniciService {
       body: JSON.stringify(tijelo),
       headers: zaglavlje,
     };
-
+    /*
     let odgovor = await fetch(
       'http://localhost:9000/api/korisnici/' + korime + '/prijava',
       parametri
-    );
+    );*/
+
+    console.log('prije odg');
+
+    let odgovor = await fetch('http://localhost:9001/prijava', parametri);
+    console.log('poslije odg' + odgovor);
 
     if (odgovor.status == 200) {
       console.log('uspjesna prijava');
@@ -34,9 +41,9 @@ export class KorisniciService {
 
       let podaci = await odgovor.text();
       console.log('podaci ' + podaci);
-
       return JSON.parse(podaci);
 
+      //  return;
       //return JSON.parse(await odgovor.text());
     } else {
       return false;
@@ -70,7 +77,7 @@ export class KorisniciService {
       headers: header,
     };
 
-    let podaci = await fetch('http://localhost:9000/api/korisnici', parametri);
+    let podaci = await fetch('http://localhost:9001/registracija', parametri);
 
     return await podaci.text();
   }

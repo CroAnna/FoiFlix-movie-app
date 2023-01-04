@@ -38,19 +38,19 @@ function pokreniServer() {
       resave: false,
     })
   );
-  /*
-    pripremiPutanjePocetna();
-    pripremiPutanjeAutentifikacija();
-    pripremiPutanjePretrazivanjeFilmova();
-    pripremiPutanjeDokumentacija();
-    pripremiPutanjeZanrovi();
-    pripremiPutanjeFilmovi();
-    pripremiPutanjeProfil();
-    pripremiPutanjeKorisnici();
-    pripremiPutanjeSlike();
-    pripremiPutanjeFilmoviPrijedlozi();
-    pripremiPutanjeGalerijaSlika();
-  */
+
+  // pripremiPutanjePocetna();
+  pripremiPutanjeAutentifikacija();
+  /* pripremiPutanjePretrazivanjeFilmova();
+   pripremiPutanjeDokumentacija();
+   pripremiPutanjeZanrovi();
+   pripremiPutanjeFilmovi();
+   pripremiPutanjeProfil();
+   pripremiPutanjeKorisnici();
+   pripremiPutanjeSlike();
+   pripremiPutanjeFilmoviPrijedlozi();
+   pripremiPutanjeGalerijaSlika();
+ */
 
 
   server.use("/js", express.static(__dirname + "/js"));
@@ -107,12 +107,12 @@ function pripremiPutanjePretrazivanjeFilmova() {
 }
 
 function pripremiPutanjeAutentifikacija() {
-  server.get("/registracija", htmlUpravitelj.registracija);
+  //server.get("/registracija", htmlUpravitelj.registracija);
   server.post("/registracija", htmlUpravitelj.registracija);
-  server.get("/odjava", htmlUpravitelj.odjava);
-  server.get("/prijava", htmlUpravitelj.prijava);
+  //  server.get("/odjava", htmlUpravitelj.odjava);
+  // server.get("/prijava", htmlUpravitelj.prijava);
   server.post("/prijava", htmlUpravitelj.prijava);
-  server.get("/getJWT", fetchUpravitelj.getJWT);
+  //server.get("/getJWT", fetchUpravitelj.getJWT);
   //server.get("/aktivacijaRacuna", fetchUpravitelj.aktvacijaRacuna);
 }
 

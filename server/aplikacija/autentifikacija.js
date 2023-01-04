@@ -109,6 +109,8 @@ class Autentifikacija {
     );
 
     if (odgovor.status == 200) {
+      console.log("u autentifikaciji");
+
       return await odgovor.text();
     } else {
       return false;
