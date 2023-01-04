@@ -1,6 +1,6 @@
 <nav>
   <ul>
-    <li>
+    <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
       <a
         routerLink="/zanrovi"
         routerLinkActive="active"
@@ -8,32 +8,29 @@
         >Zanrovi</a
       >
     </li>
-    <li>
+    <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
       <a
         routerLink="/pregledFilmova"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        *ngIf="prijavljen == '2' || prijavljen == '1'"
       >
         Pregled filmova
       </a>
     </li>
-    <li>
+    <li *ngIf="!prijavljenAdmin && !prijavljenKorisnik">
       <a
         routerLink="/prijava"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        *ngIf="!prijavljen"
       >
         Prijava
       </a>
     </li>
-    <li>
+    <li *ngIf="prijavljenAdmin">
       <a
         routerLink="/prijedloziFilmova"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        *ngIf="prijavljen == '1'"
       >
         Prijedlozi
       </a>
@@ -48,11 +45,18 @@
     </li>
     <li>
       <a
+        routerLink="/dokumentacija"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Dokumentacija</a
+      >
+    </li>
+    <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
+      <a
         routerLink="/pocetna"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
         (click)="odjaviKorisnika()"
-        *ngIf="prijavljen == '1' || prijavljen == '2'"
         >Odjava</a
       >
     </li>

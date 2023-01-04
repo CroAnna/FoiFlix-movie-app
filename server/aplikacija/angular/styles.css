@@ -32,7 +32,7 @@ body {
 
 .o-studentu {
   margin: 20px auto;
-  width: 60%;
+  width: 80%;
 }
 
 .podaci-container {
@@ -761,6 +761,51 @@ td button {
 
 .zanr-item {
   color: #ededed;
+}
+
+table.tablica {
+  align-items: center;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: #bdbdbd;
+}
+table.tablica thead tr {
+  background-color: rgba(200, 13, 57, 0.8941176471);
+  color: #ffffff;
+  text-align: left;
+}
+table.tablica th,
+table.tablica td {
+  padding: 12px 15px;
+  text-align: center;
+}
+table.tablica tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+table.tablica tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.oznaka {
+  padding: 10px;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.zelena {
+  border-color: #009879;
+}
+
+.zuta {
+  border-color: #acae04;
+}
+
+.crvena {
+  border-color: #d63d0e;
 }
 
 /*# sourceMappingURL=styles.css.map*/

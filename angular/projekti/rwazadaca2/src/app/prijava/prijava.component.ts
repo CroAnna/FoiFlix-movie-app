@@ -22,16 +22,17 @@ export class PrijavaComponent {
   constructor(private korisniciService: KorisniciService) {}
 
   async prijavi() {
-    console.log('pocetak prijavi');
-
     let odgovor = await this.korisniciService.prijaviKorisnika(
       this.inputKorime,
       this.inputLozinka
     );
-    console.log('odgovoro ' + JSON.stringify(odgovor));
-    if (odgovor != false) {
-      console.log('kraj');
+    console.log('ofg' + odgovor);
 
+    if (odgovor == false) {
+      console.log('krivi podaci');
+
+      window.alert('Neispravni podaci!');
+    } else {
       sessionStorage.setItem('prijavljeniKorisnik', odgovor.uloga_id);
     }
   }
@@ -46,6 +47,7 @@ export class PrijavaComponent {
     );
   }
 
+  // prebacivanje s logina na registraciju i obratno
   ucitajSuprotno() {
     this.prikazLogin = !this.prikazLogin;
     this.prikazReg = !this.prikazReg;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +8,16 @@ import { Subject } from 'rxjs';
 export class KorisniciService {
   constructor(private router: Router) {}
   // private updateMenu = new Subject<void>();
+
+  private loginUloga = new BehaviorSubject<string>(this.checkLoginStatus());
+
+  checkLoginStatus() {
+    return '0';
+  }
+
+  get isLoggedIn() {
+    return sessionStorage.getItem('prijavljeniKorisnik');
+  }
 
   async prijaviKorisnika(korime: string, lozinka: string) {
     // lozinka = kodovi.kreirajSHA256(lozinka, 'moja sol');

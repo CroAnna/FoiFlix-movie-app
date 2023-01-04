@@ -39,7 +39,7 @@ body {
 }
 .o-studentu {
   margin: 20px auto;
-  width: 60%;
+  width: 80%;
 }
 .podaci-container {
   background-color: $color_dark_gray;
@@ -727,4 +727,53 @@ td {
 
 .zanr-item {
   color: $color_white;
+}
+
+table.tablica {
+  align-items: center;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: #bdbdbd;
+
+  thead tr {
+    background-color: #c80d39e4;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+
+    &:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+  }
+}
+
+.oznaka {
+  padding: 10px;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.zelena {
+  border-color: #009879;
+}
+
+.zuta {
+  border-color: #acae04;
+}
+
+.crvena {
+  border-color: #d63d0e;
 }
