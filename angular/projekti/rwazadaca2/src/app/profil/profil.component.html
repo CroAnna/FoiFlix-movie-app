@@ -1,13 +1,19 @@
 <div class="podaci">
   <h2>Moj profil</h2>
-  <form>
+  <form (ngSubmit)="onSubmit($event)">
     <label for="profil-ime">Ime</label>
-    <input id="profil-ime" type="text" value="{{ logiraniKorisnik.ime }}" />
+    <input
+      id="profil-ime"
+      type="text"
+      value="{{ logiraniKorisnik.ime }}"
+      name="ime"
+    />
     <label for="profil-prezime">Prezime</label>
     <input
       id="profil-prezime"
       type="text"
       value="{{ logiraniKorisnik.prezime }}"
+      name="prezime"
     />
     <label for="profil-korime">Korisnicko ime</label>
     <input
@@ -25,7 +31,9 @@
     />
     <div class="gumbi">
       <button id="btnSpremi" type="submit">Spremi</button>
-      <button id="btnOdustani" type="button">Odustani</button>
+      <button id="btnOdustani" type="button" (click)="odustani()">
+        Odustani
+      </button>
     </div>
   </form>
 </div>

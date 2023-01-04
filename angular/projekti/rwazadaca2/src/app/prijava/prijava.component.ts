@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Form } from '@angular/forms';
 import { KorisniciService } from '../servisi/korisnici.service';
 
 @Component({

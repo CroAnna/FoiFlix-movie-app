@@ -1559,62 +1559,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _servisi_korisnici_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../servisi/korisnici.service */ 2725);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 2508);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 2508);
+
 
 
 
 
 class ProfilComponent {
-  constructor(korisniciServis) {
+  constructor(korisniciServis, router) {
     this.korisniciServis = korisniciServis;
+    this.router = router;
     this.logiraniKorisnik = ''; // da ne baca error pri loadanju da je undefined
   }
 
   ngOnInit() {
     var _this = this;
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let korime = sessionStorage.getItem('prijavljeniKorisnikKorime');
-      if (korime != null) {
-        _this.logiraniKorisnik = yield _this.korisniciServis.dajLogiranog(korime);
+      _this.korime = sessionStorage.getItem('prijavljeniKorisnikKorime');
+      if (_this.korime != null) {
+        _this.logiraniKorisnik = yield _this.korisniciServis.dajLogiranog(_this.korime);
       }
     })();
   }
+  onSubmit(event) {
+    this.profilIme = event.target.ime.value;
+    this.profilPrezime = event.target.prezime.value;
+    this.korisniciServis.updateajKorisnika(this.korime, this.profilIme, this.profilPrezime);
+  }
+  odustani() {
+    this.router.navigate(['/pocetna']);
+  }
 }
 ProfilComponent.ɵfac = function ProfilComponent_Factory(t) {
-  return new (t || ProfilComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_servisi_korisnici_service__WEBPACK_IMPORTED_MODULE_1__.KorisniciService));
+  return new (t || ProfilComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_servisi_korisnici_service__WEBPACK_IMPORTED_MODULE_1__.KorisniciService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router));
 };
 ProfilComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: ProfilComponent,
   selectors: [["app-profil"]],
   decls: 21,
   vars: 4,
-  consts: [[1, "podaci"], ["for", "profil-ime"], ["id", "profil-ime", "type", "text", 3, "value"], ["for", "profil-prezime"], ["id", "profil-prezime", "type", "text", 3, "value"], ["for", "profil-korime"], ["id", "profil-korime", "type", "text", "readonly", "", 3, "value"], ["for", "profil-email"], ["id", "profil-email", "type", "text", "readonly", "", 3, "value"], [1, "gumbi"], ["id", "btnSpremi", "type", "submit"], ["id", "btnOdustani", "type", "button"]],
+  consts: [[1, "podaci"], [3, "ngSubmit"], ["for", "profil-ime"], ["id", "profil-ime", "type", "text", "name", "ime", 3, "value"], ["for", "profil-prezime"], ["id", "profil-prezime", "type", "text", "name", "prezime", 3, "value"], ["for", "profil-korime"], ["id", "profil-korime", "type", "text", "readonly", "", 3, "value"], ["for", "profil-email"], ["id", "profil-email", "type", "text", "readonly", "", 3, "value"], [1, "gumbi"], ["id", "btnSpremi", "type", "submit"], ["id", "btnOdustani", "type", "button", 3, "click"]],
   template: function ProfilComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "h2");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "Moj profil");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "form")(4, "label", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "form", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngSubmit", function ProfilComponent_Template_form_ngSubmit_3_listener($event) {
+        return ctx.onSubmit($event);
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "label", 2);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "Ime");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "input", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "label", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "input", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "label", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, "Prezime");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](9, "input", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "label", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](9, "input", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "label", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11, "Korisnicko ime");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](12, "input", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "label", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](12, "input", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "label", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](14, "E-mail");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](15, "input", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](16, "div", 9)(17, "button", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](15, "input", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](16, "div", 10)(17, "button", 11);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](18, "Spremi");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "button", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](20, "Odustani");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "button", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ProfilComponent_Template_button_click_19_listener() {
+        return ctx.odustani();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](20, " Odustani ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
     }
     if (rf & 2) {
@@ -1628,7 +1646,7 @@ ProfilComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__[
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("value", ctx.logiraniKorisnik.email);
     }
   },
-  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgForm],
+  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgForm],
   styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
@@ -1804,6 +1822,24 @@ class KorisniciService {
       };
       let podaci = yield fetch('http://localhost:9001/registracija', parametri);
       return yield podaci.text();
+    })();
+  }
+  updateajKorisnika(korime, novo_ime, novo_prezime) {
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      let tijelo = {
+        korime: korime,
+        ime: novo_ime,
+        prezime: novo_prezime
+      };
+      let header = new Headers();
+      header.set('Content-Type', 'application/json');
+      let parametri = {
+        method: 'PUT',
+        body: JSON.stringify(tijelo),
+        headers: header
+      };
+      let podatki = yield fetch('http://localhost:9000/api/korisnici/' + korime, parametri);
+      yield podatki.text();
     })();
   }
 }

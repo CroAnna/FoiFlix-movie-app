@@ -92,4 +92,30 @@ export class KorisniciService {
 
     return await podaci.text();
   }
+
+  async updateajKorisnika(
+    korime: string,
+    novo_ime: string,
+    novo_prezime: string
+  ) {
+    let tijelo = {
+      korime: korime,
+      ime: novo_ime,
+      prezime: novo_prezime,
+    };
+
+    let header = new Headers();
+    header.set('Content-Type', 'application/json');
+
+    let parametri = {
+      method: 'PUT',
+      body: JSON.stringify(tijelo),
+      headers: header,
+    };
+    let podatki = await fetch(
+      'http://localhost:9000/api/korisnici/' + korime,
+      parametri
+    );
+    await podatki.text();
+  }
 }

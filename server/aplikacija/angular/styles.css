@@ -158,7 +158,7 @@ nav {
   padding: 0px 80px;
   margin: 25px auto;
   padding: 5px 0 5px 0;
-  width: 50%;
+  width: 60%;
   justify-content: center;
   text-align: center;
   z-index: 1;
@@ -282,6 +282,7 @@ nav ul li:hover {
   color: #ededed;
   margin-top: 30px;
   font-family: "Exo", sans-serif;
+  font-size: 1.1rem;
 }
 .login-container p span button {
   color: #da0037;
@@ -289,6 +290,7 @@ nav ul li:hover {
   padding: 2px;
   border-radius: 5px;
   font-weight: bolder;
+  font-size: 1.2rem;
   font-family: "Exo", sans-serif;
   cursor: pointer;
 }
@@ -472,6 +474,7 @@ label {
 .pregled .moji-filmovi {
   cursor: pointer;
   display: flex;
+  margin-left: 60px;
 }
 .pregled .moji-filmovi:hover {
   background-color: #da0037;
