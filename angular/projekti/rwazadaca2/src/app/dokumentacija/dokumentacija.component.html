@@ -2,20 +2,22 @@
   <div class="podaci-container">
     <a href="/">
       <img
-        src="../fotografije/previous_icon_dark.png"
+        src="/assets/fotke/previous_icon_light.png"
         alt="back"
         class="back-icon"
         title="Na početnu"
       />
     </a>
     <h2>Podaci</h2>
-    <div class="podaci">
-      <h3>Ana Škarica</h3>
-      <h3>askarica20@student.foi.hr</h3>
-      <h3>IPS-RPS</h3>
-    </div>
-    <div class="slike">
-      <img src="../fotografije/ja.jpg" alt="moja-slika" />
+    <div class="dokumentacija-container">
+      <div class="podaci">
+        <h3>Ana Škarica</h3>
+        <h3>askarica20@student.foi.hr</h3>
+        <h3>IPS-RPS</h3>
+      </div>
+      <div class="slike">
+        <img src="/assets/fotke/ja.jpg" alt="moja-slika" />
+      </div>
     </div>
     <div>
       <table class="tablica">
@@ -80,7 +82,7 @@
             <td><div>api/korisnici/korime/aktivacija</div></td>
             <td><div class="oznaka zelena">501</div></td>
             <td><div class="oznaka zelena">405</div></td>
-            <td><div>Aktivira novog korisnika</div></td>
+            <td><div class="oznaka zelena">Aktivira novog korisnika</div></td>
             <td><div class="oznaka zelena">501</div></td>
             <td><div></div></td>
           </tr>
@@ -114,7 +116,7 @@
               </div>
             </td>
             <td>
-              <div>
+              <div class="oznaka zelena">
                 Uz dobivene podatke čita sve podatke o filmu s vanjskog servisa
                 i dodaje novi film
               </div>
@@ -137,7 +139,7 @@
             </td>
             <td><div class="oznaka zelena">405</div></td>
             <td>
-              <div class="oznaka zuta">Ažurira podatke određenog filma</div>
+              <div class="oznaka zelena">Ažurira podatke određenog filma</div>
             </td>
             <td>
               <div class="oznaka zelena">Briše određeni film</div>
@@ -239,7 +241,7 @@
           <tr>
             <td>Gost</td>
             <td>
-              <div class="oznaka zuta">Registracija, Prijava, Odjava</div>
+              <div class="oznaka zelena">Registracija, Prijava, Odjava</div>
             </td>
             <td>
               <div>
@@ -260,10 +262,7 @@
               </div>
             </td>
             <td>
-              <div>
-                nakon registracije treba se ručno prebaciti na stranicu za
-                prijavu, REST servis ne koristi više username i password
-              </div>
+              <div>REST servis ne koristi više username i password</div>
             </td>
           </tr>
           <tr>
@@ -273,7 +272,6 @@
               <div>
                 Vidi svoje podatke (ime, prezime, korisničko ime, e-mail, ...) i
                 može ih ažurirati. Korisničko ime i e-mail se ne mogu ažurirati.
-                NE ZNAM JEL OVO ZUTO IL ZELENO
               </div>
             </td>
             <td>
@@ -294,10 +292,7 @@
                 filmu.
               </div>
             </td>
-            <td>
-              Jedino postoji filtriranje po nazivu, abecedno. Nema sortiranja po
-              datumu ili nazivu.
-            </td>
+            <td>Može se pretraživati po nazivu.</td>
           </tr>
           <tr>
             <td>Korisnik</td>

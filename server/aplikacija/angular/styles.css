@@ -50,10 +50,19 @@ body {
   font-size: 30px;
   padding: 10px;
 }
+.podaci-container .dokumentacija-container {
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 30px;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  margin: 0 auto;
+  background: url('background.jpg');
+}
 
 .podaci {
-  margin: 20px auto;
-  background-color: #9b9b9b;
+  margin: 150px auto;
   color: #171717;
   width: 95%;
   padding: 30px;
@@ -135,6 +144,7 @@ body {
 .slike {
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 .slike img {
   width: 380px;

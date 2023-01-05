@@ -34,6 +34,7 @@ export class PrijavaComponent {
   }
 
   registriraj() {
+    this.ucitajSuprotno();
     this.korisniciService.dodajKorisnika(
       this.korime,
       this.lozinka,

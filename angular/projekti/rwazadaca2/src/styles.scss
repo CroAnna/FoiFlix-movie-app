@@ -55,10 +55,18 @@ body {
     font-size: 30px;
     padding: 10px;
   }
+  & .dokumentacija-container {
+    width: fit-content;
+    border-radius: 30px;
+    height: fit-content;
+    display: flex;
+    margin: 0 auto;
+    background: url(./assets/fotke/background.jpg);
+  }
 }
 .podaci {
-  margin: 20px auto;
-  background-color: $color_light_gray;
+  margin: 150px auto;
+
   color: $color_black;
   width: 95%;
   padding: 30px;
@@ -138,6 +146,7 @@ body {
 .slike {
   display: flex;
   justify-content: center;
+  padding: 20px;
   img {
     width: 380px;
     height: 490px;
@@ -215,7 +224,7 @@ nav {
   left: 0;
   right: 0;
   margin: auto;
-  background: url(./app/fotke/background.jpg);
+  background: url(./assets/fotke/background.jpg);
   border-radius: 30px;
   display: flex;
   width: 70%;

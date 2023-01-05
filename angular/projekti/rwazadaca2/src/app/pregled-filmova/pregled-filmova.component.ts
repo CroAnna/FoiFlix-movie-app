@@ -34,10 +34,10 @@ export class PregledFilmovaComponent implements OnInit {
   }
 
   prikaziPoNazivu() {
+    console.log(this.tekstFiltriranje.toLowerCase());
+
     this.filmoviFiltrirani = this.filmoviOdobreni.filter((f: any) =>
-      f.original_title
-        .toLowerCase()
-        .includes(this.tekstFiltriranje.toLowerCase())
+      f.title.toLowerCase().includes(this.tekstFiltriranje.toLowerCase())
     );
   }
 
