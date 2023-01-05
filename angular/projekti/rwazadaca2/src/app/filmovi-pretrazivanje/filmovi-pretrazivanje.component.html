@@ -1,9 +1,25 @@
 <div class="pretrazivanje-gore">
   <div id="stranicenje">
-    <button class="btnStranicenje" (click)="strPrva()"><<</button>
-    <button class="btnStranicenje" (click)="strNatrag()"><</button>
-    <button class="btnStranicenje" (click)="strDalje()">></button>
-    <button class="btnStranicenje" (click)="strZadnja()">>></button>
+    <button class="btnStranicenje" *ngIf="stranica > 1" (click)="strPrva()">
+      <<
+    </button>
+    <button class="btnStranicenje" *ngIf="stranica > 1" (click)="strNatrag()">
+      <
+    </button>
+    <button
+      class="btnStranicenje"
+      *ngIf="stranica < zadnjaStranica"
+      (click)="strDalje()"
+    >
+      >
+    </button>
+    <button
+      class="btnStranicenje"
+      *ngIf="stranica < zadnjaStranica"
+      (click)="strZadnja()"
+    >
+      >>
+    </button>
   </div>
   <h1 class="pretrazivanje">Pretraživanje filmova</h1>
   <input
@@ -15,11 +31,8 @@
     (input)="onSearchChange($event)"
   />
 </div>
-
+<div class="brStr">Stranica: {{ stranica }} / {{ zadnjaStranica }}</div>
 <div class="pretrazivanje-kontejner">
-  <div id="poruka"></div>
-  <br />
-  <div id="stranicenje"></div>
   <div id="sadrzaj">
     <div *ngFor="let film of dohvaceniFilmovi" class="grid">
       <div class="dohvFilm">

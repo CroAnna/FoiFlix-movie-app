@@ -10,7 +10,8 @@ export class FilmoviPretrazivanjeComponent implements OnInit {
   constructor(private filmoviService: FilmoviService) {}
   dohvaceniFilmovi: any;
   rijeciSearch: string = '';
-  stranica: Number = 1;
+  stranica: number = 1;
+  zadnjaStranica: number = 0;
 
   async onSearchChange(event: any) {
     console.log(event.target.value);
@@ -34,26 +35,34 @@ export class FilmoviPretrazivanjeComponent implements OnInit {
 
   strPrva() {
     this.stranica = 1;
+    this.prikaziFilmove();
   }
   strNatrag() {
-    //TODO
+    if (this.stranica > 1) {
+      this.stranica = this.stranica - 1;
+      this.prikaziFilmove();
+    }
   }
   async strDalje() {
-    this.stranica = 2; //TODO
+    this.stranica = this.stranica + 1; // mora bit malo number, a ne Number
     this.prikaziFilmove();
   }
   strZadnja() {
-    //TODO
+    this.stranica = this.zadnjaStranica;
+    this.prikaziFilmove();
   }
 
   async prikaziFilmove() {
-    this.dohvaceniFilmovi = await this.filmoviService.dajTmdbFilmove(
-      this.rijeciSearch,
-      this.stranica
-    );
+    this.dohvaceniFilmovi = JSON.parse(
+      await this.filmoviService.dajTmdbFilmove(this.rijeciSearch, this.stranica)
+    ).results;
     sessionStorage.setItem(
       'dohvaceniFilmovi',
       JSON.stringify(this.dohvaceniFilmovi)
     );
+
+    this.zadnjaStranica = JSON.parse(
+      await this.filmoviService.dajTmdbFilmove(this.rijeciSearch, this.stranica)
+    ).total_pages;
   }
 }

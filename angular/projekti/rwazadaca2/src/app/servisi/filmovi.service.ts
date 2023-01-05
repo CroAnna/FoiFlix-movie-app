@@ -17,12 +17,11 @@ export class FilmoviService {
       `http://localhost:9000/api/tmdb/filmovi?kljucnaRijec=${rijec}&stranica=${str}`
     );
 
-    return JSON.parse(await odgovor.text()).results;
+    return await odgovor.text();
   }
 
   async dajOdabraniFilm(idFilma: string) {
-    console.log('id filma -----> ' + idFilma);
-
+    //console.log('id filma -----> ' + idFilma);
     let odgovor = await fetch('http://localhost:9000/api/filmovi/' + idFilma);
     if (odgovor.status == 200) {
       let podaci = await odgovor.text();
