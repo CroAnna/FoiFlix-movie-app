@@ -16,6 +16,8 @@ import { FilmDetaljiComponent } from './film-detalji/film-detalji.component';
 import { DokumentacijaComponent } from './dokumentacija/dokumentacija.component';
 import { ProfilComponent } from './profil/profil.component';
 import { FilmoviPretrazivanjeComponent } from './filmovi-pretrazivanje/filmovi-pretrazivanje.component';
+import { GalerijaComponent } from './galerija/galerija.component';
+import { UploadSlikeComponent } from './upload-slike/upload-slike.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { FilmoviPretrazivanjeComponent } from './filmovi-pretrazivanje/filmovi-p
     DokumentacijaComponent,
     ProfilComponent,
     FilmoviPretrazivanjeComponent,
+    GalerijaComponent,
+    UploadSlikeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

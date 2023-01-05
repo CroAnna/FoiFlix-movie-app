@@ -26,6 +26,19 @@ CREATE TABLE IF NOT EXISTS `korisnik` (
   tajniTOTPkljuc TEXT DEFAULT NULL
 );
 
+
+CREATE TABLE IF NOT EXISTS `slike` (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+putanja TEXT NOT NULL,
+korisnik_korime TEXT NOT NULL,
+film_id INTEGER NOT NULL,
+FOREIGN KEY (`korisnik_korime`) REFERENCES `korisnik` (`korime`)
+FOREIGN KEY (`film_id`) REFERENCES `film` (`id`)
+);
+
+SELECT * FROM `slike`;
+INSERT INTO `slike` (`id`, `putanja`, `korisnik_korime`, `film_id`) VALUES (1, 'https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg', 'administrator', 293660);
+
 DROP TABLE `korisnik`;
 
 INSERT INTO `korisnik` (`id`, `korime`, `lozinka`, `ime`, `prezime`, `email`, `token`, `sol`, `uloga_id`, `aktiviran`, `blokiran`, `tajniTOTPkljuc`) VALUES
@@ -88,6 +101,8 @@ CREATE TABLE IF NOT EXISTS `film` (
   korisnik_id INTEGER DEFAULT NULL,
   FOREIGN KEY (`korisnik_id`) REFERENCES `korisnik` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+
 
 SELECT * FROM `film`;
 

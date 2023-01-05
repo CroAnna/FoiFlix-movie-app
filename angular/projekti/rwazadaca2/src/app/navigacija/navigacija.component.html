@@ -60,7 +60,15 @@
         Prijedlozi
       </a>
     </li>
-
+    <li *ngIf="prijavljenAdmin || prijavljenKorisnik">
+      <a
+        routerLink="/upload"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        Upload
+      </a>
+    </li>
     <li>
       <a
         routerLink="/dokumentacija"

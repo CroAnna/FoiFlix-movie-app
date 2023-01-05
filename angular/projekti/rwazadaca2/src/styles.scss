@@ -647,7 +647,9 @@ td {
   text-align: center;
   margin: 40px auto;
   padding: 10px;
-  padding-left: 15%;
+  width: fit-content;
+  justify-content: center;
+  //padding-left: 15%;
 }
 #btnUpload {
   cursor: pointer;
@@ -849,4 +851,17 @@ table.tablica {
   background-color: $color_dark_gray;
   margin: 20px auto;
   width: fit-content;
+}
+
+.galerija {
+  width: 80%;
+  margin: 0 auto;
+  background-color: $color_light_gray;
+  color: $color_black;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  & h2 {
+    padding: 10px;
+  }
 }

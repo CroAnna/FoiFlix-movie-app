@@ -670,7 +670,9 @@ td button {
   text-align: center;
   margin: 40px auto;
   padding: 10px;
-  padding-left: 15%;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: center;
 }
 
 #btnUpload {
@@ -874,6 +876,19 @@ table.tablica tbody tr:nth-of-type(even) {
   margin: 20px auto;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.galerija {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #9b9b9b;
+  color: #171717;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+.galerija h2 {
+  padding: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map*/

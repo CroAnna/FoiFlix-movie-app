@@ -1,0 +1,32 @@
+<div class="slike-kontejner">
+  <h2>Uploadaj sliku</h2>
+
+  <form>
+    <input
+      id="slika-upload"
+      #myInput
+      type="file"
+      accept="image/png, image/gif, image/jpeg, image/jpg"
+      (change)="odabranFile($event)"
+    />
+    <p id="povratna-info"></p>
+    <button
+      id="btnUpload"
+      class="lijepiGumb"
+      type="submit"
+      [disabled]="isLoading ? true : null"
+      (click)="uploadajSliku()"
+    >
+      Pošalji
+    </button>
+    <button
+      id="btnUpload"
+      class="lijepiGumb"
+      type="submit"
+      [disabled]="isLoading ? true : null"
+      (click)="ukloniSliku()"
+    >
+      Ukloni sliku
+    </button>
+  </form>
+</div>

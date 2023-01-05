@@ -145,7 +145,12 @@
           value="{{ odabraniFilm.korisnik_id }}"
         />
       </form>
-      <button class="lijepiGumb">Na galeriju</button>
+      <button
+        class="lijepiGumb"
+        routerLink="/pregledFilmova/galerija/{{ odabraniFilm.id }}"
+      >
+        Na galeriju
+      </button>
     </div>
   </div>
 </div>
