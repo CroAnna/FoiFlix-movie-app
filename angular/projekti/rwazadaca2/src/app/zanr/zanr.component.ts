@@ -24,6 +24,11 @@ export class ZanrComponent {
     this.zanroviTMDB = await this.zanroviService.dajPodatke();
   }
 
+  async prikaziZanrove() {
+    await this.prikaziMojeZanrove();
+    await this.prikaziTMDBZanrove();
+  }
+
   onChangeOdabraniRadioTmdb(event: any, id: number) {
     // koji je trenutno odabran
     this.odabraniRadioNameTmdb = event.target.value;

@@ -1,9 +1,6 @@
 <div class="zanrovi-gumbi">
-  <button class="lijepiGumb" id="dajPodatke" (click)="prikaziTMDBZanrove()">
-    Ucitaj zanrove TMDB
-  </button>
-  <button class="lijepiGumb" id="dajMojePodatke" (click)="prikaziMojeZanrove()">
-    Ucitaj zanrove moja baza
+  <button class="lijepiGumb" id="dajMojePodatke" (click)="prikaziZanrove()">
+    Ucitaj zanrove
   </button>
   <button class="lijepiGumb" id="dodajTMDBPodatke" (click)="dodajTMDBPodatke()">
     Dodaj iz TMDB-a u moju bazu
@@ -22,33 +19,35 @@
     Izbrisi sve zanrove bez filmova
   </button>
 </div>
-<div id="zanrovi-container-moje">
-  <ul *ngFor="let zanr of zanroviMoji">
-    <li>
-      <input
-        type="radio"
-        id="{{ zanr.id }}"
-        name="moji-zanrovi"
-        value="{{ zanr.name }}"
-        (change)="onChangeOdabraniRadioMoj($event, zanr.id)"
-      />
-      {{ zanr.name }} {{ zanr.id }}
-    </li>
-  </ul>
-</div>
-<div id="informacije-zanrovi"></div>
 <input type="text" id="inputPromjenaNaziva" [(ngModel)]="noviNaziv" />
-<div id="zanrovi-container">
-  <ul *ngFor="let zanr of zanroviTMDB">
-    <li>
-      <input
-        type="radio"
-        id="{{ zanr.id }}"
-        name="tmdb-zanrovi"
-        value="{{ zanr.name }}"
-        (change)="onChangeOdabraniRadioTmdb($event, zanr.id)"
-      />
-      {{ zanr.name }} {{ zanr.id }}
-    </li>
-  </ul>
+<div class="zanrovi-vanjski-container">
+  <div id="zanrovi-container-moje">
+    <ul *ngFor="let zanr of zanroviMoji">
+      <li>
+        <input
+          type="radio"
+          id="{{ zanr.id }}"
+          name="moji-zanrovi"
+          value="{{ zanr.name }}"
+          (change)="onChangeOdabraniRadioMoj($event, zanr.id)"
+        />
+        {{ zanr.name }} {{ zanr.id }}
+      </li>
+    </ul>
+  </div>
+
+  <div id="zanrovi-container">
+    <ul *ngFor="let zanr of zanroviTMDB">
+      <li>
+        <input
+          type="radio"
+          id="{{ zanr.id }}"
+          name="tmdb-zanrovi"
+          value="{{ zanr.name }}"
+          (change)="onChangeOdabraniRadioTmdb($event, zanr.id)"
+        />
+        {{ zanr.name }} {{ zanr.id }}
+      </li>
+    </ul>
+  </div>
 </div>

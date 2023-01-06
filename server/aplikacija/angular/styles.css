@@ -62,13 +62,16 @@ body {
 }
 
 .podaci {
-  margin: 150px auto;
+  margin: 30px auto;
   color: #171717;
   width: 95%;
   padding: 30px;
   border-radius: 15px;
   width: 50%;
   font-size: 1.5rem;
+}
+.podaci.veci {
+  margin: 150px auto;
 }
 .podaci input {
   display: block;
@@ -410,36 +413,29 @@ label {
 }
 
 .zanrovi-vanjski-container {
-  padding: 0 50px;
-  color: #ededed;
-  width: 80%;
-  font-size: 1.5rem;
-  margin: 0 auto;
-}
-.zanrovi-vanjski-container button {
-  color: #202020;
-  width: 250px;
-  font-size: 1.5rem;
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
 }
 
 #zanrovi-container-moje {
   background-color: #202020;
-  width: 70%;
-  margin: 30px auto;
-  padding: 50px;
+  width: 300px;
+  padding: 30px;
   border-radius: 30px;
   color: #ededed;
   list-style: none;
+  margin: 10px;
 }
 
 #zanrovi-container {
   background-color: #202020;
-  width: 70%;
-  margin: 30px auto;
-  padding: 50px;
+  width: 300px;
+  padding: 30px;
   border-radius: 30px;
   color: #ededed;
   list-style: none;
+  margin: 10px;
 }
 
 #profil-korime {
