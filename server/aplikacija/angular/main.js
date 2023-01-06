@@ -603,14 +603,14 @@ DokumentacijaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](362, "tr")(363, "td");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](364, "Admin");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](365, "td")(366, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](365, "td")(366, "div", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](367, "\u017Danrovi");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](368, "td")(369, "div");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](370, " Vidi pregled svih \u017Eanrova u bazi podataka, mo\u017Ee a\u017Eurirati naziv \u017Eanra, mo\u017Ee obrisati sve \u017Eanrove za koje nema filmova u bazi. Mo\u017Ee povu\u0107i listu \u017Eanrova s TMDB servisa te mo\u017Ee dodati u bazu sve ili samo neke \u017Eanrove. Ako pri dodavanju, ve\u0107 postoji neki \u017Eanr s istim id-om, tada se takav preska\u010De i uop\u0107e se ne \u0161alje zahtjev na servis za dodavanjem. Korisniku se javlja poruka na ekranu koji \u017Eanrovi su bili presko\u010Deni jer ve\u0107 postoje ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](371, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](372, " Sve radi, jedino nema opcije dodavanja svih zanrova u bazu odjednom. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](372, "Sve radi.");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](373, "div")(374, "table", 8)(375, "thead")(376, "tr")(377, "th");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](378, "Korak");
@@ -2559,11 +2559,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ZanrComponent_ul_12_Template(rf, ctx) {
+function ZanrComponent_ul_14_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "ul")(1, "li")(2, "input", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function ZanrComponent_ul_12_Template_input_change_2_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "ul")(1, "li")(2, "input", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function ZanrComponent_ul_14_Template_input_change_2_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r4);
       const zanr_r2 = restoredCtx.$implicit;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -2582,11 +2582,11 @@ function ZanrComponent_ul_12_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"](" ", zanr_r2.name, " ", zanr_r2.id, " ");
   }
 }
-function ZanrComponent_ul_16_Template(rf, ctx) {
+function ZanrComponent_ul_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "ul")(1, "li")(2, "input", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function ZanrComponent_ul_16_Template_input_change_2_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "ul")(1, "li")(2, "input", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function ZanrComponent_ul_18_Template_input_change_2_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r7);
       const zanr_r5 = restoredCtx.$implicit;
       const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -2635,26 +2635,46 @@ class ZanrComponent {
     this.odabraniRadioNameMoj = event.target.value;
     this.odabraniRadioIdMoj = id;
   }
-  // TODO provjeri jel vec postoji u bazi taj
   dodajTMDBPodatke() {
     var _this3 = this;
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      yield _this3.zanroviService.dodajIzTMDBAuMojuBazu(_this3.odabraniRadioIdTmdb, _this3.odabraniRadioNameTmdb);
-      _this3.prikaziMojeZanrove();
+      if (_this3.odabraniRadioIdTmdb != 0) {
+        yield _this3.zanroviService.dodajIzTMDBAuMojuBazu(_this3.odabraniRadioIdTmdb, _this3.odabraniRadioNameTmdb);
+        _this3.prikaziMojeZanrove();
+      } else {
+        alert('Nije odabran ni jedan žanr!');
+      }
+    })();
+  }
+  dodajSveTMDBPodatke() {
+    var _this4 = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this4.prikaziTMDBZanrove();
+      console.log('zanrovi tmdb ' + _this4.zanroviTMDB);
+      _this4.zanroviTMDB.forEach( /*#__PURE__*/function () {
+        var _ref = (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (zanr) {
+          console.log(zanr.id + zanr.name);
+          yield _this4.zanroviService.dodajIzTMDBAuMojuBazu(zanr.id, zanr.name);
+        });
+        return function (_x) {
+          return _ref.apply(this, arguments);
+        };
+      }());
+      yield _this4.prikaziMojeZanrove();
     })();
   }
   promijeniNaziv() {
-    var _this4 = this;
+    var _this5 = this;
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      yield _this4.zanroviService.updateajZanr(_this4.odabraniRadioIdMoj, _this4.noviNaziv);
-      _this4.prikaziMojeZanrove();
+      yield _this5.zanroviService.updateajZanr(_this5.odabraniRadioIdMoj, _this5.noviNaziv);
+      _this5.prikaziMojeZanrove();
     })();
   }
   brisanje() {
-    var _this5 = this;
+    var _this6 = this;
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      yield _this5.zanroviService.dajMojePodatkeBrisanje();
-      _this5.prikaziMojeZanrove();
+      yield _this6.zanroviService.dajMojePodatkeBrisanje();
+      yield _this6.prikaziMojeZanrove();
     })();
   }
 }
@@ -2664,9 +2684,9 @@ ZanrComponent.ɵfac = function ZanrComponent_Factory(t) {
 ZanrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: ZanrComponent,
   selectors: [["app-zanr"]],
-  decls: 17,
+  decls: 19,
   vars: 3,
-  consts: [[1, "zanrovi-gumbi"], ["id", "dajPodatke", 1, "lijepiGumb", 3, "click"], ["id", "dajMojePodatke", 1, "lijepiGumb", 3, "click"], ["id", "dodajTMDBPodatke", 1, "lijepiGumb", 3, "click"], ["id", "promijeniNaziv", 1, "lijepiGumb", 3, "click"], ["id", "izbrisiBezFilmova", 1, "lijepiGumb", 3, "click"], ["id", "zanrovi-container-moje"], [4, "ngFor", "ngForOf"], ["id", "informacije-zanrovi"], ["type", "text", "id", "inputPromjenaNaziva", 3, "ngModel", "ngModelChange"], ["id", "zanrovi-container"], ["type", "radio", "name", "moji-zanrovi", 3, "id", "value", "change"], ["type", "radio", "name", "tmdb-zanrovi", 3, "id", "value", "change"]],
+  consts: [[1, "zanrovi-gumbi"], ["id", "dajPodatke", 1, "lijepiGumb", 3, "click"], ["id", "dajMojePodatke", 1, "lijepiGumb", 3, "click"], ["id", "dodajTMDBPodatke", 1, "lijepiGumb", 3, "click"], ["id", "dodajSveTMDBPodatke", 1, "lijepiGumb", 3, "click"], ["id", "promijeniNaziv", 1, "lijepiGumb", 3, "click"], ["id", "izbrisiBezFilmova", 1, "lijepiGumb", 3, "click"], ["id", "zanrovi-container-moje"], [4, "ngFor", "ngForOf"], ["id", "informacije-zanrovi"], ["type", "text", "id", "inputPromjenaNaziva", 3, "ngModel", "ngModelChange"], ["id", "zanrovi-container"], ["type", "radio", "name", "moji-zanrovi", 3, "id", "value", "change"], ["type", "radio", "name", "tmdb-zanrovi", 3, "id", "value", "change"]],
   template: function ZanrComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "button", 1);
@@ -2689,31 +2709,37 @@ ZanrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "button", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ZanrComponent_Template_button_click_7_listener() {
-        return ctx.promijeniNaziv();
+        return ctx.dodajSveTMDBPodatke();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, " Promijeni naziv odabranog ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, " Dodaj sve iz TMDB-a u moju bazu ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "button", 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ZanrComponent_Template_button_click_9_listener() {
+        return ctx.promijeniNaziv();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, " Promijeni naziv odabranog ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "button", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ZanrComponent_Template_button_click_11_listener() {
         return ctx.brisanje();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, " Izbrisi sve zanrove bez filmova ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](12, " Izbrisi sve zanrove bez filmova ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "div", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, ZanrComponent_ul_12_Template, 4, 4, "ul", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "div", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](14, ZanrComponent_ul_14_Template, 4, 4, "ul", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](13, "div", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "input", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function ZanrComponent_Template_input_ngModelChange_14_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](15, "div", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](16, "input", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function ZanrComponent_Template_input_ngModelChange_16_listener($event) {
         return ctx.noviNaziv = $event;
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "div", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](16, ZanrComponent_ul_16_Template, 4, 4, "ul", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "div", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](18, ZanrComponent_ul_18_Template, 4, 4, "ul", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](14);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.zanroviMoji);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.noviNaziv);

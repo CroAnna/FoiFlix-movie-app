@@ -35,13 +35,27 @@ export class ZanrComponent {
     this.odabraniRadioIdMoj = id;
   }
 
-  // TODO provjeri jel vec postoji u bazi taj
   async dodajTMDBPodatke() {
-    await this.zanroviService.dodajIzTMDBAuMojuBazu(
-      this.odabraniRadioIdTmdb,
-      this.odabraniRadioNameTmdb
-    );
-    this.prikaziMojeZanrove();
+    if (this.odabraniRadioIdTmdb != 0) {
+      await this.zanroviService.dodajIzTMDBAuMojuBazu(
+        this.odabraniRadioIdTmdb,
+        this.odabraniRadioNameTmdb
+      );
+      this.prikaziMojeZanrove();
+    } else {
+      alert('Nije odabran ni jedan žanr!');
+    }
+  }
+
+  async dodajSveTMDBPodatke() {
+    await this.prikaziTMDBZanrove();
+    console.log('zanrovi tmdb ' + this.zanroviTMDB);
+
+    this.zanroviTMDB.forEach(async (zanr: any) => {
+      console.log(zanr.id + zanr.name);
+      await this.zanroviService.dodajIzTMDBAuMojuBazu(zanr.id, zanr.name);
+    });
+    await this.prikaziMojeZanrove();
   }
 
   async promijeniNaziv() {
@@ -54,6 +68,6 @@ export class ZanrComponent {
 
   async brisanje() {
     await this.zanroviService.dajMojePodatkeBrisanje();
-    this.prikaziMojeZanrove();
+    await this.prikaziMojeZanrove();
   }
 }

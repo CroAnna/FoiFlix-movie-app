@@ -49,6 +49,11 @@ INSERT INTO `korisnik` (`id`, `korime`, `lozinka`, `ime`, `prezime`, `email`, `t
 
 SELECT * FROM korisnik;
 SELECT * FROM `film_zanr`;
+
+DELETE FROM `film_zanr`;
+DELETE FROM `film`;
+DELETE FROM `zanr`;
+
 SELECT * FROM `film`;
 
 CREATE TABLE IF NOT EXISTS `zanr` (
