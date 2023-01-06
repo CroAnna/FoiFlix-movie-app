@@ -49,7 +49,7 @@ INSERT INTO `korisnik` (`id`, `korime`, `lozinka`, `ime`, `prezime`, `email`, `t
 
 SELECT * FROM korisnik;
 SELECT * FROM `film_zanr`;
-
+SELECT * FROM `film`;
 
 CREATE TABLE IF NOT EXISTS `zanr` (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -76,7 +76,7 @@ VALUES (10402, 65),
 
 
 CREATE TABLE IF NOT EXISTS `film` (
-  id INTEGER NOT NULL,
+  id INTEGER UNIQUE NOT NULL,
   adult INTEGER NOT NULL,
   backdrop_path TEXT DEFAULT NULL,
   budget INTEGER DEFAULT NULL,
@@ -144,6 +144,7 @@ SELECT * FROM film;
 SELECT * FROM film_zanr;
 
 DROP TABLE `film_zanr`;
+DELETE FROM `film_zanr`;
 
 SELECT * FROM `film_zanr`;
 

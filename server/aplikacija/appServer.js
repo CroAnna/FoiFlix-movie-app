@@ -6,7 +6,7 @@ const Konfiguracija = require("../konfiguracija");
 //const portovi = require("portovi.js");
 const htmlUpravitelj = require("./htmlUpravitelj.js");
 const fetchUpravitelj = require("./fetchUpravitelj.js");
-const port = 9001;
+//const port = 9001; //TODO
 
 const cors = require('cors');
 
@@ -26,6 +26,12 @@ server.use(express.static(__dirname + "/angular"));
 
 
 function pokreniServer() {
+  let jsonobjekt = konf.dajKonf();
+  let appport = jsonobjekt["app.port"]
+  console.log("appport " + appport);
+  port = appport;
+
+
   server.use(express.urlencoded({ extended: true }));
   server.use(express.json());
   server.use(kolacici());

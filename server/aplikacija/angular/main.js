@@ -223,7 +223,7 @@ DokumentacijaComponent.ɵfac = function DokumentacijaComponent_Factory(t) {
 DokumentacijaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: DokumentacijaComponent,
   selectors: [["app-dokumentacija"]],
-  decls: 496,
+  decls: 538,
   vars: 0,
   consts: [[1, "o-studentu"], [1, "podaci-container"], ["href", "/"], ["src", "/assets/fotke/previous_icon_light.png", "alt", "back", "title", "Na po\u010Detnu", 1, "back-icon"], [1, "dokumentacija-container"], [1, "podaci"], [1, "slike"], ["src", "/assets/fotke/ja.jpg", "alt", "moja-slika"], [1, "tablica"], [1, "oznaka", "zelena"], [1, "oznaka", "zuta"], [1, "oznaka", "crvena"]],
   template: function DokumentacijaComponent_Template(rf, ctx) {
@@ -482,7 +482,7 @@ DokumentacijaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](253, " Prikazuje popis \u017Eanrova u bazi podataka i nasumice prikazuje 2 filma za svaki \u017Eanr koji postoje u bazi podataka. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](254, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](255, "Ne prikazuje filmove iz moje baze, nego iz TMDB-a");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](255, "Jedino ne prikazuje filmove iz moje baze, nego iz TMDB-a");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](256, "tr")(257, "td");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](258, "Gost");
@@ -493,251 +493,320 @@ DokumentacijaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](262, "td")(263, "div");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](264, "Prikazuje stranicu dokumentacija.html opisanu ranije");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](265, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](266, "tr")(267, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](268, "Gost");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](269, "td")(270, "div", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](271, "Registracija, Prijava, Odjava");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](265, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](266, "Sve radi.");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](272, "td")(273, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](274, " Gost se mo\u017Ee se registrirati kao novi korisnik. ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](275, "s");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](276, " Kod registracije \u0161alje se e-mail s tokenom za aktivaciju ra\u010Duna. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](267, "tr")(268, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](269, "Gost");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](277, " Lozinka se u bazu ne smije spremati u \u010Ditljivom obliku i treba koristiti sol kod spremanja. ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](278, "s");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](279, " Dok se ra\u010Dun ne aktivira nije mogu\u0107e napraviti prijavu. Kod prijave treba koristiti autentikacija dvije razine prvo lozinka s JWT i nakon toga TOTP. ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](280, " Jednom prijavljeni korisnik mo\u017Ee se odjaviti u bilo kojem trenutku. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](270, "td")(271, "div", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](272, "Registracija, Prijava, Odjava");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](281, "td")(282, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](283, "REST servis ne koristi vi\u0161e username i password");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](273, "td")(274, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](275, " Gost se mo\u017Ee se registrirati kao novi korisnik. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](276, "s");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](277, " Kod registracije \u0161alje se e-mail s tokenom za aktivaciju ra\u010Duna. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](278, " Lozinka se u bazu ne smije spremati u \u010Ditljivom obliku i treba koristiti sol kod spremanja. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](279, "s");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](280, " Dok se ra\u010Dun ne aktivira nije mogu\u0107e napraviti prijavu. Kod prijave treba koristiti autentikacija dvije razine prvo lozinka s JWT i nakon toga TOTP. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](281, " Jednom prijavljeni korisnik mo\u017Ee se odjaviti u bilo kojem trenutku. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](282, "td")(283, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](284, " Sve radi. REST servis ne koristi vi\u0161e username i password ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](284, "tr")(285, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](286, "Korisnik");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](285, "tr")(286, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](287, "Korisnik");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](287, "td")(288, "div", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](289, "Profil");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](288, "td")(289, "div", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](290, "Profil");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](290, "td")(291, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](292, " Vidi svoje podatke (ime, prezime, korisni\u010Dko ime, e-mail, ...) i mo\u017Ee ih a\u017Eurirati. Korisni\u010Dko ime i e-mail se ne mogu a\u017Eurirati. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](291, "td")(292, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](293, " Vidi svoje podatke (ime, prezime, korisni\u010Dko ime, e-mail, ...) i mo\u017Ee ih a\u017Eurirati. Korisni\u010Dko ime i e-mail se ne mogu a\u017Eurirati. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](293, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](294, " Mogu se a\u017Eurirati samo ove 2 stvari koje su navedene u zada\u0107i (ime i prezime) ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](294, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](295, "Sve radi.");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](295, "tr")(296, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](297, "Korisnik");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](296, "tr")(297, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](298, "Korisnik");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](298, "td")(299, "div", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](300, "Filmovi pregled");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](299, "td")(300, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](301, "Filmovi pregled");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](301, "td")(302, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](303, " Vidi popis svih filmova koji postoje u bazi, mo\u017Ee filmove filtrirati po \u017Eanru i/ili datumu unosa. Datumsko filtriranje \u010Dita podatke od unesenog datuma do dana\u0161njeg datuma. Mo\u017Ee uzlazno sortirati filmove po nazivu filma, datumu ili nazivu \u017Eanra. Mo\u017Ee kliknuti na naziv filma i dobiti sve podatke o filmu. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](302, "td")(303, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](304, " Vidi popis svih filmova koji postoje u bazi, mo\u017Ee filmove filtrirati po \u017Eanru i/ili datumu unosa. Datumsko filtriranje \u010Dita podatke od unesenog datuma do dana\u0161njeg datuma. Mo\u017Ee uzlazno sortirati filmove po nazivu filma, datumu ili nazivu \u017Eanra. Mo\u017Ee kliknuti na naziv filma i dobiti sve podatke o filmu. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](304, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](305, "Mo\u017Ee se pretra\u017Eivati po nazivu.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](305, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](306, " Vidi se popis filmova i detalji o filmu kad se klikne, mo\u017Ee se pretra\u017Eivati jedino po nazivu. (za sad) ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](306, "tr")(307, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](308, "Korisnik");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](307, "tr")(308, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](309, "Korisnik");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](309, "td")(310, "div", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](311, "Film");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](310, "td")(311, "div", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](312, "Film");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](312, "td")(313, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](314, " Prikazuje sve podatke o filmu zajedno s posterom i poveznicom na \u201CGalerija slika\u201D za taj film i podatkom koji korisnik je dodao film u bazu. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](313, "td")(314, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](315, " Prikazuje sve podatke o filmu zajedno s posterom i poveznicom na \u201CGalerija slika\u201D za taj film i podatkom koji korisnik je dodao film u bazu. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](315, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](316, "Prikazuju se samo podaci koji su une\u0161eni");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](316, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](317, "Sve radi.");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](317, "tr")(318, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](319, "Korisnik");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](318, "tr")(319, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](320, "Korisnik");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](320, "td")(321, "div", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](322, "Filmovi pretra\u017Eivanje");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](321, "td")(322, "div", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](323, "Filmovi pretra\u017Eivanje");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](323, "td")(324, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](325, " Mo\u017Ee upisati klju\u010Dne rije\u010Di po kojima se pretra\u017Euju filmovi sa servisa TMDB (preko api/tmdb). Broj stranica nalazi se u podatku \u201Ctotal_pages\u201D. Ako prona\u0111e film koji mu se svi\u0111a mo\u017Ee kliknuti na dodaj u bazu. Film se svim dobivenim podacima dodaje u bazu kao prijedlog, ali \u010Deka odobrenje admina da bude vidljiv u \u201CFilmovi pregled\u201D. Nije potrebno spremati podatke o \u201Cproduction_companies\u201D, \u201Cproduction_countries\u201D i \u201Cspoken_languages\u201D. Ako ve\u0107 postoji prijedlog za neki film tada nije mogu\u0107e kliknuti dodaj u bazu ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](324, "td")(325, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](326, " Mo\u017Ee upisati klju\u010Dne rije\u010Di po kojima se pretra\u017Euju filmovi sa servisa TMDB (preko api/tmdb). Broj stranica nalazi se u podatku \u201Ctotal_pages\u201D. Ako prona\u0111e film koji mu se svi\u0111a mo\u017Ee kliknuti na dodaj u bazu. Film se svim dobivenim podacima dodaje u bazu kao prijedlog, ali \u010Deka odobrenje admina da bude vidljiv u \u201CFilmovi pregled\u201D. Nije potrebno spremati podatke o \u201Cproduction_companies\u201D, \u201Cproduction_countries\u201D i \u201Cspoken_languages\u201D. Ako ve\u0107 postoji prijedlog za neki film tada nije mogu\u0107e kliknuti dodaj u bazu ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](326, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](327, " Mogu\u0107e je kliknuti dvaput na isti film, makar je ve\u0107 u prijedlozima i inserta se makar zanr ne postoji - OVO JE U PRVOJ RADILO KOLKO SE SJECAM ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](327, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](328, "Sve radi.");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](328, "tr")(329, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](330, "Korisnik");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](329, "tr")(330, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](331, "Korisnik");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](331, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](332, "Galerija slika");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](333, "td")(334, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](335, " Korisnik vidi galeriju slika postavljenih od strane svih korisnika za odabrani film. Mo\u017Ee pretra\u017Eivati galeriju slika po datumu postavljanja slike tako da unese od i/ili do datum. Mo\u017Ee kliknuti na sliku te ga se prebacuje na \u201CFilm\u201D ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](332, "td")(333, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](334, "Galerija slika");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](336, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](337, "tr")(338, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](339, "Korisnik");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](340, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](341, "Slika");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](342, "td")(343, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](344, " Mo\u017Ee postaviti novu sliku (samo jpg, jpeg, png ili gif maksimalne veli\u010Dine 500KB) za neki film koji postoji u bazi. Slika se sprema fizi\u010Dki na poslu\u017Eitelj unutar direktorija slike/id_filma/korime. Direktorij ozna\u010Den sa id_filma predstavlja id filma pod kojim je film spremljen u bazi, a direktroij korime je korisni\u010Dko ime korisnika koji je dodao sliku. Slika se sprema pod nazivom datum_hash.ekstenzija. Datum je datum postavljanja slike u obliku \u201Cgodina-mjesec-dan\u201D, a hash je generiran na temelju vremena i korisni\u010Dkog imena. Ekstenzija je originalna ekstenzija prenesene datoteke ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](335, "td")(336, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](337, " Korisnik vidi galeriju slika postavljenih od strane svih korisnika za odabrani film. Mo\u017Ee pretra\u017Eivati galeriju slika po datumu postavljanja slike tako da unese od i/ili do datum. Mo\u017Ee kliknuti na sliku te ga se prebacuje na \u201CFilm\u201D ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](345, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](338, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](339, " Jedino radi da se otvori stranica za odabrani film i prika\u017Ee naslov, dio sa slikama nije implementiran ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](340, "tr")(341, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](342, "Korisnik");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](346, "tr")(347, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](348, "Admin");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](343, "td")(344, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](345, "Slika");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](346, "td")(347, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](348, " Mo\u017Ee postaviti novu sliku (samo jpg, jpeg, png ili gif maksimalne veli\u010Dine 500KB) za neki film koji postoji u bazi. Slika se sprema fizi\u010Dki na poslu\u017Eitelj unutar direktorija slike/id_filma/korime. Direktorij ozna\u010Den sa id_filma predstavlja id filma pod kojim je film spremljen u bazi, a direktroij korime je korisni\u010Dko ime korisnika koji je dodao sliku. Slika se sprema pod nazivom datum_hash.ekstenzija. Datum je datum postavljanja slike u obliku \u201Cgodina-mjesec-dan\u201D, a hash je generiran na temelju vremena i korisni\u010Dkog imena. Ekstenzija je originalna ekstenzija prenesene datoteke ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](349, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](350, "Filmovi prijedlozi");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](351, "td")(352, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](353, " Vidi popis filmova koji su poslani kao prijedlog za dodavanje, ako odobri film postaje vidljiv svim korisnicima u pogledu \u201CFilmovi pregled\u201D. Kod odobravanja filma preuzima se slika postera s TMDB koja se sprema lokalno na poslu\u017Eitelj u direktorij posteri. Ako ne odobri film tada se on bri\u0161e i mo\u017Ee se opet kasnije dati kao prijedlog ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](350, " Radi dio s prijenosom i validacijom (provjera vrste i dopu\u0161tene veli\u010Dine datoteke). Javlja se obavijest ako korisnik nije odabrao dobru sliku, a mo\u017Ee se i obrisati odabir slike. Slika se ne sprema, tj. to dalje nije implementirano. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](354, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](351, "tr")(352, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](353, "Admin");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](355, "tr")(356, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](357, "Admin");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](358, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](359, "\u017Danrovi");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](360, "td")(361, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](362, " Vidi pregled svih \u017Eanrova u bazi podataka, mo\u017Ee a\u017Eurirati naziv \u017Eanra, mo\u017Ee obrisati sve \u017Eanrove za koje nema filmova u bazi. Mo\u017Ee povu\u0107i listu \u017Eanrova s TMDB servisa te mo\u017Ee dodati u bazu sve ili samo neke \u017Eanrove. Ako pri dodavanju, ve\u0107 postoji neki \u017Eanr s istim id-om, tada se takav preska\u010De i uop\u0107e se ne \u0161alje zahtjev na servis za dodavanjem. Korisniku se javlja poruka na ekranu koji \u017Eanrovi su bili presko\u010Deni jer ve\u0107 postoje ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](354, "td")(355, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](356, "Filmovi prijedlozi");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](363, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](364, "div")(365, "table", 8)(366, "thead")(367, "tr")(368, "th");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](369, "Korak");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](357, "td")(358, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](359, " Vidi popis filmova koji su poslani kao prijedlog za dodavanje, ako odobri film postaje vidljiv svim korisnicima u pogledu \u201CFilmovi pregled\u201D. Kod odobravanja filma preuzima se slika postera s TMDB koja se sprema lokalno na poslu\u017Eitelj u direktorij posteri. Ako ne odobri film tada se on bri\u0161e i mo\u017Ee se opet kasnije dati kao prijedlog ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](360, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](361, " Radi sve, jedino nije implementirano spremanje slike postera ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](362, "tr")(363, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](364, "Admin");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](370, "th");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](371, "\u0160to je dovr\u0161eno");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](365, "td")(366, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](367, "\u017Danrovi");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](368, "td")(369, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](370, " Vidi pregled svih \u017Eanrova u bazi podataka, mo\u017Ee a\u017Eurirati naziv \u017Eanra, mo\u017Ee obrisati sve \u017Eanrove za koje nema filmova u bazi. Mo\u017Ee povu\u0107i listu \u017Eanrova s TMDB servisa te mo\u017Ee dodati u bazu sve ili samo neke \u017Eanrove. Ako pri dodavanju, ve\u0107 postoji neki \u017Eanr s istim id-om, tada se takav preska\u010De i uop\u0107e se ne \u0161alje zahtjev na servis za dodavanjem. Korisniku se javlja poruka na ekranu koji \u017Eanrovi su bili presko\u010Deni jer ve\u0107 postoje ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](371, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](372, " Sve radi, jedino nema opcije dodavanja svih zanrova u bazu odjednom. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](373, "div")(374, "table", 8)(375, "thead")(376, "tr")(377, "th");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](378, "Korak");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](372, "th");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](373, "\u0160to nije dovr\u0161eno");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](379, "th");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](380, "\u0160to je dovr\u0161eno");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](381, "th");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](382, "\u0160to nije dovr\u0161eno");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](374, "tbody")(375, "tr")(376, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](377, "Kreirati 3 tablice na dokumentaciji i ispuniti ih");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](378, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](379, "Sve");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](380, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](381, "-");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](382, "tr")(383, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](384, "Prebaciti bazu u sqlite");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](385, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](386, "Sve");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](383, "tbody")(384, "tr")(385, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](386, "Kreirati 3 tablice na dokumentaciji i ispuniti ih");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](387, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](388, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](388, "Sve");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](389, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](390, "-");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](389, "tr")(390, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](391, "Prebaciti zada\u0107u 1 da funkcionira s novom bazom lokalno");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](391, "tr")(392, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](393, "Prebaciti bazu u sqlite");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](392, "td")(393, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](394, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](395, "Sve");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](394, "tr")(395, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](396, "Poslo\u017Eiti strukturu prema uputama");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](396, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](397, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](398, "tr")(399, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](400, "Poslo\u017Eiti strukturu prema uputama");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](397, "td")(398, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](401, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](402, "TODO");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](399, "tr")(400, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](401, "Pokretanje sa npm start");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](403, "td");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](402, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](403, "Sve");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](404, "tr")(405, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](406, "Pokretanje sa npm start");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](404, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](407, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](408, "Sve");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](405, "tr")(406, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](407, "Izbrisani svoji klju\u010Devi za TMDB");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](409, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](410, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](411, "tr")(412, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](413, "Poslo\u017Eiti NODE_PATH");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](408, "td")(409, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](414, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](415, "TODO");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](410, "tr")(411, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](412, "REST koristi port iz konfiguracijske datoteke pod rest.port");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](416, "td");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](413, "td")(414, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](415, "tr")(416, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](417, "REST ne koristi vi\u0161e username i password, nego JWT");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](418, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](419, "Izba\u010Den username i password");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](417, "tr")(418, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](419, "Izbrisati svoje klju\u010Deve za TMDB");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](420, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](421, "Nije dodano da radi s JWT-om");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](421, "TODO");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](422, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](423, "tr")(424, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](425, "REST koristi port iz konfiguracijske datoteke pod rest.port");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](426, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](427, "Sve");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](428, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](429, "-");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](422, "tr")(423, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](424, "Klijentski dio preba\u010Den u Angular");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](430, "tr")(431, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](432, "REST ne koristi vi\u0161e username i password, nego JWT");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](425, "td")(426, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](433, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](434, "Izba\u010Den username i password");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](427, "tr")(428, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](429, "Informacije o portovima se \u010Ditaju iz environment datoteke");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](430, "td")(431, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](432, "tr")(433, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](434, "Dizajn koristi SASS");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](435, "td")(436, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](435, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](436, "Nije dodano da radi s JWT-om");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](437, "tr")(438, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](439, "Dodana bar 3 reCaptcha v3 (prijava, reg + 1 po izboru)");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](439, "Klijentski dio preba\u010Den u Angular");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](440, "td")(441, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](440, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](441, "Ve\u0107ina");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](442, "tr")(443, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](444, " Pozadinski dio web aplikacije poslu\u017Euje Angular web aplikaciju. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](442, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](443, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](444, "tr")(445, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](446, "Informacije o portovima se \u010Ditaju iz environment datoteke");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](445, "td")(446, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](447, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](448, "Sve");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](447, "tr")(448, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](449, "Pozadinski dio web aplikacije poslu\u017Euje dokumentaciju");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](449, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](450, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](451, "tr")(452, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](453, "Dizajn koristi SASS");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](450, "td")(451, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](454, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](455, "Sve");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](452, "tr")(453, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](454, " Pozadinski dio web aplikaciije nudi REST api podr\u0161ku za klijentsku stranu sa resursima koji ne postoje u REST servisu npr. autentifikacija korisnika i generiranje JWT-a. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](456, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](457, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](458, "tr")(459, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](460, "Dodana bar 3 reCaptcha v3 (prijava, reg + 1 po izboru)");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](455, "td")(456, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](461, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](462, "TODO");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](457, "tr")(458, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](459, " Pozadinski dio port se mora \u010Ditati iz konfiguracijske datoteke iz podatka: app.port ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](463, "td");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](460, "td")(461, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](464, "tr")(465, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](466, " Pozadinski dio web aplikacije poslu\u017Euje Angular web aplikaciju. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](462, "tr")(463, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](464, "Izba\u010Den TOTP i aktivacija mailom kod prijave");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](467, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](468, "Sve");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](465, "td")(466, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](469, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](470, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](471, "tr")(472, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](473, " Pozadinski dio web aplikacije poslu\u017Euje dokumentaciju ili je ugra\u0111ena u Angular ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](467, "tr")(468, "td");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](469, " Angular aplikacija smije direktno komunicirati sa REST servisom, ali mora obavezno slati JWT. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](474, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](475, "Sve");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](470, "td")(471, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](476, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](477, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](478, "tr")(479, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](480, " Pozadinski dio web aplikaciije nudi REST api podr\u0161ku za klijentsku stranu sa resursima koji ne postoje u REST servisu npr. autentifikacija korisnika i generiranje JWT-a. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](472, "tr");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](473, "td")(474, "td")(475, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](481, "td")(482, "td");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](476, "tr");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](477, "td")(478, "td")(479, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](483, "tr")(484, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](485, " Pozadinski dio port se mora \u010Ditati iz konfiguracijske datoteke iz podatka: app.port ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](480, "tr");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](481, "td")(482, "td")(483, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](486, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](487, "Sve");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](484, "tr");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](485, "td")(486, "td")(487, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](488, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](489, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](490, "tr")(491, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](492, "Izba\u010Den TOTP i aktivacija mailom kod prijave");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](488, "tr");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](489, "td")(490, "td")(491, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](493, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](494, "Sve");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](492, "tr");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](493, "td")(494, "td")(495, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](495, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](496, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](497, "tr")(498, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](499, "Prikazati podatke za login za admina i korisnika");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](500, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](501, "Sve");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](502, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](503, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](504, "tr")(505, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](506, " Angular aplikacija smije direktno komunicirati sa REST servisom, ali mora obavezno slati JWT. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](507, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](508, "Komunicira direktno.");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](509, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](510, "Ne \u0161alje JWT");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](511, "tr")(512, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](513, " Datumski podaci su u obliku dan.mjesec.godina sati:minute:sekunde ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](514, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](515, "Sve");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](516, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](517, "-");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](518, "tr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](519, "td")(520, "td")(521, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](522, "tr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](523, "td")(524, "td")(525, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](526, "tr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](527, "td")(528, "td")(529, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](530, "tr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](531, "td")(532, "td")(533, "td");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](534, "tr");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](535, "td")(536, "td")(537, "td");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()()()();
     }
   },
@@ -1861,16 +1930,27 @@ class PrijedloziComponent {
     };
   }
   ngOnInit() {
-    var _this = this;
-    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      _this.filmoviNeodobreni = yield _this.filmoviService.dajMojeFilmove();
-    })();
+    this.prikaziMojeFilmove();
   }
   odobriFilm(id) {
-    this.filmoviService.odobri(id);
+    var _this = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this.filmoviService.odobri(id);
+      _this.prikaziMojeFilmove();
+    })();
   }
   odbaciFilm(id) {
-    this.filmoviService.odbaci(id);
+    var _this2 = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this2.filmoviService.odbaci(id);
+      _this2.prikaziMojeFilmove();
+    })();
+  }
+  prikaziMojeFilmove() {
+    var _this3 = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this3.filmoviNeodobreni = yield _this3.filmoviService.dajMojeFilmove();
+    })();
   }
 }
 PrijedloziComponent.ɵfac = function PrijedloziComponent_Factory(t) {
@@ -2014,27 +2094,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FilmoviService": () => (/* binding */ FilmoviService)
 /* harmony export */ });
 /* harmony import */ var C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _environment_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environment/environment */ 7019);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 
 class FilmoviService {
   constructor() {}
   dajMojeFilmove() {
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let odgovor = yield fetch('http://localhost:9000/api/filmovi');
+      let odgovor = yield fetch(_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis + 'filmovi');
       return JSON.parse(yield odgovor.text());
     })();
   }
   dajTmdbFilmove(rijec, str) {
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let odgovor = yield fetch(`http://localhost:9000/api/tmdb/filmovi?kljucnaRijec=${rijec}&stranica=${str}`);
+      let odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}tmdb/filmovi?kljucnaRijec=${rijec}&stranica=${str}`);
       return yield odgovor.text();
     })();
   }
   dajOdabraniFilm(idFilma) {
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       //console.log('id filma -----> ' + idFilma);
-      let odgovor = yield fetch('http://localhost:9000/api/filmovi/' + idFilma);
+      let odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}filmovi/` + idFilma);
       if (odgovor.status == 200) {
         let podaci = yield odgovor.text();
         console.log('podaci ' + podaci);
@@ -2056,7 +2138,7 @@ class FilmoviService {
         body: JSON.stringify(tijelo),
         headers: header
       };
-      let podatki = yield fetch('http://localhost:9000/api/filmovi/:id', parametri);
+      let podatki = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}filmovi/:id`, parametri);
       yield podatki.text();
     })();
   }
@@ -2072,7 +2154,7 @@ class FilmoviService {
         body: JSON.stringify(tijelo),
         headers: header
       };
-      let podatki = yield fetch('http://localhost:9000/api/filmovi/:id', parametri);
+      let podatki = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}filmovi/:id`, parametri);
       yield podatki.text();
     })();
   }
@@ -2095,7 +2177,7 @@ class FilmoviService {
             body: JSON.stringify(film),
             headers: header
           };
-          let odgovor = yield fetch('http://localhost:9000/api/filmovi', parametri);
+          let odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}filmovi`, parametri);
           if (odgovor.status == 200) {
             let podaci = yield odgovor.text();
             console.log('FILM ' + JSON.stringify(podaci));
@@ -2114,7 +2196,7 @@ class FilmoviService {
 FilmoviService.ɵfac = function FilmoviService_Factory(t) {
   return new (t || FilmoviService)();
 };
-FilmoviService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+FilmoviService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
   token: FilmoviService,
   factory: FilmoviService.ɵfac,
   providedIn: 'root'
@@ -2133,8 +2215,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "KorisniciService": () => (/* binding */ KorisniciService)
 /* harmony export */ });
 /* harmony import */ var C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _environment_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environment/environment */ 7019);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 124);
+
 
 
 
@@ -2144,7 +2228,7 @@ class KorisniciService {
   }
   dajLogiranog(korime) {
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let odgovor = yield fetch('http://localhost:9000/api/korisnici/' + korime);
+      let odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}korisnici/` + korime);
       if (odgovor.status == 200) {
         let podaci = yield odgovor.text();
         console.log(podaci);
@@ -2172,22 +2256,13 @@ class KorisniciService {
         body: JSON.stringify(tijelo),
         headers: zaglavlje
       };
-      /*
-      let odgovor = await fetch(
-        'http://localhost:9000/api/korisnici/' + korime + '/prijava',
-        parametri
-      );*/
-      console.log('prije odg');
-      let odgovor = yield fetch('http://localhost:9001/prijava', parametri);
-      console.log('poslije odg' + odgovor);
+      let odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.appServis}prijava`, parametri);
       if (odgovor.status == 200) {
         console.log('uspjesna prijava');
         _this.router.navigate(['/pocetna']);
         let podaci = yield odgovor.text();
         console.log('podaci ' + podaci);
         return JSON.parse(podaci);
-        //  return;
-        //return JSON.parse(await odgovor.text());
       } else {
         return false;
       }
@@ -2202,8 +2277,6 @@ class KorisniciService {
         prezime: prezime,
         email: email
       };
-      // TODO da sprema ko sol
-      // mozda probaj s onim ngFormom
       let header = new Headers();
       header.set('Content-Type', 'application/json');
       let parametri = {
@@ -2211,7 +2284,7 @@ class KorisniciService {
         body: JSON.stringify(tijelo),
         headers: header
       };
-      let podaci = yield fetch('http://localhost:9001/registracija', parametri);
+      let podaci = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.appServis}registracija`, parametri);
       return yield podaci.text();
     })();
   }
@@ -2229,15 +2302,15 @@ class KorisniciService {
         body: JSON.stringify(tijelo),
         headers: header
       };
-      let podatki = yield fetch('http://localhost:9000/api/korisnici/' + korime, parametri);
+      let podatki = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}korisnici/` + korime, parametri);
       yield podatki.text();
     })();
   }
 }
 KorisniciService.ɵfac = function KorisniciService_Factory(t) {
-  return new (t || KorisniciService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router));
+  return new (t || KorisniciService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router));
 };
-KorisniciService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+KorisniciService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
   token: KorisniciService,
   factory: KorisniciService.ɵfac,
   providedIn: 'root'
@@ -2256,7 +2329,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ZanroviService": () => (/* binding */ ZanroviService)
 /* harmony export */ });
 /* harmony import */ var C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _environment_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environment/environment */ 7019);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 
 class ZanroviService {
@@ -2264,7 +2339,7 @@ class ZanroviService {
   dajMojePodatke() {
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let mojiZanrovi = new Array();
-      let odgovor = yield fetch('http://localhost:9000/api/zanr'); // OVO SE CITA IZ ENVIRONMENT VARIJABLI TODO
+      let odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}zanr`); // OVO SE CITA IZ ENVIRONMENT VARIJABLI TODO
       mojiZanrovi = JSON.parse(yield odgovor.text());
       return mojiZanrovi;
     })();
@@ -2272,9 +2347,25 @@ class ZanroviService {
   dajPodatke() {
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let tmdbZanrovi = new Array();
-      let odgovor = yield fetch('http://localhost:9000/api/tmdb/zanr');
+      let odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}tmdb/zanr`);
       tmdbZanrovi = JSON.parse(yield odgovor.text()).genres;
       return tmdbZanrovi;
+    })();
+  }
+  dajMojePodatkeBrisanje() {
+    var _this = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      try {
+        let odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}zanr`);
+        if (odgovor.status === 200) {
+          const podaci = yield odgovor.text();
+          _this.izbrisiBezFilmova(podaci);
+        } else {
+          alert(`Problem kod preuzimanja podataka: ${odgovor.statusText}`);
+        }
+      } catch (error) {
+        console.error(error);
+      }
     })();
   }
   dodajIzTMDBAuMojuBazu(novi_id, novi_naziv) {
@@ -2292,9 +2383,12 @@ class ZanroviService {
         headers: zaglavlje
       };
       try {
-        const odgovor = yield fetch('http://localhost:9000/api/zanr', parametri);
+        const odgovor = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}zanr`, parametri);
         const data = yield odgovor.text();
         console.log(data);
+        if (data == 'false') {
+          alert('Ovaj žanr je već u bazi!');
+        }
       } catch (error) {
         console.error(error);
       }
@@ -2314,7 +2408,7 @@ class ZanroviService {
         body: JSON.stringify(tijelo),
         headers: zaglavlje
       };
-      let podatki = yield fetch('http://localhost:9000/api/zanr/:id', parametri);
+      let podatki = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}zanr/:id`, parametri);
       yield podatki.text();
     })();
   }
@@ -2331,7 +2425,7 @@ class ZanroviService {
         body: JSON.stringify(tijelo),
         headers: zaglavlje
       };
-      let podatki = yield fetch('http://localhost:9000/api/zanr', parametri);
+      let podatki = yield fetch(`${_environment_environment__WEBPACK_IMPORTED_MODULE_1__.environment.restServis}zanr`, parametri);
       yield podatki.text();
     })();
   }
@@ -2339,7 +2433,7 @@ class ZanroviService {
 ZanroviService.ɵfac = function ZanroviService_Factory(t) {
   return new (t || ZanroviService)();
 };
-ZanroviService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+ZanroviService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
   token: ZanroviService,
   factory: ZanroviService.ɵfac,
   providedIn: 'root'
@@ -2364,19 +2458,19 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["myInput"];
 class UploadSlikeComponent {
   constructor() {
-    this.isLoading = true;
+    this.disablean = true;
   }
   odabranFile(event) {
     if (event.target.value != null) {
       const velicinaFile = event.target.files[0].size;
       const velicinaKB = velicinaFile / 1024;
       if (velicinaKB >= 500) {
-        this.isLoading = true;
+        this.disablean = true;
         console.log('veci od 500, nije okej');
         this.ukloniSliku();
         alert('File je prevelik. Mora biti do 500KB');
       } else {
-        this.isLoading = false;
+        this.disablean = false;
         console.log('manji od 500, okej');
       }
     }
@@ -2434,9 +2528,9 @@ UploadSlikeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.isLoading ? true : null);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disablean ? true : null);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.isLoading ? true : null);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disablean ? true : null);
     }
   },
   dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgForm],
@@ -2473,7 +2567,7 @@ function ZanrComponent_ul_12_Template(rf, ctx) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r4);
       const zanr_r2 = restoredCtx.$implicit;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r3.onChangeOdabraniRadioTmdb($event, zanr_r2.id));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r3.onChangeOdabraniRadioMoj($event, zanr_r2.id));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3);
@@ -2488,15 +2582,15 @@ function ZanrComponent_ul_12_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"](" ", zanr_r2.name, " ", zanr_r2.id, " ");
   }
 }
-function ZanrComponent_ul_14_Template(rf, ctx) {
+function ZanrComponent_ul_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "ul")(1, "li")(2, "input", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function ZanrComponent_ul_14_Template_input_change_2_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function ZanrComponent_ul_16_Template_input_change_2_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r7);
       const zanr_r5 = restoredCtx.$implicit;
       const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r6.onChangeOdabraniRadioMoj($event, zanr_r5.id));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r6.onChangeOdabraniRadioTmdb($event, zanr_r5.id));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3);
@@ -2543,25 +2637,24 @@ class ZanrComponent {
   }
   // TODO provjeri jel vec postoji u bazi taj
   dodajTMDBPodatke() {
-    this.zanroviService.dodajIzTMDBAuMojuBazu(this.odabraniRadioIdTmdb, this.odabraniRadioNameTmdb);
-  }
-  promijeniNaziv() {
-    this.zanroviService.updateajZanr(this.odabraniRadioIdMoj, this.noviNaziv);
-  }
-  dajMojePodatkeBrisanje() {
     var _this3 = this;
     return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      try {
-        let odgovor = yield fetch('http://localhost:9000/api/zanr');
-        if (odgovor.status === 200) {
-          const podaci = yield odgovor.text();
-          _this3.zanroviService.izbrisiBezFilmova(podaci);
-        } else {
-          alert(`Problem kod preuzimanja podataka: ${odgovor.statusText}`);
-        }
-      } catch (error) {
-        console.error(error);
-      }
+      yield _this3.zanroviService.dodajIzTMDBAuMojuBazu(_this3.odabraniRadioIdTmdb, _this3.odabraniRadioNameTmdb);
+      _this3.prikaziMojeZanrove();
+    })();
+  }
+  promijeniNaziv() {
+    var _this4 = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this4.zanroviService.updateajZanr(_this4.odabraniRadioIdMoj, _this4.noviNaziv);
+      _this4.prikaziMojeZanrove();
+    })();
+  }
+  brisanje() {
+    var _this5 = this;
+    return (0,C_Users_Ana_Desktop_askarica20_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield _this5.zanroviService.dajMojePodatkeBrisanje();
+      _this5.prikaziMojeZanrove();
     })();
   }
 }
@@ -2573,7 +2666,7 @@ ZanrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
   selectors: [["app-zanr"]],
   decls: 17,
   vars: 3,
-  consts: [[1, "zanrovi-gumbi"], ["id", "dajPodatke", 1, "lijepiGumb", 3, "click"], ["id", "dajMojePodatke", 1, "lijepiGumb", 3, "click"], ["id", "dodajTMDBPodatke", 1, "lijepiGumb", 3, "click"], ["id", "promijeniNaziv", 1, "lijepiGumb", 3, "click"], ["id", "izbrisiBezFilmova", 1, "lijepiGumb", 3, "click"], ["id", "zanrovi-container"], [4, "ngFor", "ngForOf"], ["id", "zanrovi-container-moje"], ["id", "informacije-zanrovi"], ["type", "text", "id", "inputPromjenaNaziva", 3, "ngModel", "ngModelChange"], ["type", "radio", "name", "tmdb-zanrovi", 3, "id", "value", "change"], ["type", "radio", "name", "moji-zanrovi", 3, "id", "value", "change"]],
+  consts: [[1, "zanrovi-gumbi"], ["id", "dajPodatke", 1, "lijepiGumb", 3, "click"], ["id", "dajMojePodatke", 1, "lijepiGumb", 3, "click"], ["id", "dodajTMDBPodatke", 1, "lijepiGumb", 3, "click"], ["id", "promijeniNaziv", 1, "lijepiGumb", 3, "click"], ["id", "izbrisiBezFilmova", 1, "lijepiGumb", 3, "click"], ["id", "zanrovi-container-moje"], [4, "ngFor", "ngForOf"], ["id", "informacije-zanrovi"], ["type", "text", "id", "inputPromjenaNaziva", 3, "ngModel", "ngModelChange"], ["id", "zanrovi-container"], ["type", "radio", "name", "moji-zanrovi", 3, "id", "value", "change"], ["type", "radio", "name", "tmdb-zanrovi", 3, "id", "value", "change"]],
   template: function ZanrComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "button", 1);
@@ -2602,35 +2695,52 @@ ZanrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "button", 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ZanrComponent_Template_button_click_9_listener() {
-        return ctx.dajMojePodatkeBrisanje();
+        return ctx.brisanje();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, " Izbrisi sve zanrove bez filmova ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "div", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, ZanrComponent_ul_12_Template, 4, 4, "ul", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "div", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](14, ZanrComponent_ul_14_Template, 4, 4, "ul", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](15, "div", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](16, "input", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function ZanrComponent_Template_input_ngModelChange_16_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](13, "div", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "input", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function ZanrComponent_Template_input_ngModelChange_14_listener($event) {
         return ctx.noviNaziv = $event;
       });
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](16, ZanrComponent_ul_16_Template, 4, 4, "ul", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.zanroviTMDB);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.zanroviMoji);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.noviNaziv);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.zanroviTMDB);
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgModel],
   styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
 });
+
+/***/ }),
+
+/***/ 7019:
+/*!************************************************************!*\
+  !*** ./projekti/rwazadaca2/src/environment/environment.ts ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "environment": () => (/* binding */ environment)
+/* harmony export */ });
+const environment = {
+  restServis: 'http://localhost:9000/api/',
+  appServis: 'http://localhost:9001/' // app port
+};
 
 /***/ }),
 

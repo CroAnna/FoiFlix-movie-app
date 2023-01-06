@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environment/environment';
 import { FilmoviI } from '../sucelja/FilmoviI';
 
 @Injectable({
@@ -8,13 +9,13 @@ export class FilmoviService {
   constructor() {}
 
   async dajMojeFilmove() {
-    let odgovor = await fetch('http://localhost:9000/api/filmovi');
+    let odgovor = await fetch(environment.restServis + 'filmovi');
     return JSON.parse(await odgovor.text());
   }
 
   async dajTmdbFilmove(rijec: string, str: Number) {
     let odgovor = await fetch(
-      `http://localhost:9000/api/tmdb/filmovi?kljucnaRijec=${rijec}&stranica=${str}`
+      `${environment.restServis}tmdb/filmovi?kljucnaRijec=${rijec}&stranica=${str}`
     );
 
     return await odgovor.text();
@@ -22,7 +23,7 @@ export class FilmoviService {
 
   async dajOdabraniFilm(idFilma: string) {
     //console.log('id filma -----> ' + idFilma);
-    let odgovor = await fetch('http://localhost:9000/api/filmovi/' + idFilma);
+    let odgovor = await fetch(`${environment.restServis}filmovi/` + idFilma);
     if (odgovor.status == 200) {
       let podaci = await odgovor.text();
       console.log('podaci ' + podaci);
@@ -45,7 +46,7 @@ export class FilmoviService {
       headers: header,
     };
     let podatki = await fetch(
-      'http://localhost:9000/api/filmovi/:id',
+      `${environment.restServis}filmovi/:id`,
       parametri
     );
     await podatki.text();
@@ -63,7 +64,7 @@ export class FilmoviService {
       headers: header,
     };
     let podatki = await fetch(
-      'http://localhost:9000/api/filmovi/:id',
+      `${environment.restServis}filmovi/:id`,
       parametri
     );
     await podatki.text();
@@ -91,7 +92,7 @@ export class FilmoviService {
         };
 
         let odgovor = await fetch(
-          'http://localhost:9000/api/filmovi',
+          `${environment.restServis}filmovi`,
           parametri
         );
         if (odgovor.status == 200) {

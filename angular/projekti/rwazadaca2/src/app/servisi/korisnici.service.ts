@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ export class KorisniciService {
   constructor(private router: Router) {}
 
   async dajLogiranog(korime: string) {
-    let odgovor = await fetch('http://localhost:9000/api/korisnici/' + korime);
+    let odgovor = await fetch(`${environment.restServis}korisnici/` + korime);
     if (odgovor.status == 200) {
       let podaci = await odgovor.text();
       console.log(podaci);
@@ -35,17 +36,8 @@ export class KorisniciService {
       body: JSON.stringify(tijelo),
       headers: zaglavlje,
     };
-    /*
-    let odgovor = await fetch(
-      'http://localhost:9000/api/korisnici/' + korime + '/prijava',
-      parametri
-    );*/
 
-    console.log('prije odg');
-
-    let odgovor = await fetch('http://localhost:9001/prijava', parametri);
-    console.log('poslije odg' + odgovor);
-
+    let odgovor = await fetch(`${environment.appServis}prijava`, parametri);
     if (odgovor.status == 200) {
       console.log('uspjesna prijava');
       this.router.navigate(['/pocetna']);
@@ -53,9 +45,6 @@ export class KorisniciService {
       let podaci = await odgovor.text();
       console.log('podaci ' + podaci);
       return JSON.parse(podaci);
-
-      //  return;
-      //return JSON.parse(await odgovor.text());
     } else {
       return false;
     }
@@ -76,9 +65,6 @@ export class KorisniciService {
       email: email,
     };
 
-    // TODO da sprema ko sol
-    // mozda probaj s onim ngFormom
-
     let header = new Headers();
     header.set('Content-Type', 'application/json');
 
@@ -88,7 +74,7 @@ export class KorisniciService {
       headers: header,
     };
 
-    let podaci = await fetch('http://localhost:9001/registracija', parametri);
+    let podaci = await fetch(`${environment.appServis}registracija`, parametri);
 
     return await podaci.text();
   }
@@ -113,7 +99,7 @@ export class KorisniciService {
       headers: header,
     };
     let podatki = await fetch(
-      'http://localhost:9000/api/korisnici/' + korime,
+      `${environment.restServis}korisnici/` + korime,
       parametri
     );
     await podatki.text();

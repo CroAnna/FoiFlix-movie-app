@@ -228,7 +228,7 @@
               Prikazuje popis žanrova u bazi podataka i nasumice prikazuje 2
               filma za svaki žanr koji postoje u bazi podataka.
             </td>
-            <td>Ne prikazuje filmove iz moje baze, nego iz TMDB-a</td>
+            <td>Jedino ne prikazuje filmove iz moje baze, nego iz TMDB-a</td>
           </tr>
           <tr>
             <td>Gost</td>
@@ -236,7 +236,7 @@
             <td>
               <div>Prikazuje stranicu dokumentacija.html opisanu ranije</div>
             </td>
-            <td></td>
+            <td>Sve radi.</td>
           </tr>
           <tr>
             <td>Gost</td>
@@ -262,7 +262,9 @@
               </div>
             </td>
             <td>
-              <div>REST servis ne koristi više username i password</div>
+              <div>
+                Sve radi. REST servis ne koristi više username i password
+              </div>
             </td>
           </tr>
           <tr>
@@ -274,10 +276,7 @@
                 može ih ažurirati. Korisničko ime i e-mail se ne mogu ažurirati.
               </div>
             </td>
-            <td>
-              Mogu se ažurirati samo ove 2 stvari koje su navedene u zadaći (ime
-              i prezime)
-            </td>
+            <td>Sve radi.</td>
           </tr>
           <tr>
             <td>Korisnik</td>
@@ -292,7 +291,10 @@
                 filmu.
               </div>
             </td>
-            <td>Može se pretraživati po nazivu.</td>
+            <td>
+              Vidi se popis filmova i detalji o filmu kad se klikne, može se
+              pretraživati jedino po nazivu. (za sad)
+            </td>
           </tr>
           <tr>
             <td>Korisnik</td>
@@ -304,12 +306,12 @@
                 film u bazu.
               </div>
             </td>
-            <td>Prikazuju se samo podaci koji su unešeni</td>
+            <td>Sve radi.</td>
           </tr>
           <tr>
             <td>Korisnik</td>
             <td>
-              <div class="oznaka zuta">Filmovi pretraživanje</div>
+              <div class="oznaka zelena">Filmovi pretraživanje</div>
             </td>
             <td>
               <div>
@@ -324,15 +326,11 @@
                 nije moguće kliknuti dodaj u bazu
               </div>
             </td>
-            <td>
-              Moguće je kliknuti dvaput na isti film, makar je već u
-              prijedlozima i inserta se makar zanr ne postoji - OVO JE U PRVOJ
-              RADILO KOLKO SE SJECAM
-            </td>
+            <td>Sve radi.</td>
           </tr>
           <tr>
             <td>Korisnik</td>
-            <td>Galerija slika</td>
+            <td><div class="oznaka zuta">Galerija slika</div></td>
             <td>
               <div>
                 Korisnik vidi galeriju slika postavljenih od strane svih
@@ -341,11 +339,14 @@
                 kliknuti na sliku te ga se prebacuje na “Film”
               </div>
             </td>
-            <td></td>
+            <td>
+              Jedino radi da se otvori stranica za odabrani film i prikaže
+              naslov, dio sa slikama nije implementiran
+            </td>
           </tr>
           <tr>
             <td>Korisnik</td>
-            <td>Slika</td>
+            <td><div class="oznaka zuta">Slika</div></td>
             <td>
               <div>
                 Može postaviti novu sliku (samo jpg, jpeg, png ili gif
@@ -360,11 +361,16 @@
                 je originalna ekstenzija prenesene datoteke
               </div>
             </td>
-            <td></td>
+            <td>
+              Radi dio s prijenosom i validacijom (provjera vrste i dopuštene
+              veličine datoteke). Javlja se obavijest ako korisnik nije odabrao
+              dobru sliku, a može se i obrisati odabir slike. Slika se ne
+              sprema, tj. to dalje nije implementirano.
+            </td>
           </tr>
           <tr>
             <td>Admin</td>
-            <td>Filmovi prijedlozi</td>
+            <td><div class="oznaka zuta">Filmovi prijedlozi</div></td>
             <td>
               <div>
                 Vidi popis filmova koji su poslani kao prijedlog za dodavanje,
@@ -375,11 +381,13 @@
                 se opet kasnije dati kao prijedlog
               </div>
             </td>
-            <td></td>
+            <td>
+              Radi sve, jedino nije implementirano spremanje slike postera
+            </td>
           </tr>
           <tr>
             <td>Admin</td>
-            <td>Žanrovi</td>
+            <td><div class="oznaka zuta">Žanrovi</div></td>
             <td>
               <div>
                 Vidi pregled svih žanrova u bazi podataka, može ažurirati naziv
@@ -391,7 +399,10 @@
                 ekranu koji žanrovi su bili preskočeni jer već postoje
               </div>
             </td>
-            <td></td>
+            <td>
+              Sve radi, jedino nema opcije dodavanja svih zanrova u bazu
+              odjednom.
+            </td>
           </tr>
         </tbody>
       </table>
@@ -418,29 +429,29 @@
             <td>-</td>
           </tr>
           <tr>
-            <td>Prebaciti zadaću 1 da funkcionira s novom bazom lokalno</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
             <td>Posložiti strukturu prema uputama</td>
-            <td></td>
+            <td>TODO</td>
             <td></td>
           </tr>
           <tr>
             <td>Pokretanje sa npm start</td>
             <td>Sve</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Posložiti NODE_PATH</td>
+            <td>TODO</td>
             <td></td>
           </tr>
           <tr>
-            <td>Izbrisani svoji ključevi za TMDB</td>
-            <td></td>
+            <td>Izbrisati svoje ključeve za TMDB</td>
+            <td>TODO</td>
             <td></td>
           </tr>
           <tr>
             <td>REST koristi port iz konfiguracijske datoteke pod rest.port</td>
-            <td></td>
-            <td></td>
+            <td>Sve</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>REST ne koristi više username i password, nego JWT</td>
@@ -449,35 +460,38 @@
           </tr>
           <tr>
             <td>Klijentski dio prebačen u Angular</td>
-            <td></td>
-            <td></td>
+            <td>Većina</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Informacije o portovima se čitaju iz environment datoteke</td>
-            <td></td>
-            <td></td>
+            <td>Sve</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Dizajn koristi SASS</td>
-            <td></td>
-            <td></td>
+            <td>Sve</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Dodana bar 3 reCaptcha v3 (prijava, reg + 1 po izboru)</td>
-            <td></td>
+            <td>TODO</td>
             <td></td>
           </tr>
           <tr>
             <td>
               Pozadinski dio web aplikacije poslužuje Angular web aplikaciju.
             </td>
-            <td></td>
-            <td></td>
+            <td>Sve</td>
+            <td>-</td>
           </tr>
           <tr>
-            <td>Pozadinski dio web aplikacije poslužuje dokumentaciju</td>
-            <td></td>
-            <td></td>
+            <td>
+              Pozadinski dio web aplikacije poslužuje dokumentaciju ili je
+              ugrađena u Angular
+            </td>
+            <td>Sve</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>
@@ -493,26 +507,33 @@
               Pozadinski dio port se mora čitati iz konfiguracijske datoteke iz
               podatka: app.port
             </td>
-            <td></td>
-            <td></td>
+            <td>Sve</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Izbačen TOTP i aktivacija mailom kod prijave</td>
-            <td></td>
-            <td></td>
+            <td>Sve</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Prikazati podatke za login za admina i korisnika</td>
+            <td>Sve</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>
               Angular aplikacija smije direktno komunicirati sa REST servisom,
               ali mora obavezno slati JWT.
             </td>
-            <td></td>
-            <td></td>
+            <td>Komunicira direktno.</td>
+            <td>Ne šalje JWT</td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              Datumski podaci su u obliku dan.mjesec.godina sati:minute:sekunde
+            </td>
+            <td>Sve</td>
+            <td>-</td>
           </tr>
           <tr>
             <td></td>

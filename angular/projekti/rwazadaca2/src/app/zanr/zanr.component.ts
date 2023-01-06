@@ -36,28 +36,24 @@ export class ZanrComponent {
   }
 
   // TODO provjeri jel vec postoji u bazi taj
-  dodajTMDBPodatke() {
-    this.zanroviService.dodajIzTMDBAuMojuBazu(
+  async dodajTMDBPodatke() {
+    await this.zanroviService.dodajIzTMDBAuMojuBazu(
       this.odabraniRadioIdTmdb,
       this.odabraniRadioNameTmdb
     );
+    this.prikaziMojeZanrove();
   }
 
-  promijeniNaziv() {
-    this.zanroviService.updateajZanr(this.odabraniRadioIdMoj, this.noviNaziv);
+  async promijeniNaziv() {
+    await this.zanroviService.updateajZanr(
+      this.odabraniRadioIdMoj,
+      this.noviNaziv
+    );
+    this.prikaziMojeZanrove();
   }
 
-  async dajMojePodatkeBrisanje() {
-    try {
-      let odgovor = await fetch('http://localhost:9000/api/zanr');
-      if (odgovor.status === 200) {
-        const podaci = await odgovor.text();
-        this.zanroviService.izbrisiBezFilmova(podaci);
-      } else {
-        alert(`Problem kod preuzimanja podataka: ${odgovor.statusText}`);
-      }
-    } catch (error) {
-      console.error(error);
-    }
+  async brisanje() {
+    await this.zanroviService.dajMojePodatkeBrisanje();
+    this.prikaziMojeZanrove();
   }
 }

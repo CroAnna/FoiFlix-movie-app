@@ -6,7 +6,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./upload-slike.component.scss'],
 })
 export class UploadSlikeComponent {
-  isLoading: any = true;
+  disablean: any = true;
 
   @ViewChild('myInput') myInputVariable!: ElementRef; // ! da nema errora onog
 
@@ -15,12 +15,12 @@ export class UploadSlikeComponent {
       const velicinaFile = event.target.files[0].size;
       const velicinaKB = velicinaFile / 1024;
       if (velicinaKB >= 500) {
-        this.isLoading = true;
+        this.disablean = true;
         console.log('veci od 500, nije okej');
         this.ukloniSliku();
         alert('File je prevelik. Mora biti do 500KB');
       } else {
-        this.isLoading = false;
+        this.disablean = false;
         console.log('manji od 500, okej');
       }
     }

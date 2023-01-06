@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environment/environment';
 import { ZanroviI } from '../sucelja/ZanroviI';
 
 @Injectable({
@@ -9,16 +10,30 @@ export class ZanroviService {
 
   async dajMojePodatke() {
     let mojiZanrovi = new Array<ZanroviI>();
-    let odgovor = await fetch('http://localhost:9000/api/zanr'); // OVO SE CITA IZ ENVIRONMENT VARIJABLI TODO
+    let odgovor = await fetch(`${environment.restServis}zanr`); // OVO SE CITA IZ ENVIRONMENT VARIJABLI TODO
     mojiZanrovi = JSON.parse(await odgovor.text()) as Array<ZanroviI>;
     return mojiZanrovi;
   }
 
   async dajPodatke() {
     let tmdbZanrovi = new Array<ZanroviI>();
-    let odgovor = await fetch('http://localhost:9000/api/tmdb/zanr');
+    let odgovor = await fetch(`${environment.restServis}tmdb/zanr`);
     tmdbZanrovi = JSON.parse(await odgovor.text()).genres as Array<ZanroviI>;
     return tmdbZanrovi;
+  }
+
+  async dajMojePodatkeBrisanje() {
+    try {
+      let odgovor = await fetch(`${environment.restServis}zanr`);
+      if (odgovor.status === 200) {
+        const podaci = await odgovor.text();
+        this.izbrisiBezFilmova(podaci);
+      } else {
+        alert(`Problem kod preuzimanja podataka: ${odgovor.statusText}`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async dodajIzTMDBAuMojuBazu(novi_id: number, novi_naziv: string) {
@@ -36,9 +51,12 @@ export class ZanroviService {
     };
 
     try {
-      const odgovor = await fetch('http://localhost:9000/api/zanr', parametri);
+      const odgovor = await fetch(`${environment.restServis}zanr`, parametri);
       const data = await odgovor.text();
       console.log(data);
+      if (data == 'false') {
+        alert('Ovaj žanr je već u bazi!');
+      }
     } catch (error) {
       console.error(error);
     }
@@ -61,7 +79,7 @@ export class ZanroviService {
       headers: zaglavlje,
     };
 
-    let podatki = await fetch('http://localhost:9000/api/zanr/:id', parametri);
+    let podatki = await fetch(`${environment.restServis}zanr/:id`, parametri);
     await podatki.text();
   }
 
@@ -80,7 +98,7 @@ export class ZanroviService {
       headers: zaglavlje,
     };
 
-    let podatki = await fetch('http://localhost:9000/api/zanr', parametri);
+    let podatki = await fetch(`${environment.restServis}zanr`, parametri);
     await podatki.text();
   }
 }

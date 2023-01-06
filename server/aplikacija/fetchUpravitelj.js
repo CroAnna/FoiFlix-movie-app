@@ -1,6 +1,7 @@
 const FilmoviPretrazivanje = require("./filmoviPretrazivanje.js");
 const jwt = require("./moduli/jwt.js")
-const Autentifikacija = require("./autentifikacija.js")
+const Autentifikacija = require("./autentifikacija.js");
+const Konfiguracija = require("../konfiguracija.js");
 let auth = new Autentifikacija();
 let fp = new FilmoviPretrazivanje();
 /*
@@ -18,6 +19,16 @@ exports.aktvacijaRacuna = async function (zahtjev, odgovor) {
         odgovor.send(await poruka.text());
     }
 }*/
+
+let port;
+let konf = new Konfiguracija();
+konf.ucitajKonfiguraciju().then(() => {
+    let jsonobjekt = konf.dajKonf();
+    let restport = jsonobjekt["rest.port"]
+    console.log("restport " + restport);
+    port = restport;
+})
+
 
 exports.dajSveZanrove = async function (zahtjev, odgovor) {
     odgovor.json(await fp.dohvatiSveZanrove());
@@ -71,8 +82,9 @@ exports.dodajFilm = async function (zahtjev, odgovor) {
         headers: zaglavlje,
     };
 
+    // TODO TU ZA SVE PORTOVE
     let odgFetch = await fetch(
-        "http://localhost:9000/api/filmovi?korime={rest.korime}&lozinka={rest.lozinka}",//
+        "http://localhost:" + port + "/api/filmovi?korime={rest.korime}&lozinka={rest.lozinka}",//
         parametri
     );
 

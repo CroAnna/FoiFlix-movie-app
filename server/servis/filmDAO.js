@@ -28,6 +28,7 @@ class FilmDAO {
         this.baza.spojiSeNaBazu();
         let sql = "DELETE FROM film WHERE id=?;";
         var podaci = await this.baza.izvrsiUpit(sql, [film.id]);
+        // brise i podatke iz film_zanr ak se odbaci film :D
         this.baza.zatvoriVezu();
         // console.log("izbrisan je film s id " + id);
         return true;

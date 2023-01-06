@@ -901,4 +901,11 @@ table.tablica tbody tr:nth-of-type(even) {
   padding: 10px;
 }
 
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 /*# sourceMappingURL=styles.css.map*/
