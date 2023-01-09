@@ -17,10 +17,8 @@ export class FilmDetaljiComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    // JEL TREBAJU SVE OVE NEKAJ VRACAT IL JE OKE I BEZ TOG JER MENI NE BACA ERROR, A NEZ JEL BU DRUGIMA TAK
     this.filmId = this.aktiviranRoute.snapshot.paramMap.get('id');
     console.log('this.film id ---> ' + this.filmId);
-
     this.odabraniFilm = await this.filmoviServis.dajOdabraniFilm(this.filmId);
   }
 }

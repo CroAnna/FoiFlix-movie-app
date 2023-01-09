@@ -44,7 +44,6 @@ export class PrijavaComponent {
     );
   }
 
-  // prebacivanje s logina na registraciju i obratno
   ucitajSuprotno() {
     this.prikazLogin = !this.prikazLogin;
     this.prikazReg = !this.prikazReg;

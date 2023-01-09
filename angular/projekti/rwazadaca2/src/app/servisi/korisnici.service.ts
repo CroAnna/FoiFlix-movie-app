@@ -14,15 +14,12 @@ export class KorisniciService {
       let podaci = await odgovor.text();
       console.log(podaci);
       return JSON.parse(podaci);
-      //prikaziKorisnikovePodatke(podaci);
     } else {
       return null;
-      // alert('Problem kod preuzimanja podataka:\n' + odgovor.statusText);
     }
   }
 
   async prijaviKorisnika(korime: string, lozinka: string) {
-    // lozinka = kodovi.kreirajSHA256(lozinka, 'moja sol');
     let tijelo = {
       korime: korime,
       lozinka: lozinka,

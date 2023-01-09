@@ -1,11 +1,24 @@
 <div class="pregled">
   <input type="text" [(ngModel)]="tekstFiltriranje" />
+
+  <!-- 
+  <p>Zanr</p>
+  <select [(ngModel)]="odabraniZanrFilter">
+    <option value="Svi" selected="selected">Svi</option>
+    <option *ngFor="let zanr of mojiZanrovi" [value]="zanr.name">
+      {{ zanr.name }}
+    </option>
+  </select>
+-->
+
+  <p>Naziv</p>
   <select id="sort" [(ngModel)]="odabraniFilter">
     <option value="Svi" selected="selected">Svi</option>
     <option value="Naziv">Naziv (prvo unesi riječ pa odaberi ovo)</option>
     <option value="Datum">Datum</option>
     <option value="Zanr">Zanr</option>
   </select>
+
   <div id="stranicenje"></div>
   <h2>Pregled filmova</h2>
 

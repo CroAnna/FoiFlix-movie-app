@@ -1,6 +1,7 @@
 import { LowerCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FilmoviService } from '../servisi/filmovi.service';
+import { ZanroviService } from '../servisi/zanrovi.service';
 
 @Component({
   selector: 'app-pregled-filmova',
@@ -9,19 +10,38 @@ import { FilmoviService } from '../servisi/filmovi.service';
 })
 export class PregledFilmovaComponent implements OnInit {
   filmoviOdobreni: any;
-  //filter = { odobreno: 1 };
   filmoviFiltrirani: any;
-  filterOdabrani: string = 'Svi';
   tekstFiltriranje: string = '';
+  mojiZanrovi: any;
 
-  constructor(private filmoviService: FilmoviService) {}
+  filterOdabrani: string = 'Svi';
+  zanrOdabraniFilter: any;
+
+  constructor(
+    private filmoviService: FilmoviService,
+    private zanroviService: ZanroviService
+  ) {}
+
+  async ngOnInit() {
+    console.log('on init');
+    this.filmoviOdobreni = await this.filmoviService.dajMojeFilmove();
+    this.mojiZanrovi = await this.zanroviService.dajMojePodatke();
+    this.prikaziSve();
+  }
 
   get odabraniFilter() {
     return this.filterOdabrani;
   }
 
+  get odabraniZanrFilter() {
+    return this.filterOdabrani;
+  }
+
+  set odabraniZanrFilter(value: string) {
+    // TODO
+  }
+
   set odabraniFilter(value: string) {
-    // zove se svaki put kad se promijeni
     this.filterOdabrani = value;
     console.log('value ' + value);
     if (value == 'Svi') {
@@ -30,12 +50,10 @@ export class PregledFilmovaComponent implements OnInit {
       this.prikaziPoNazivu();
     } else if (value == '') {
     }
-    // promjena polja prikaza
   }
 
   prikaziPoNazivu() {
-    console.log(this.tekstFiltriranje.toLowerCase());
-
+    //console.log(this.tekstFiltriranje.toLowerCase());
     this.filmoviFiltrirani = this.filmoviOdobreni.filter((f: any) =>
       f.title.toLowerCase().includes(this.tekstFiltriranje.toLowerCase())
     );
@@ -43,11 +61,5 @@ export class PregledFilmovaComponent implements OnInit {
 
   prikaziSve() {
     this.filmoviFiltrirani = this.filmoviOdobreni;
-  }
-
-  async ngOnInit() {
-    console.log('on init');
-    this.filmoviOdobreni = await this.filmoviService.dajMojeFilmove();
-    this.prikaziSve();
   }
 }

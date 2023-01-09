@@ -13,9 +13,8 @@ import { UploadSlikeComponent } from './upload-slike/upload-slike.component';
 
 import { ZanrComponent } from './zanr/zanr.component';
 
-// pocetna verzija za routing
 const routes: Routes = [
-  { path: '', redirectTo: '/pocetna', pathMatch: 'full' }, // provjeri
+  { path: '', redirectTo: '/pocetna', pathMatch: 'full' },
   { path: 'zanrovi', component: ZanrComponent },
   { path: 'prijava', component: PrijavaComponent },
   { path: 'pregledFilmova', component: PregledFilmovaComponent },

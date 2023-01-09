@@ -17,7 +17,7 @@ export class NavigacijaComponent {
   }
 
   odjaviKorisnika() {
-    sessionStorage.setItem('prijavljenaUloga', ''); // nema prijavljenog
+    sessionStorage.setItem('prijavljenaUloga', '');
     sessionStorage.setItem('prijavljeniKorisnikKorime', '');
   }
 }

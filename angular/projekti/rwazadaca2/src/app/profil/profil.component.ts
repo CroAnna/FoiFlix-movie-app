@@ -8,7 +8,7 @@ import { KorisniciService } from '../servisi/korisnici.service';
   styleUrls: ['./profil.component.scss'],
 })
 export class ProfilComponent implements OnInit {
-  logiraniKorisnik: any = ''; // da ne baca error pri loadanju da je undefined
+  logiraniKorisnik: any = '';
 
   korime: any;
 

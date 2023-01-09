@@ -10,7 +10,7 @@ export class ZanroviService {
 
   async dajMojePodatke() {
     let mojiZanrovi = new Array<ZanroviI>();
-    let odgovor = await fetch(`${environment.restServis}zanr`); // OVO SE CITA IZ ENVIRONMENT VARIJABLI TODO
+    let odgovor = await fetch(`${environment.restServis}zanr`);
     mojiZanrovi = JSON.parse(await odgovor.text()) as Array<ZanroviI>;
     return mojiZanrovi;
   }
@@ -63,8 +63,6 @@ export class ZanroviService {
   }
 
   async updateajZanr(id: number, novi_naziv: string) {
-    // TODO da se automatski azurira i obrise text input field
-
     let tijelo = {
       id: id,
       name: novi_naziv,

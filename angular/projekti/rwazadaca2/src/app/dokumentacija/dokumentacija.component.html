@@ -293,7 +293,7 @@
             </td>
             <td>
               Vidi se popis filmova i detalji o filmu kad se klikne, može se
-              pretraživati jedino po nazivu. (za sad)
+              pretraživati jedino po nazivu.
             </td>
           </tr>
           <tr>
@@ -409,153 +409,251 @@
       <table class="tablica">
         <thead>
           <tr>
-            <th>Korak</th>
-            <th>Što je dovršeno</th>
-            <th>Što nije dovršeno</th>
+            <th>Zadatak</th>
+            <th>Opis</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Kreirati 3 tablice na dokumentaciji i ispuniti ih</td>
-            <td>Sve</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Prebaciti bazu u sqlite</td>
-            <td>Sve</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Posložiti strukturu prema uputama</td>
-            <td>TODO</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Pokretanje sa npm start</td>
-            <td>Sve</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Posložiti NODE_PATH</td>
-            <td>TODO</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Izbrisati svoje ključeve za TMDB</td>
-            <td>TODO</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>REST koristi port iz konfiguracijske datoteke pod rest.port</td>
-            <td>Sve</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>REST ne koristi više username i password, nego JWT</td>
-            <td>Izbačen username i password</td>
-            <td>Nije dodano da radi s JWT-om</td>
-          </tr>
-          <tr>
-            <td>Klijentski dio prebačen u Angular</td>
-            <td>Većina</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Informacije o portovima se čitaju iz environment datoteke</td>
-            <td>Sve</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Dizajn koristi SASS</td>
-            <td>Sve</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Dodana bar 3 reCaptcha v3 (prijava, reg + 1 po izboru)</td>
-            <td>TODO</td>
-            <td></td>
+            <td>
+              1. Na stranicu dokumentacija kreirati tablicu u kojoj jasno pišu
+              resursi iz prvog dijela (REST servis) su napravljene, a koje nisu
+              prema opisu tablice zadaće 1
+            </td>
+            <td>
+              <div>Napravljeno</div>
+            </td>
           </tr>
           <tr>
             <td>
-              Pozadinski dio web aplikacije poslužuje Angular web aplikaciju.
+              2. Na stranicu dokumentacija kreirati tablicu u kojoj jasno pišu
+              pogledi iz drugog dijela (APP) koji su implementirani, a koje nisu
+              prema opisu tablice zadaće 1.
             </td>
-            <td>Sve</td>
-            <td>-</td>
+            <td>
+              <div>Napravljeno</div>
+            </td>
           </tr>
           <tr>
             <td>
-              Pozadinski dio web aplikacije poslužuje dokumentaciju ili je
-              ugrađena u Angular
+              3. Na stranicu dokumentacija kreirati tablicu po koracima (počevši
+              od zadaci općenito) ovog dokumenta u kojoj jasno pišu elementi
+              opisa 2 zadaće koji su napravljeni, koji nisu.
             </td>
-            <td>Sve</td>
-            <td>-</td>
+            <td>
+              <div>Napravljeno</div>
+            </td>
           </tr>
           <tr>
             <td>
-              Pozadinski dio web aplikaciije nudi REST api podršku za klijentsku
-              stranu sa resursima koji ne postoje u REST servisu npr.
-              autentifikacija korisnika i generiranje JWT-a.
+              5. U obje aplikacije složiti package.json tako da se sa npm start
+              može pokrenuti pojedini server. Kod kreiranja start skripte
+              obavezno definirati putanju na NODE_PATH gdje piše putanja do
+              globalnih modula kako je to rađeno na predavanjima i vježbama.
+              Student/ica kod testiranja tada može lako promijeniti tu putanju.
             </td>
-            <td></td>
-            <td></td>
+            <td>
+              <div>
+                Napravljeno. Pošto se radi na Windowsu, nije trebao dio s
+                NODE_PATH-om jer se radilo prema uputama kolege Frica s foruma
+              </div>
+            </td>
           </tr>
           <tr>
             <td>
-              Pozadinski dio port se mora čitati iz konfiguracijske datoteke iz
-              podatka: app.port
+              6. Kod predavanja izbrisati svoje ključeve za TMDB servis iz
+              konfiguracijske datoteke svaki student ubacuje svoje ključeve u
+              datoteku kod testiranja.
             </td>
-            <td>Sve</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Izbačen TOTP i aktivacija mailom kod prijave</td>
-            <td>Sve</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Prikazati podatke za login za admina i korisnika</td>
-            <td>Sve</td>
-            <td>-</td>
+            <td>
+              <div>Napravljeno</div>
+            </td>
           </tr>
           <tr>
             <td>
-              Angular aplikacija smije direktno komunicirati sa REST servisom,
-              ali mora obavezno slati JWT.
+              7. REST servis funkcionalno ostaje isti međutim potrebno je
+              napraviti sljedeće izmjene: a. Da radi sa SQLite bazom podataka b.
+              Da koristi port koji se čita iz konfiguracijske datoteke pod
+              nazivom: rest.port
             </td>
-            <td>Komunicira direktno.</td>
-            <td>Ne šalje JWT</td>
+            <td>
+              <div>
+                Sve radi: radi s novom bazom, defaultni app port je 9001, ali se
+                može mijenjati (detaljno u zadnjem retku ove tablice)
+              </div>
+            </td>
           </tr>
           <tr>
             <td>
-              Datumski podaci su u obliku dan.mjesec.godina sati:minute:sekunde
+              8. REST servis može dodatno ima parameter kod resursa api/filmovi
+              koji omogućuje dohvat samo odobrenih ili ne odobrenih filmova.
+              Nije obavezno.
             </td>
-            <td>Sve</td>
-            <td>-</td>
+            <td>
+              <div>Nije bilo potrebno</div>
+            </td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              9. REST servis ne korsiti više username i password već prima JWT i
+              tako validira input. Varijanta sa username i password nosi manje
+              bodova
+            </td>
+            <td>
+              <div>
+                Ne koristi više username i password, a s JWT-om nije
+                implementirano
+              </div>
+            </td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              10. Za dodatne bodove može se prebaciti cijeli REST servis u
+              TypeScript. Kod pokretanja sa npm start obavezno se mora napraviti
+              recomplike TypeScript-a i korpitanje svih bitnih statičnih
+              sadržaja da aplikacija normalno radi.
+            </td>
+            <td>
+              <div>Ovo nije implementirano</div>
+            </td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              11. Klientski dio Web Aplikacije HTML, CSS i JS na strani klijenta
+              prebaciti u Angular sa TypeScript-om
+            </td>
+            <td>
+              <div>Napravljeno - opisano što radi u tablici 2</div>
+            </td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              12. Informacije o portovima na servise koje koristi Angular
+              aplikacija čita iz environment datoteke. Hard kodirana varijanta
+              nosi manje bodova.
+            </td>
+            <td>
+              <div>
+                Napravljeno (bez hardkodiranja, tj. čita se iz datoteke
+                (detaljno u zadnjem retku ove tablice))
+              </div>
+            </td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              13. Dizajn treba prebaciti korištenjem Sass preprocesora u Sass
+              ili Scss sintaksi. Čisti CSS ili bootstrap varijante nose 0
+              bodova.
+            </td>
+            <td>
+              <div>Dizajn je prebačen u SCSSs</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              14. Dodati reCaptcha v3 sustav na minimalno 3 obrazaca od kojih su
+              obavezni: prijava, registracija i jedan po izboru.
+            </td>
+            <td>
+              <div>Nije implementirano</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              15. Pozadinski dio web aplikacije poslužuje Angular web
+              aplikaciju. Moguće je pokretanje angular aplikacije preko live
+              servera sa ng serve, ali ta varijanta nosi manje bodova
+            </td>
+            <td>
+              <div>
+                Implementirano na način da pozadinski dio web aplikacije
+                poslužuje Angular web aplikaciju
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              16. Pozadinski dio web aplikacije poslužuje dokumentaciju - moguće
+              je dokumentaciju ugraditi u samu angular aplikaciju.
+            </td>
+            <td>
+              <div>Dokumentacija je u Angular aplikaciji kao komponenta</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              17. Pozadinski dio web aplikacije nudi REST api podršku za
+              klijentsku stranu sa resursima koji ne postoje u REST servisu npr.
+              autentifikacija korisnika i generiranje JWT-a
+            </td>
+            <td>
+              <div>
+                Implementirano (hashira se lozinka, JWT se ne koristi pri
+                provjeri pristupa)
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              18. Pozadinski dio da se port mora čitati iz konfiguracijske
+              datoteke iz podatka: app.port
+            </td>
+            <td>
+              <div>Napravljeno</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              19. Izbaciti TOTP i aktivaciju mailom kod prijave. Inicijalno mora
+              postojati korisnik iz svake uloge koji nema TOTP i već je
+              aktiviran i treba navesti podatke na stranici prijava radi lakšeg
+              testiranja
+            </td>
+            <td>
+              <div>Napravljeno</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              20. Angular aplikacija smije direktno komunicirati sa REST
+              servisom, ali mora obavezno slati JWT. Varijanta bez JWT-a nosi
+              manje bodova.
+            </td>
+            <td>
+              <div>Napravljeno, ali bez slanja JWT-a</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              21. Za dodatne bodove može se prebaciti cijeli pozadinski dio web
+              aplikacije u TypeScript. Kod pokretanja sa npm start obavezno se
+              mora napraviti recomplike TypeScript-a i korpitanje svih bitnih
+              statičnih sadržaja da aplikacija normalno radi
+            </td>
+            <td>
+              <div>Nije implementirano</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Dodatne informacije</td>
+            <td>
+              <div>
+                Datum se prikazuje u željenom obliku, rađeno na Windowsu prema
+                uputama kolege Frica pa ako ne radi, potrebno je
+                posložitivarijable okruženja na taj način
+                <br /><br />
+                Pokretanje - uđi u \server\aplikacija i `npm start` i u
+                \server\servis i `npm start`. Pokreni localhost:9001 u
+                pregledniku. (app port je defaultno 9001, a 9000 je rest port)
+                <br />
+                Za promjenu porta na vlastiti promijeni datoteke environment.ts
+                i konfiguracija.csv (portovi moraju biti isti) Ak ti ne radi,
+                možda nemaš globalno instalirano sve kaj moraš imat i cors (npm
+                -g install cors)
+                <br />
+                Ako se nešto mijenja, u askarica20\angular se pokrene `ng build`
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

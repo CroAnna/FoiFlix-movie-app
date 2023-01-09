@@ -30,8 +30,6 @@
           required
           [(ngModel)]="inputLozinka"
         />
-        <!--
-              <input name="totp" type="text" placeholder="TOTP" id="totp" /> -->
         <p>
           Nemaš račun?
           <span>
@@ -105,19 +103,8 @@
     </div>
   </div>
 </div>
-<!-- TODO slozi da se prikazuju ovisno o idu prijavljenog -->
 <div class="podaci-prijava" *ngIf="prikazLogin">
   <h2>podaci za prijavu:</h2>
-  <p>
-    admin => korime: administrator, lozinka: rwa
-
-    <!--, TOTP:
-        BECRAAAAAAAACBRBAAAAABRAAADRAAAJAAAAKAAAAIAAABAEAAAAMARABEDRABZAAAAARAAEAZAARAZFA5DACAAAAACAAAAHAABRABA-->
-  </p>
-  <p>
-    korisnik => korime: obican, lozinka: rwa
-    <!--, TOTP:
-        AACAAAIFAAAATAAFAAERCAAFAABAAAAGARAACAZAA5AAACIABAAAAAZDBACRAAAAAADRAAAAAADRAAAFAEAAMARAARDRTAADAABAIAA
-      -->
-  </p>
+  <p>admin => korime: administrator, lozinka: rwa</p>
+  <p>korisnik => korime: obican, lozinka: rwa</p>
 </div>

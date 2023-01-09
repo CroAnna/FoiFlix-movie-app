@@ -10,10 +10,10 @@ export class ZanrComponent {
   zanroviMoji: any;
   zanroviTMDB: any;
   odabraniRadioNameTmdb: string = '';
-  odabraniRadioIdTmdb: number = 0; // neki defaultni broj
+  odabraniRadioIdTmdb: number = 0;
   odabraniRadioNameMoj: string = '';
-  odabraniRadioIdMoj: number = 0; // neki defaultni broj
-  noviNaziv: any; // two way binding
+  odabraniRadioIdMoj: number = 0;
+  noviNaziv: any;
   constructor(private zanroviService: ZanroviService) {}
 
   async prikaziMojeZanrove() {
@@ -30,7 +30,6 @@ export class ZanrComponent {
   }
 
   onChangeOdabraniRadioTmdb(event: any, id: number) {
-    // koji je trenutno odabran
     this.odabraniRadioNameTmdb = event.target.value;
     this.odabraniRadioIdTmdb = id;
   }

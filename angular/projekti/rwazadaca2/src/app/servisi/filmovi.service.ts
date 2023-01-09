@@ -17,12 +17,10 @@ export class FilmoviService {
     let odgovor = await fetch(
       `${environment.restServis}tmdb/filmovi?kljucnaRijec=${rijec}&stranica=${str}`
     );
-
     return await odgovor.text();
   }
 
   async dajOdabraniFilm(idFilma: string) {
-    //console.log('id filma -----> ' + idFilma);
     let odgovor = await fetch(`${environment.restServis}filmovi/` + idFilma);
     if (odgovor.status == 200) {
       let podaci = await odgovor.text();
@@ -78,7 +76,6 @@ export class FilmoviService {
       filmovi = JSON.parse(sesija);
     }
 
-    //filmovi = JSON.parse(sessionStorage.getItem('dohvaceniFilmovi'));
     for (let film of filmovi) {
       if (idFilma == film.id) {
         let header = new Headers();
@@ -98,11 +95,6 @@ export class FilmoviService {
         if (odgovor.status == 200) {
           let podaci = await odgovor.text();
           console.log('FILM ' + JSON.stringify(podaci));
-          //poruka.innerHTML = 'Film dodan u bazu!';
-        } else if (odgovor.status == 401) {
-          //  poruka.innerHTML = 'Neautorizirani pristup! Prijavite se!';
-        } else {
-          //poruka.innerHTML = 'Greška u dodavanju filma!';
         }
         break;
       }

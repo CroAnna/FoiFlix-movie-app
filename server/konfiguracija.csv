@@ -3,5 +3,5 @@ rest.lozinka=123456
 app.broj.stranica=1 
 rest.port=9000
 app.port=9001
-tmdb.apikey.v3=d1a195f8c2246da2ab419d50494d4da8
-tmdb.apikey.v4=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMWExOTVmOGMyMjQ2ZGEyYWI0MTlkNTA0OTRkNGRhOCIsInN1YiI6IjYzNGVmOWIyYmU0YjM2MDA3YzY3MDIwMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2qiDoM1Gx61sKsKLEpV0O1OJft2Rrj5VODroCcxEBOk
+tmdb.apikey.v3="UNESI"
+tmdb.apikey.v4="UNESI"

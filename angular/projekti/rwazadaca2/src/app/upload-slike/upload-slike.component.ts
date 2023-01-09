@@ -8,7 +8,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class UploadSlikeComponent {
   disablean: any = true;
 
-  @ViewChild('myInput') myInputVariable!: ElementRef; // ! da nema errora onog
+  @ViewChild('myInput') myInputVariable!: ElementRef;
 
   odabranFile(event: any) {
     if (event.target.value != null) {

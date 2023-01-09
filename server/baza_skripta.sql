@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `film` (
   overview TEXT DEFAULT NULL,
   popularity REAL NOT NULL,
   poster_path TEXT DEFAULT NULL,
-  release_date TEXT NOT NULL,
+  release_date TEXT NOT NULL, 
   revenue INTEGER DEFAULT NULL,
   runtime INTEGER DEFAULT NULL,
   status TEXT DEFAULT NULL,
