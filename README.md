@@ -1,6 +1,6 @@
 # FoiFlix-movie-app
 
-An web application made in Angular, using SQLite. Angular application is connected with REST server and The Movie Database where gets movie data using API TMDB (movies, genres, movie info etc.).
+An web application made in Angular, using SQLite database. Angular application is connected with REST server and The Movie Database where gets movie data using API TMDB (movies, genres, movie info etc.).
 Navigation is role-based so on the login page are user data for admin and random default user.
 Design is made using SCSS.
 
