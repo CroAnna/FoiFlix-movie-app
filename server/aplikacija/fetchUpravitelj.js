@@ -4,21 +4,7 @@ const Autentifikacija = require("./autentifikacija.js");
 const Konfiguracija = require("../konfiguracija.js");
 let auth = new Autentifikacija();
 let fp = new FilmoviPretrazivanje();
-/*
-exports.aktvacijaRacuna = async function (zahtjev, odgovor) {
-    console.log(zahtjev.query);
-    let korime = zahtjev.query.korime;
-    let kod = zahtjev.query.kod;
 
-    let poruka = await auth.aktivirajKorisnickiRacun(korime, kod);
-    console.log(poruka)
-
-    if (poruka.status == 200) {
-        odgovor.send(await poruka.text());
-    } else {
-        odgovor.send(await poruka.text());
-    }
-}*/
 
 let port;
 let konf = new Konfiguracija();
