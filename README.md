@@ -15,3 +15,6 @@ Starting the project:
 Go in \server\aplikacija and `npm start` and in \server\servis and `npm start`.
 
 Then open the app in browser on localhost:9001/
+
+<img src="https://github.com/CroAnna/FoiFlix-movie-app/blob/master/screenshots/screenshot_login.png" alt="login-screenshot"/>
+<img src="https://github.com/CroAnna/FoiFlix-movie-app/blob/master/screenshots/screenshot_search_movies.png"/>
