@@ -527,16 +527,7 @@ label {
     margin-left: 30px;
   }
 }
-#slika-poster {
-  float: left;
-  position: absolute;
-  margin: auto 35px;
-  margin-top: 80px;
-  width: 20%;
-}
-.podaci-filma-kontejner {
-  position: relative;
-}
+
 .lijepiGumb {
   margin: 60px auto 30px;
   font-weight: bold;
@@ -793,6 +784,7 @@ table.tablica {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px 20px;
   border-radius: 15px;
+  margin-bottom: 30px;
 
   & .dohvFilm {
     margin: 0 auto;

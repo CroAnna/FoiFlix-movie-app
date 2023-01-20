@@ -1,4 +1,48 @@
 <div class="podaci-filma-kontejner">
+  <!-- <div
+  class="podaci-filma-kontejner"
+  [ngStyle]="{
+    background:
+      'url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
+        odabraniFilm.poster_path
+      }})',
+    'background-repeat': 'no-repeat',
+    ' background-repeat': 'no-repeat',
+    width: '100%',
+    'background-size': '100% 800px',
+    'object-fit': 'cover'
+  }"
+> -->
+  <div
+    class="podaci-filma-unutranji-kontejner"
+    [ngStyle]="{
+      'object-fit': 'cover',
+      'background-repeat': 'no-repeat',
+      background:
+        'url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/' +
+        imageUrl +
+        ')'
+    }"
+  >
+    <div class="slika">
+      <img
+        src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
+          odabraniFilm.poster_path
+        }}"
+        alt="slika-poster"
+        alt="{{ odabraniFilm.poster_path }}"
+      />
+    </div>
+    <div class="podaci">
+      <h2>{{ odabraniFilm.title }}</h2>
+      <div class="detalji">
+        {{ odabraniFilm.release_date | date : "dd.MM.yyyy." }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="podaci-filma-kontejner">
   <div class="pregled">
     <div id="film-slika">
       <img
@@ -152,4 +196,4 @@
       </button>
     </div>
   </div>
-</div>
+</div> -->
