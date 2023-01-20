@@ -36,17 +36,18 @@
   <div id="sadrzaj">
     <div *ngFor="let film of dohvaceniFilmovi" class="grid">
       <div class="dohvFilm">
-        <h4>{{ film.original_title }}</h4>
         <div class="img-div">
           <img
             src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
               film.poster_path
             }}"
+            x
             alt="poster"
           />
-        </div>
-        <div class="tekst">
-          {{ film.overview }}
+          <div class="tekst">
+            <h4>{{ film.original_title }}</h4>
+            <p>{{ film.overview }}</p>
+          </div>
         </div>
         <button (click)="dodaj(film.id)">Dodaj u bazu</button>
       </div>
