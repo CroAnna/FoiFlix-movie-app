@@ -5,6 +5,27 @@ class RestTMDB {
     this.tmdbKlijent = new TMDBklijent(api_kljuc);
   }
 
+  getFilm(zahtjev, odgovor) {
+    this.tmdbKlijent
+      .dohvatiFilm(zahtjev.params.idFilma)
+      .then((film) => {
+        odgovor.type("application/json");
+        odgovor.send(film);
+      })
+      .catch((greska) => {
+        odgovor.json(greska);
+      });
+  }
+  /*
+    exports.getKorisnik = function (zahtjev, odgovor) {
+      odgovor.type("application/json");
+      let kdao = new KorisnikDAO();
+      let korime = zahtjev.params.korime;
+      kdao.daj(korime).then((korisnik) => {
+        odgovor.send(JSON.stringify(korisnik));
+      })
+    };*/
+
   getZanr(zahtjev, odgovor) {
     this.tmdbKlijent
       .dohvatiZanrove()

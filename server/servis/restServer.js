@@ -68,6 +68,9 @@ function pripremiPutanjeResursTMDB() {
   server.put("/api/tmdb/zanr", restZanr.putZanrTmdb.bind(restTMDB));
   server.delete("/api/tmdb/zanr", restZanr.deleteZanrTmdb.bind(restTMDB));
 
+  // dohvati 1 film
+  server.get("/api/tmdb/film/:idFilma", restTMDB.getFilm.bind(restTMDB));
+
   server.get("/api/tmdb/filmovi", restTMDB.getFilmovi.bind(restTMDB));
   server.post("/api/tmdb/filmovi", restZanr.postTmdbFilmovi.bind(restTMDB));
   server.put("/api/tmdb/filmovi", restZanr.putTmdbFilmovi.bind(restTMDB));

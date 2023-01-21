@@ -21,6 +21,7 @@ export class FilmoviService {
   }
 
   async dajOdabraniFilm(idFilma: string) {
+    // ovo se koristi!
     let odgovor = await fetch(`${environment.restServis}filmovi/` + idFilma);
     if (odgovor.status == 200) {
       let podaci = await odgovor.text();
@@ -70,40 +71,40 @@ export class FilmoviService {
 
   async dodajUbazu(idFilma: Number) {
     let sesija = sessionStorage.getItem('dohvaceniFilmovi');
-    console.log(`sessjia ${sesija}`);
+    //console.log(`sessjia ${sesija}`);
     let filmovi;
     if (sesija) {
       filmovi = JSON.parse(sesija);
     }
 
-    for (let film of filmovi) {
-      if (idFilma == film.id) {
-        // TODO slozi tu da se dohvaca film iz
-        // https://api.themoviedb.org/3/movie/718789?api_key=d1a195f8c2246da2ab419d50494d4da8
-        // i onda se ti podaci spreme u film koji se spremi u bazu onda
+    let odabraniFilm = await fetch(
+      `${environment.restServis}tmdb/film/` + idFilma
+    );
 
-        // imas u klijentTMDB dohvatiFilm(id), mozda se more s tim nekaj idk
+    let odabraniFilmPodaci = null;
+    if (odabraniFilm.status == 200) {
+      let podaci = await odabraniFilm.text();
+      console.log('ODDABRANI ' + podaci);
 
-        let header = new Headers();
-        header.set('Content-Type', 'application/json');
-        console.log('id filma ' + idFilma);
+      odabraniFilmPodaci = JSON.parse(podaci);
+    } else {
+      alert('Problem kod preuzimanja podataka:\n' + odabraniFilm.statusText);
+    }
 
-        let parametri = {
-          method: 'POST',
-          body: JSON.stringify(film),
-          headers: header,
-        };
+    let header = new Headers();
+    header.set('Content-Type', 'application/json');
+    console.log('id filma ' + idFilma);
 
-        let odgovor = await fetch(
-          `${environment.restServis}filmovi`,
-          parametri
-        );
-        if (odgovor.status == 200) {
-          let podaci = await odgovor.text();
-          console.log('FILM ' + JSON.stringify(podaci));
-        }
-        break;
-      }
+    let parametri = {
+      method: 'POST',
+      body: JSON.stringify(odabraniFilmPodaci),
+      headers: header,
+    };
+
+    let odgovor = await fetch(`${environment.restServis}filmovi`, parametri);
+    if (odgovor.status == 200) {
+      let podaci = await odgovor.text();
+      console.log('\n\n DODANI FILM ' + JSON.stringify(podaci));
     }
   }
 }

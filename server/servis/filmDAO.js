@@ -76,19 +76,19 @@ class FilmDAO {
         ];
 
         let sql2 = `INSERT INTO film_zanr (film_id, zanr_id) VALUES (?,?)`;
-        var zanrString = (film.genre_ids).toString();
-        const poljeZanrova = zanrString.split(",");
-        for (let i = 0; i < poljeZanrova.length; i++) {
-            console.log("\nzanr " + i + " " + poljeZanrova[i]);
+
+        let zanrovi = film.genres;
+        for (let i = 0; i < zanrovi.length; i++) {
+            console.log("\nzanr " + i + " " + zanrovi[i].id);
         }
 
         try {
             await this.baza.izvrsiUpit(sql, podaci);
             try {
-                for (let j = 0; j < poljeZanrova.length; j++) {
+                for (let j = 0; j < zanrovi.length; j++) {
                     await this.baza.izvrsiUpit(sql2, [
                         film.id,
-                        poljeZanrova[j]
+                        zanrovi[j].id
                     ]);
                 }
             } catch (error) {
