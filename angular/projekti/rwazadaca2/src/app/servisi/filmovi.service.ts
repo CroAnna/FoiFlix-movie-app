@@ -78,6 +78,12 @@ export class FilmoviService {
 
     for (let film of filmovi) {
       if (idFilma == film.id) {
+        // TODO slozi tu da se dohvaca film iz
+        // https://api.themoviedb.org/3/movie/718789?api_key=d1a195f8c2246da2ab419d50494d4da8
+        // i onda se ti podaci spreme u film koji se spremi u bazu onda
+
+        // imas u klijentTMDB dohvatiFilm(id), mozda se more s tim nekaj idk
+
         let header = new Headers();
         header.set('Content-Type', 'application/json');
         console.log('id filma ' + idFilma);

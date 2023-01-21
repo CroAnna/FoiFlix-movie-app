@@ -1,3 +1,4 @@
+const { json } = require("express");
 const Baza = require("./baza.js");
 
 class FilmDAO {
@@ -48,7 +49,7 @@ class FilmDAO {
 
     dodaj = async function (film
     ) {
-        console.log("FILM " + film);
+        console.log("FILM " + JSON.stringify(film));
 
         let sql = `INSERT INTO film (id, adult, backdrop_path,original_language , original_title, overview, popularity, poster_path, release_date, title, video, vote_average, vote_count, budget, odobreno, status, homepage, tagline,imdb_id ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
@@ -69,9 +70,9 @@ class FilmDAO {
             film.budget,
             0,
             "Released",
-            film.backdrop_path,
-            film.title,
-            film.id,
+            film.homepage,
+            film.tagline,
+            film.imdb_id,
         ];
 
         let sql2 = `INSERT INTO film_zanr (film_id, zanr_id) VALUES (?,?)`;

@@ -12,11 +12,10 @@ class TMDBklijent {
     return odgovor;
   }
 
-  async dohvatiFilm(id) {
+  async dohvatiFilm(id) { // ovo se ni ne koristi...
     let resurs = "/movie/" + id;
     let odgovor = await this.obaviZahtjev(resurs);
-
-
+    console.log("odg " + odgovor);
     return odgovor;
   }
 

@@ -1,6 +1,6 @@
 <div class="podaci-filma-kontejner">
   <div
-    class="podaci-filma-unutranji-kontejner"
+    class="podaci-filma-unutarnji-kontejner"
     [style.background-image]="
       'linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),rgba(31.5, 31.5, 31.5, 0.84) 30%,rgba(31.5, 31.5, 31.5, 0.84) 100%),url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/' +
       imageUrl +
@@ -24,6 +24,13 @@
       <h2>{{ odabraniFilm.title }}</h2>
       <div class="detalji">
         {{ odabraniFilm.release_date | date : "dd.MM.yyyy." }}
+      </div>
+      <div class="overview">
+        <h4>Overview:</h4>
+        <p>{{ odabraniFilm.overview }}</p>
+      </div>
+      <div class="tagline">
+        <p>{{ odabraniFilm.tagline }}</p>
       </div>
     </div>
   </div>

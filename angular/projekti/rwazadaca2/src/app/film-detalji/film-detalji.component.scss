@@ -19,7 +19,7 @@ $color_green: #1bb10b;
   object-fit: cover;
   background-position: left calc((50vw - 170px) - 340px) top;
 
-  & .podaci-filma-unutranji-kontejner {
+  & .podaci-filma-unutarnji-kontejner {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -27,10 +27,24 @@ $color_green: #1bb10b;
     padding: 20px;
 
     & .slika img {
-      width: 350px;
+      width: 400px;
+      margin-left: 40%;
     }
     & .podaci {
       color: $color_white;
+      font-size: 1.3rem;
+      & .detalji {
+        margin: 10px;
+      }
+      & .overview {
+        & h4 {
+          padding: 10px 0;
+        }
+        & p {
+          padding: 5px 0;
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }
