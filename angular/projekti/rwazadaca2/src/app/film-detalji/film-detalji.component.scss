@@ -17,28 +17,12 @@ $color_green: #1bb10b;
   background-color: $color_dark_gray;
   width: 100%;
   object-fit: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: left calc((50vw - 170px) - 340px) top;
-
-  // nez jel ovo ikaj dela:
-  background-image: linear-gradient(
-    to right,
-    rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),
-    rgba(31.5, 31.5, 31.5, 0.84) 30%,
-    rgba(31.5, 31.5, 31.5, 0.84) 100%
-  );
-  background: linear-gradient(
-    to right,
-    rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),
-    rgba(31.5, 31.5, 31.5, 0.84) 30%,
-    rgba(31.5, 31.5, 31.5, 0.84) 100%
-  );
 
   & .podaci-filma-unutranji-kontejner {
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
 

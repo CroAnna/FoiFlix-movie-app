@@ -1,28 +1,15 @@
 <div class="podaci-filma-kontejner">
-  <!-- <div
-  class="podaci-filma-kontejner"
-  [ngStyle]="{
-    background:
-      'url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
-        odabraniFilm.poster_path
-      }})',
-    'background-repeat': 'no-repeat',
-    ' background-repeat': 'no-repeat',
-    width: '100%',
-    'background-size': '100% 800px',
-    'object-fit': 'cover'
-  }"
-> -->
   <div
     class="podaci-filma-unutranji-kontejner"
-    [ngStyle]="{
-      'object-fit': 'cover',
-      'background-repeat': 'no-repeat',
-      background:
-        'url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/' +
-        imageUrl +
-        ')'
-    }"
+    [style.background-image]="
+      'linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),rgba(31.5, 31.5, 31.5, 0.84) 30%,rgba(31.5, 31.5, 31.5, 0.84) 100%),url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/' +
+      imageUrl +
+      ')'
+    "
+    [style.background-size]="'cover'"
+    [style.background-repeat]="'no-repeat'"
+    [style.background-position]="'center'"
+    [style.background]="'transparent'"
   >
     <div class="slika">
       <img
