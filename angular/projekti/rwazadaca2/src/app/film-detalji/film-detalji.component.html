@@ -23,7 +23,11 @@
     <div class="podaci">
       <h2>{{ odabraniFilm.title }}</h2>
       <div class="detalji">
-        {{ odabraniFilm.release_date | date : "dd.MM.yyyy." }}
+        Release date: {{ odabraniFilm.release_date | date : "d.M.yyyy." }}
+      </div>
+      <div class="detalji">
+        Vote average:
+        {{ odabraniFilm.vote_average }}/10
       </div>
       <div class="overview">
         <h4>Overview:</h4>
@@ -31,6 +35,10 @@
       </div>
       <div class="tagline">
         <p>{{ odabraniFilm.tagline }}</p>
+      </div>
+      <div class="money">
+        <p>Budget: ${{ odabraniFilm.budget }}</p>
+        <p>Revenue: ${{ odabraniFilm.revenue }}</p>
       </div>
     </div>
   </div>

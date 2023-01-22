@@ -34,7 +34,7 @@ $color_green: #1bb10b;
       color: $color_white;
       font-size: 1.3rem;
       & .detalji {
-        margin: 10px;
+        margin: 10px 0;
       }
       & .overview {
         & h4 {
@@ -44,6 +44,16 @@ $color_green: #1bb10b;
           padding: 5px 0;
           font-size: 1.1rem;
         }
+      }
+      & .tagline {
+        padding: 5px 0;
+        color: $color_light_gray;
+        font-style: italic;
+        font-size: 1.2rem;
+      }
+      & .money {
+        font-size: 1.1rem;
+        padding: 5px 0;
       }
     }
   }
