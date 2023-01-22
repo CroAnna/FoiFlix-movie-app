@@ -442,12 +442,14 @@ label {
     outline-width: 0;
   }
 }
+/*
 #moji-filmovi-kontejner {
   width: 60%;
   color: $color_white;
   font-size: 1.5rem;
   margin: 0 auto;
-}
+}*/
+/*
 .pregled {
   h2 {
     text-align: center;
@@ -527,7 +529,7 @@ label {
     margin-left: 30px;
   }
 }
-
+*/
 .lijepiGumb {
   margin: 60px auto 30px;
   font-weight: bold;
@@ -775,7 +777,7 @@ table.tablica {
 .crvena {
   border-color: #d63d0e;
 }
-#sadrzaj {
+.sadrzaj {
   width: 85%;
   margin: 0 auto;
   background-color: $color_dark_gray;
@@ -790,9 +792,21 @@ table.tablica {
     margin: 0 auto;
     width: 100%;
     height: 530px;
-    background-color: $color_light_gray;
     border-radius: 15px;
     position: relative;
+
+    &.pretrazi {
+      background-color: $color_light_gray;
+    }
+
+    &.pregled-film {
+      height: max-content;
+      padding: 0;
+      background-color: none;
+      & img {
+        border-radius: 15px;
+      }
+    }
 
     & .img-div {
       margin: 10px auto;
@@ -808,6 +822,14 @@ table.tablica {
       }
     }
     & .tekst {
+      &.pregled-film {
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      &.pretrazi {
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+      }
       position: absolute;
       padding: 10px;
       top: 0;
@@ -822,8 +844,7 @@ table.tablica {
       overflow: hidden;
       opacity: 0;
       transition: 0.4s;
-      border-top-right-radius: 15px;
-      border-top-left-radius: 15px;
+
       backdrop-filter: blur(15px);
       max-height: 450px;
 

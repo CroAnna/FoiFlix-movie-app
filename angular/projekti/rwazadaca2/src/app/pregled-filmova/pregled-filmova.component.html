@@ -1,36 +1,55 @@
-<div class="pregled">
-  <input type="text" [(ngModel)]="tekstFiltriranje" />
+<div class="pretrazivanje-gore">
+  <div id="stranicenje">
+    <button class="btnStranicenje" *ngIf="stranica > 1" (click)="strPrva()">
+      <<
+    </button>
+    <button class="btnStranicenje" *ngIf="stranica > 1" (click)="strNatrag()">
+      <
+    </button>
+    <button
+      class="btnStranicenje"
+      *ngIf="stranica < zadnjaStranica"
+      (click)="strDalje()"
+    >
+      >
+    </button>
+    <button
+      class="btnStranicenje"
+      *ngIf="stranica < zadnjaStranica"
+      (click)="strZadnja()"
+    >
+      >>
+    </button>
+  </div>
+  <h1 class="pretrazivanje">Pregled filmova</h1>
+  <input
+    type="text"
+    id="filterPRCMAN"
+    class="search"
+    placeholder="Pretrazi po nazivu..."
+    name="rijeci"
+    (input)="onSearchChange($event)"
+  />
+</div>
 
-  <!-- 
-  <p>Zanr</p>
-  <select [(ngModel)]="odabraniZanrFilter">
-    <option value="Svi" selected="selected">Svi</option>
-    <option *ngFor="let zanr of mojiZanrovi" [value]="zanr.name">
-      {{ zanr.name }}
-    </option>
-  </select>
--->
-
-  <p>Naziv</p>
-  <select id="sort" [(ngModel)]="odabraniFilter">
-    <option value="Svi" selected="selected">Svi</option>
-    <option value="Naziv">Naziv (prvo unesi riječ pa odaberi ovo)</option>
-    <option value="Datum">Datum</option>
-    <option value="Zanr">Zanr</option>
-  </select>
-
-  <div id="stranicenje"></div>
-  <h2>Pregled filmova</h2>
-
-  <div id="moji-filmovi-kontejner">
-    <div *ngFor="let film of filmoviFiltrirani">
-      <div class="moji-filmovi">
-        <div
-          class="moj-film"
-          *ngIf="film.odobreno == 1"
-          routerLink="/pregledFilmova/film/{{ film.id }}"
-        >
-          ---> {{ film.title }} {{ film.id }}
+<div class="sadrzaj">
+  <div *ngFor="let film of filmoviFiltrirani" class="grid">
+    <div class="dohvFilm pregled-film">
+      <div
+        class="img-div"
+        routerLink="/pregledFilmova/film/{{ film.id }}"
+        *ngIf="film.odobreno == 1"
+      >
+        <img
+          src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
+            film.poster_path
+          }}"
+          x
+          alt="poster"
+        />
+        <div class="tekst pregled-film">
+          <h4>{{ film.original_title }}</h4>
+          <p>{{ film.overview }}</p>
         </div>
       </div>
     </div>

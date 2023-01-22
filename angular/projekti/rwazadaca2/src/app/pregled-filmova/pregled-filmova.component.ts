@@ -11,8 +11,12 @@ import { ZanroviService } from '../servisi/zanrovi.service';
 export class PregledFilmovaComponent implements OnInit {
   filmoviOdobreni: any;
   filmoviFiltrirani: any;
-  tekstFiltriranje: string = '';
   mojiZanrovi: any;
+
+  rijeciSearch: string = '';
+  stranica: number = 1;
+  //zadnjaStranica: number = 0;
+  zadnjaStranica: number = 50;
 
   filterOdabrani: string = 'Svi';
   zanrOdabraniFilter: any;
@@ -29,18 +33,50 @@ export class PregledFilmovaComponent implements OnInit {
     this.prikaziSve();
   }
 
+  async onSearchChange(event: any) {
+    console.log(event.target.value);
+
+    this.rijeciSearch = event.target.value;
+    //  this.prikaziFilmove();
+
+    if (this.rijeciSearch == '') {
+      this.prikaziSve();
+    } else if (this.rijeciSearch != '') {
+      this.prikaziPoNazivu();
+    }
+  }
+
+  strPrva() {
+    this.stranica = 1;
+    // this.prikaziFilmove();
+  }
+  strNatrag() {
+    if (this.stranica > 1) {
+      this.stranica = this.stranica - 1;
+      // this.prikaziFilmove();
+    }
+  }
+  async strDalje() {
+    this.stranica = this.stranica + 1; // mora bit malo number, a ne Number
+    // this.prikaziFilmove();
+  }
+  strZadnja() {
+    this.stranica = this.zadnjaStranica;
+    // this.prikaziFilmove();
+  }
+  /*
   get odabraniFilter() {
     return this.filterOdabrani;
-  }
-
+  }*/
+  /*
   get odabraniZanrFilter() {
     return this.filterOdabrani;
-  }
-
+  }*/
+  /*
   set odabraniZanrFilter(value: string) {
     // TODO
-  }
-
+  }*/
+  /*
   set odabraniFilter(value: string) {
     this.filterOdabrani = value;
     console.log('value ' + value);
@@ -50,12 +86,12 @@ export class PregledFilmovaComponent implements OnInit {
       this.prikaziPoNazivu();
     } else if (value == '') {
     }
-  }
+  }*/
 
   prikaziPoNazivu() {
     //console.log(this.tekstFiltriranje.toLowerCase());
     this.filmoviFiltrirani = this.filmoviOdobreni.filter((f: any) =>
-      f.title.toLowerCase().includes(this.tekstFiltriranje.toLowerCase())
+      f.title.toLowerCase().includes(this.rijeciSearch.toLowerCase())
     );
   }
 
