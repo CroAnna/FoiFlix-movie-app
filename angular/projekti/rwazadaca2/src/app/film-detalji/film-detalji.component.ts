@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FilmoviService } from '../servisi/filmovi.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-film-detalji',
@@ -14,7 +15,8 @@ export class FilmDetaljiComponent implements OnInit {
 
   constructor(
     private aktiviranRoute: ActivatedRoute,
-    private filmoviServis: FilmoviService
+    private filmoviServis: FilmoviService,
+    private router: Router
   ) {}
 
   async ngOnInit() {
@@ -22,5 +24,14 @@ export class FilmDetaljiComponent implements OnInit {
     console.log('this.film id ---> ' + this.filmId);
     this.odabraniFilm = await this.filmoviServis.dajOdabraniFilm(this.filmId);
     this.imageUrl = this.odabraniFilm.poster_path;
+  }
+
+  obrisiFilm(idFilma: Number) {
+    this.filmoviServis.odbaci(idFilma);
+    this.redirect();
+  }
+
+  redirect() {
+    this.router.navigate(['./pregledFilmova']);
   }
 }

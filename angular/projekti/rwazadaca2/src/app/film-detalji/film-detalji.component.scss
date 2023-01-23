@@ -56,3 +56,25 @@ $color_green: #1bb10b;
     }
   }
 }
+
+.btns {
+  display: flex;
+  justify-content: center;
+  & button {
+    background-color: $color_dark_gray;
+    text-align: center;
+    padding: 10px 30px;
+    width: 250px;
+    height: 70px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 50px 20px;
+    font-size: 1.6rem;
+    color: $color_white;
+    &:hover {
+      background-color: $color_light_gray;
+      transition: 0.4s;
+    }
+  }
+}

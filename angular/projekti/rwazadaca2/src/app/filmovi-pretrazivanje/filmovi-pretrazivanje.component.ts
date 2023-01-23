@@ -18,6 +18,7 @@ export class FilmoviPretrazivanjeComponent implements OnInit {
 
     this.rijeciSearch = event.target.value;
     this.prikaziFilmove();
+    this.stranica = 1;
   }
 
   async ngOnInit() {
@@ -64,5 +65,10 @@ export class FilmoviPretrazivanjeComponent implements OnInit {
     this.zadnjaStranica = JSON.parse(
       await this.filmoviService.dajTmdbFilmove(this.rijeciSearch, this.stranica)
     ).total_pages;
+    console.log(this.zadnjaStranica);
+
+    if (this.zadnjaStranica > 500) {
+      this.zadnjaStranica = 500;
+    }
   }
 }
