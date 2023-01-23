@@ -18,3 +18,4 @@ Then open the app in browser on localhost:9001/
 
 <img src="https://github.com/CroAnna/FoiFlix-movie-app/blob/master/screenshots/screenshot_login.png" alt="login-screenshot"/>
 <img src="https://github.com/CroAnna/FoiFlix-movie-app/blob/master/screenshots/screenshot_search_movies.png"/>
+<img src="https://github.com/CroAnna/FoiFlix-movie-app/blob/master/screenshots/screenshot_movie_details.png"/>
