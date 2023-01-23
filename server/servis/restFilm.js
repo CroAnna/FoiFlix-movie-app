@@ -10,6 +10,15 @@ exports.getFilmovi = function (zahtjev, odgovor) {
     });
 };
 
+exports.getFilmoviOdobreni = function (zahtjev, odgovor) {
+    odgovor.type("application/json");
+    let fdao = new FilmDAO();
+    fdao.dajOdobrene().then((filmovi) => {
+        console.log(filmovi);
+        odgovor.send(JSON.stringify(filmovi));
+    });
+};
+
 exports.putFilmovi = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     odgovor.status(501);

@@ -78,7 +78,7 @@ body {
   input {
     display: block;
     background-color: $color_light_gray;
-    border: var(--dark) 1px solid;
+    border: $color_dark_gray 1px solid;
     font-size: 1.5rem;
   }
   .gumbi {
@@ -89,7 +89,7 @@ body {
   #btnSpremi {
     background-color: $color_white;
     font-weight: 600;
-    box-shadow: var(--red) 0px 0px 15px;
+    box-shadow: $color_red 0px 0px 15px;
     &:hover {
       background-color: $color_red;
       color: $color_white;
@@ -216,7 +216,7 @@ nav {
   margin-top: 15px;
   right: 50px;
   border-radius: 15px;
-  box-shadow: 0px 0px 15px var(--red);
+  box-shadow: 0px 0px 15px $color_red;
 }
 .login-container {
   transition: all 2s;
@@ -230,7 +230,7 @@ nav {
   border-radius: 30px;
   display: flex;
   width: 70%;
-  box-shadow: 0px 0px 20px var(--darkgrey);
+  box-shadow: 0px 0px 20px $color_dark_gray;
   text-align: center;
   .lijevo {
     align-items: center;
@@ -240,7 +240,7 @@ nav {
     h2 {
       font-size: 7rem;
       font-family: $font-family_1;
-      text-shadow: 2px 2px 3px var(--red);
+      text-shadow: 2px 2px 3px $color_red;
       color: $color_black;
     }
     h3 {
@@ -270,7 +270,7 @@ nav {
     flex: 2;
     border-radius: 30px;
     background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 0px 2px var(--dark);
+    box-shadow: 0px 0px 2px $color_dark_gray;
     height: 690px;
   }
   #btnSalji {
@@ -296,7 +296,7 @@ nav {
     font-size: 1.1rem;
     span button {
       color: $color_red;
-      text-shadow: 0px 0px 10px var(--white);
+      text-shadow: 0px 0px 10px $color_white;
       padding: 2px;
       border-radius: 5px;
       font-weight: bolder;
@@ -318,7 +318,7 @@ nav {
     font-family: $font-family_1;
     color: $color_white;
     font-size: 30px;
-    text-shadow: 2px 2px 8px var(--darkgrey);
+    text-shadow: 2px 2px 8px $color_dark_gray;
     margin-bottom: 30px;
     font-weight: 500;
     letter-spacing: 5px;
@@ -329,7 +329,7 @@ nav {
     padding: 10px;
     border-radius: 10px;
     color: $color_white_pure;
-    text-shadow: 2px 2px 8px var(--darkgrey);
+    text-shadow: 2px 2px 8px $color_dark_gray;
     font-weight: 800;
     letter-spacing: 0.4px;
   }
@@ -467,7 +467,7 @@ label {
     position: relative;
     right: 50px;
     border-radius: 15px;
-    box-shadow: 0px 0px 15px var(--red);
+    box-shadow: 0px 0px 15px $color_red;
   }
   li {
     list-style: none;
@@ -536,7 +536,7 @@ label {
   color: $color_black;
   cursor: pointer;
   background-color: $color_light_gray;
-  border: var(--dark) solid 2px;
+  border: $color_dark_gray solid 2px;
   letter-spacing: 1.5px;
   border-radius: 10px;
   width: fit-content;
@@ -551,7 +551,7 @@ label {
   color: $color_white;
   cursor: pointer;
   background-color: $color_red;
-  border: var(--dark) solid 2px;
+  border: $color_dark_gray solid 2px;
   letter-spacing: 1.5px;
   border-radius: 10px;
   width: fit-content;
@@ -564,7 +564,7 @@ label {
   width: 70%;
   margin: 0 auto;
   background-color: $color_light_gray;
-  box-shadow: 0px 0px 15px var(--dark);
+  box-shadow: 0px 0px 15px $color_dark_gray;
   border-radius: 30px;
   padding: 10px;
   h2 {
@@ -613,7 +613,7 @@ h1.pretrazivanje {
   font-size: 1.4rem;
   padding: 5px 20px;
   color: $color_white;
-  text-shadow: 2px 2px 3px var(--dark);
+  text-shadow: 2px 2px 3px $color_dark_gray;
   letter-spacing: 2px;
   cursor: pointer;
 }
@@ -665,37 +665,7 @@ td {
     list-style: none;
   }
 }
-#prijedlozi-kontejner {
-  width: 70%;
-  color: $color_white;
-  font-size: 1.5rem;
-  margin: 0 auto;
-  background-color: $color_black;
-  padding: 40px;
-  border-radius: 30px;
-  & #btnOdobri {
-    background-color: $color_dark_gray;
-    margin: 4px;
-    border-radius: 5px;
-    font-size: 1.4rem;
-    padding: 5px 20px;
-    color: $color_white;
-    text-shadow: 2px 2px 3px var(--dark);
-    letter-spacing: 2px;
-    cursor: pointer;
-  }
-  & #btnOdbaci {
-    background-color: $color_dark_gray;
-    margin: 4px;
-    border-radius: 5px;
-    font-size: 1.4rem;
-    padding: 5px 20px;
-    color: $color_white;
-    text-shadow: 2px 2px 3px var(--dark);
-    letter-spacing: 2px;
-    cursor: pointer;
-  }
-}
+
 #inputPromjenaNaziva {
   margin: 40px auto 0;
   font-weight: bold;

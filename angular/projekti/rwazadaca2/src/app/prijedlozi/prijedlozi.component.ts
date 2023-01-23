@@ -9,6 +9,7 @@ import { FilmoviService } from '../servisi/filmovi.service';
 export class PrijedloziComponent implements OnInit {
   filmoviNeodobreni: any;
   filter = { odobreno: 1 };
+  imageUrl: any = '';
 
   constructor(private filmoviService: FilmoviService) {}
 

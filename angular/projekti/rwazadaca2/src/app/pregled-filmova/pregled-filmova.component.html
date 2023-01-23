@@ -33,13 +33,9 @@
 </div>
 
 <div class="sadrzaj">
-  <div *ngFor="let film of filmoviFiltrirani" class="grid">
-    <div class="dohvFilm pregled-film">
-      <div
-        class="img-div"
-        routerLink="/pregledFilmova/film/{{ film.id }}"
-        *ngIf="film.odobreno == 1"
-      >
+  <span *ngFor="let film of filmoviFiltrirani">
+    <div class="dohvFilm pregled-film" *ngIf="film.odobreno == 1">
+      <div class="img-div" routerLink="/pregledFilmova/film/{{ film.id }}">
         <img
           src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{
             film.poster_path
@@ -53,5 +49,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </span>
 </div>

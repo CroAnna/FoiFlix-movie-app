@@ -1,10 +1,20 @@
 <div id="prijedlozi-kontejner">
   <div *ngFor="let film of filmoviNeodobreni">
     <div class="moji-filmovi">
-      <div class="moj-film" *ngIf="film.odobreno == 0">
-        {{ film.title }} {{ film.id }}
-        <button id="btnOdobri" (click)="odobriFilm(film.id)">Odobri</button>
-        <button id="btnOdbaci" (click)="odbaciFilm(film.id)">Odbaci</button>
+      <div *ngIf="film.odobreno == 0" class="moj-film">
+        <div>
+          <div class="naslov">{{ film.title }}</div>
+
+          <button id="btnOdobri" (click)="odobriFilm(film.id)">Odobri</button>
+          <button id="btnOdbaci" (click)="odbaciFilm(film.id)">Odbaci</button>
+        </div>
+        <img
+          src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/{{
+            film.poster_path
+          }}"
+          x
+          alt="poster"
+        />
       </div>
     </div>
   </div>
