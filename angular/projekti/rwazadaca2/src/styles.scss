@@ -69,6 +69,9 @@ body {
   &.veci {
     margin: 150px auto;
   }
+  &.profil {
+    background-color: $color_light_gray;
+  }
   color: $color_black;
   width: 95%;
   padding: 30px;
@@ -442,94 +445,7 @@ label {
     outline-width: 0;
   }
 }
-/*
-#moji-filmovi-kontejner {
-  width: 60%;
-  color: $color_white;
-  font-size: 1.5rem;
-  margin: 0 auto;
-}*/
-/*
-.pregled {
-  h2 {
-    text-align: center;
-    color: $color_white;
-    font-size: 1.7rem;
-    margin: 40px auto;
-  }
-  select {
-    display: flex;
-    background-color: $color_light_gray;
-    height: 60px;
-    padding-left: 12px;
-    width: 400px;
-    float: right;
-    position: relative;
-    right: 50px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 15px $color_red;
-  }
-  li {
-    list-style: none;
-  }
-  .moji-filmovi {
-    cursor: pointer;
-    display: flex;
-    margin-left: 60px;
-    &:hover {
-      background-color: $color_red;
-      width: fit-content;
-    }
-    & .moj-film {
-      padding: 10px;
-      width: fit-content;
-    }
-  }
-  label {
-    margin: 25px auto 0;
-    font-size: 1.3rem;
-  }
-  input {
-    margin: 5px auto 0;
-    font-weight: bold;
-    color: $color_black;
-    background-color: $color_white;
-    border: #da0037 solid 2px;
-    letter-spacing: 1.5px;
-    border-radius: 10px;
-    width: fit-content;
-    min-width: 40%;
-    font-size: 1.4rem;
-    padding: 12px;
-    display: block;
-    cursor: default;
-    &:focus {
-      outline: none;
-    }
-  }
-  textarea {
-    margin: 5px auto 0;
-    font-weight: bold;
-    color: $color_black;
-    background-color: $color_white;
-    border: #da0037 solid 2px;
-    letter-spacing: 1.5px;
-    border-radius: 10px;
-    width: fit-content;
-    min-width: 40%;
-    font-size: 1.4rem;
-    padding: 12px;
-    display: block;
-    cursor: default;
-    &:focus {
-      outline: none;
-    }
-  }
-  a {
-    margin-left: 30px;
-  }
-}
-*/
+
 .lijepiGumb {
   margin: 60px auto 30px;
   font-weight: bold;
@@ -539,7 +455,7 @@ label {
   border: $color_dark_gray solid 2px;
   letter-spacing: 1.5px;
   border-radius: 10px;
-  width: fit-content;
+  width: 60%;
   min-width: 20%;
   font-size: 1.4rem;
   padding: 12px;
@@ -585,10 +501,11 @@ ul {
   padding: 10px;
   font-size: 1.3rem;
 }
+
 .zanrovi-gumbi {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
-  width: 70%;
+  width: 800px;
   margin: 0 auto;
   button {
     margin-top: 5px;

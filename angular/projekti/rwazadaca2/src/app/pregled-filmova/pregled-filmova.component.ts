@@ -31,6 +31,7 @@ export class PregledFilmovaComponent implements OnInit {
     this.filmoviOdobreni = await this.filmoviService.dajMojeFilmove();
     this.mojiZanrovi = await this.zanroviService.dajMojePodatke();
     this.prikaziSve();
+    this.filmoviFiltrirani
   }
 
   async onSearchChange(event: any) {
