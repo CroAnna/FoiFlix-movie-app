@@ -28,6 +28,6 @@ export class PrijedloziComponent implements OnInit {
   }
 
   async prikaziMojeFilmove() {
-    this.filmoviNeodobreni = await this.filmoviService.dajMojeFilmove();
+    this.filmoviNeodobreni = await this.filmoviService.dajPrijedloge();
   }
 }

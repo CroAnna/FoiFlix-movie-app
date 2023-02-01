@@ -16,8 +16,8 @@ class FilmDAO {
 
     dajOdobrene = async function () {
         this.baza.spojiSeNaBazu();
-        let sql = "SELECT * FROM film WHERE odobreno==1;";
-        var podaci = await this.baza.izvrsiUpit(sql, []);
+        let sql = "SELECT * FROM film WHERE odobreno==?;";
+        var podaci = await this.baza.izvrsiUpit(sql, 1);
         this.baza.zatvoriVezu();
         return podaci;
     };

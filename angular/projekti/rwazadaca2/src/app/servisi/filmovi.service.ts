@@ -9,6 +9,13 @@ export class FilmoviService {
   constructor() {}
 
   async dajMojeFilmove() {
+    // let odgovor = await fetch(environment.restServis + 'filmovi');
+    let odgovor = await fetch(environment.restServis + 'filmoviOdobreni');
+    return JSON.parse(await odgovor.text());
+  }
+
+  async dajPrijedloge() {
+    // let odgovor = await fetch(environment.restServis + 'filmovi');
     let odgovor = await fetch(environment.restServis + 'filmovi');
     return JSON.parse(await odgovor.text());
   }
