@@ -27,13 +27,24 @@ export class FilmoviService {
     let odgovor = await fetch(
       `${environment.restServis}filmoviPoZanru/` + zanr.id
     );
-    console.log(
-      `u dohvatiDvaPoZanru za zanr ${zanr.name} odgovor ide sljedeci`
-    );
 
+    let parsirano = JSON.parse(await odgovor.text());
+    // console.log(
+    //   `u dohvatiDvaPoZanru za zanr ${zanr.name} odgovor ide sljedeci`
+    // );
+
+    console.log(parsirano.length);
+
+    if (parsirano.length > 2) {
+      const firstTwo = parsirano.slice(0, 2); // daje samo prva dva
+      console.log(firstTwo);
+      return firstTwo;
+    }
+
+    // }
     //  console.log(odgovor.text());
-    //return JSON.parse(await odgovor.text());
-    return await odgovor.text(); // a na frontendu se parsira onda
+    return parsirano;
+    //return await odgovor.text(); // a na frontendu se parsira onda
   }
 
   async dajTmdbFilmove(rijec: string, str: Number) {
