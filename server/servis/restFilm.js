@@ -10,6 +10,18 @@ exports.getFilmovi = function (zahtjev, odgovor) {
     });
 };
 
+exports.getFilmoviPoZanru = function (zahtjev, odgovor) {
+    console.log("u getFilmoviPoZanru!!");
+
+    odgovor.type("application/json");
+    let fdao = new FilmDAO();
+    let id = zahtjev.params.id;
+    fdao.dajPoZanru(id).then((filmovi) => {
+        console.log("zanr" + id + " = " + filmovi + JSON.stringify(filmovi) + "!");
+        odgovor.send(JSON.stringify(filmovi));
+    });
+};
+
 exports.getFilmoviOdobreni = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     let fdao = new FilmDAO();

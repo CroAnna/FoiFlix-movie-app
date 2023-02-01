@@ -14,6 +14,16 @@ class FilmDAO {
         return podaci;
     };
 
+    dajPoZanru = async function (id) {
+        this.baza.spojiSeNaBazu();
+        let sql = "SELECT * FROM film_zanr WHERE zanr_id==?;";
+        var podaci = await this.baza.izvrsiUpit(sql, [id]);
+        this.baza.zatvoriVezu();
+        console.log(podaci);
+
+        return podaci;
+    };
+
     dajOdobrene = async function () {
         this.baza.spojiSeNaBazu();
         let sql = "SELECT * FROM film WHERE odobreno==?;";

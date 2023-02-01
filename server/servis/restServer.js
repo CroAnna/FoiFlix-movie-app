@@ -102,6 +102,8 @@ function pripremaPutanjeResursKorisnika() {
 }
 
 function pripremaPutanjaFilmova() {
+  server.get("/api/filmoviPoZanru/:id", restFilm.getFilmoviPoZanru);
+
   server.get("/api/filmovi", restFilm.getFilmovi);
   server.get("/api/filmoviOdobreni", restFilm.getFilmoviOdobreni);
   server.post("/api/filmovi", restFilm.postFilmovi);

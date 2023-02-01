@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environment/environment';
 import { FilmoviI } from '../sucelja/FilmoviI';
+import { ZanrComponent } from '../zanr/zanr.component';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,20 @@ export class FilmoviService {
     // let odgovor = await fetch(environment.restServis + 'filmovi');
     let odgovor = await fetch(environment.restServis + 'filmovi');
     return JSON.parse(await odgovor.text());
+  }
+
+  async dohvatiDvaPoZanru(zanr: any) {
+    //console.log(`zanr ${zanr.id} ${zanr.name}`);
+    console.log(`u dohvatiDvaPoZanru za zanr ${zanr.name} PRIJE`);
+    let odgovor = await fetch(
+      `${environment.restServis}filmoviPoZanru/` + zanr.id
+    );
+    console.log(
+      `u dohvatiDvaPoZanru za zanr ${zanr.name} odgovor ide sljedeci`
+    );
+
+    //  console.log(odgovor.text());
+    return await odgovor.text();
   }
 
   async dajTmdbFilmove(rijec: string, str: Number) {
