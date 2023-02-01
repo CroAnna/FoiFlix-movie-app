@@ -26,10 +26,11 @@ export class PocetnaComponent implements OnInit {
     this.zanroviMoji = await this.zanroviService.dajMojePodatke();
     console.log(this.zanroviMoji);
     for (let zanr of this.zanroviMoji) {
-      let odg = await this.filmoviService.dohvatiDvaPoZanru(zanr); // salje zanr
+      let odg = JSON.parse(await this.filmoviService.dohvatiDvaPoZanru(zanr)); // salje zanr, mozes parsirat i na servisu ak ne zelis tu
       console.log('odgovor = ' + odg); // odg su jsoni film_zanr tablica
-      //this.merged += odg; // OK OVO RADI :D
-      this.merged.push(odg);
+
+      this.merged = [...this.merged, ...odg]; // spaja json odgovor sa prethodnim json odgovorima
+
       console.log('MERGED ' + this.merged);
     }
   }

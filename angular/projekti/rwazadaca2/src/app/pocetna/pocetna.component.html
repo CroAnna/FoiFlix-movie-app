@@ -2,6 +2,18 @@
   <h2>Početna 🎬</h2>
   <h3>Preporučeni filmovi po Vašim žanrovima:</h3>
   <div class="generirani-kontejner">
+    <ul *ngFor="let film of merged">
+      <li class="moji-filmovi">
+        <div>
+          {{ film.film_id }}
+        </div>
+        <!-- <div>{{ randomFilm1.id }}</div> -->
+        <!-- <div>{{ randomFilm2.id }}</div> -->
+      </li>
+    </ul>
+  </div>
+
+  <div class="generirani-kontejner">
     <ul *ngFor="let zanr of zanroviMoji">
       <li class="moji-filmovi">
         <div>

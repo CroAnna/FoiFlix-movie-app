@@ -32,7 +32,8 @@ export class FilmoviService {
     );
 
     //  console.log(odgovor.text());
-    return await odgovor.text();
+    //return JSON.parse(await odgovor.text());
+    return await odgovor.text(); // a na frontendu se parsira onda
   }
 
   async dajTmdbFilmove(rijec: string, str: Number) {
