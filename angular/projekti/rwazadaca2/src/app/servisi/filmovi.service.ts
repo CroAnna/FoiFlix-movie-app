@@ -22,7 +22,7 @@ export class FilmoviService {
   }
 
   async dohvatiDvaPoZanru(zanr: any) {
-    //console.log(`zanr ${zanr.id} ${zanr.name}`);
+    console.log(`zanr ${zanr.id} ${zanr.name}`);
     console.log(`u dohvatiDvaPoZanru za zanr ${zanr.name} PRIJE`);
     let odgovor = await fetch(
       `${environment.restServis}filmoviPoZanru/` + zanr.id
@@ -33,7 +33,7 @@ export class FilmoviService {
     //   `u dohvatiDvaPoZanru za zanr ${zanr.name} odgovor ide sljedeci`
     // );
 
-    console.log(parsirano.length);
+    console.log('duzina parsiranog ' + parsirano.length);
 
     if (parsirano.length > 2) {
       const firstTwo = parsirano.slice(0, 2); // daje samo prva dva

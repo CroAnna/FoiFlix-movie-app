@@ -16,8 +16,11 @@ class FilmDAO {
 
     dajPoZanru = async function (id) {
         this.baza.spojiSeNaBazu();
-        let sql = "SELECT * FROM film_zanr WHERE zanr_id==?;";
-        var podaci = await this.baza.izvrsiUpit(sql, [id]);
+
+
+        let sql = "SELECT * FROM film_zanr WHERE zanr_id=?;";
+        console.log(sql + " " + id);
+        var podaci = await this.baza.izvrsiUpit(sql, [parseInt(id)]);
         this.baza.zatvoriVezu();
         console.log(podaci);
 
@@ -26,7 +29,7 @@ class FilmDAO {
 
     dajOdobrene = async function () {
         this.baza.spojiSeNaBazu();
-        let sql = "SELECT * FROM film WHERE odobreno==?;";
+        let sql = "SELECT * FROM film WHERE odobreno=?;";
         var podaci = await this.baza.izvrsiUpit(sql, 1);
         this.baza.zatvoriVezu();
         return podaci;

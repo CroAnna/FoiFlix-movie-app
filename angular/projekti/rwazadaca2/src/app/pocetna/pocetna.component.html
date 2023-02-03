@@ -2,24 +2,22 @@
   <h2>Početna 🎬</h2>
   <h3>Preporučeni filmovi po Vašim žanrovima:</h3>
   <div class="generirani-kontejner">
-    <ul *ngFor="let film of merged">
+    <ul *ngFor="let film of mergedFilmovi">
       <li class="moji-filmovi">
-        <div>id filma = {{ film.film_id }}, zanr = {{ film.zanr_id }}</div>
-        <!-- <div>{{ randomFilm1.id }}</div> -->
-        <!-- <div>{{ randomFilm2.id }}</div> -->
+        <div>id filma = {{ film.id }}, naslov = {{ film.original_title }}</div>
       </li>
     </ul>
   </div>
 
-  <div class="generirani-kontejner">
+  <!-- <div class="generirani-kontejner">
     <ul *ngFor="let zanr of zanroviMoji">
       <li class="moji-filmovi">
         <div>
           {{ zanr.name }}
         </div>
-        <div>{{ randomFilm1.id }}</div>
+        <div>{{ randomFilm1.id }}</div> // dodaj tu petlju koja zove dohvatiDvaPoZanru(zanr.name)
         <div>{{ randomFilm2.id }}</div>
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>

@@ -16,6 +16,8 @@ exports.getFilmoviPoZanru = function (zahtjev, odgovor) {
     odgovor.type("application/json");
     let fdao = new FilmDAO();
     let id = zahtjev.params.id;
+    console.log("iddd" + id);
+
     fdao.dajPoZanru(id).then((filmovi) => {
         console.log("zanr" + id + " = " + filmovi + JSON.stringify(filmovi) + "!");
         odgovor.send(JSON.stringify(filmovi));

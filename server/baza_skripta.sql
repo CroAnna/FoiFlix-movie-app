@@ -147,9 +147,10 @@ INSERT INTO `film_zanr` (`zanr_id`, `film_id`) VALUES
 SELECT * FROM zanr;
 SELECT * FROM film;
 SELECT * FROM film_zanr;
+SELECT * FROM film_zanr WHERE zanr_id=16;
 
 DROP TABLE `film_zanr`;
-DELETE FROM `film_zanr`;
+DELETE FROM `film_zanr` WHERE `film_id`=459151;
 
 SELECT * FROM `film_zanr`;
 

@@ -12,6 +12,8 @@ export class PocetnaComponent implements OnInit {
   randomFilm1: any = '';
   randomFilm2: any = '';
   merged: any = [];
+  mergedFilmovi: any = [];
+
   constructor(
     private zanroviService: ZanroviService,
     private filmoviService: FilmoviService
@@ -29,7 +31,7 @@ export class PocetnaComponent implements OnInit {
     for (let zanr of this.zanroviMoji) {
       // let odg = JSON.parse(await this.filmoviService.dohvatiDvaPoZanru(zanr)); // salje zanr, mozes parsirat i na servisu ak ne zelis tu
       let odg = await this.filmoviService.dohvatiDvaPoZanru(zanr);
-      // console.log('odgovor = ' + odg); // odg su jsoni film_zanr tablica
+      console.log('odgovor = ' + odg); // odg su jsoni film_zanr tablica
 
       this.merged = [...this.merged, ...odg]; // spaja json odgovor sa prethodnim json odgovorima
 
@@ -40,7 +42,16 @@ export class PocetnaComponent implements OnInit {
   }
 
   async prikaziRandomFilmove() {
-    this.randomFilm1 = await this.filmoviService.dajOdabraniFilm('370172');
-    console.log('odabrani ' + this.randomFilm1);
+    /* this.randomFilm1 = await this.filmoviService.dajOdabraniFilm('370172');
+    console.log('odabrani ' + this.randomFilm1);*/
+
+    for (let i = 0; i < this.merged.length; i++) {
+      console.log('i ' + i + ', ' + this.merged[i].film_id);
+
+      this.mergedFilmovi[i] = await this.filmoviService.dajOdabraniFilm(
+        this.merged[i].film_id
+      );
+      await console.log('mergeani ' + this.mergedFilmovi[i]);
+    }
   }
 }
