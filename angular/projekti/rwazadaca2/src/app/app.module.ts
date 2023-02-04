@@ -18,6 +18,8 @@ import { ProfilComponent } from './profil/profil.component';
 import { FilmoviPretrazivanjeComponent } from './filmovi-pretrazivanje/filmovi-pretrazivanje.component';
 import { GalerijaComponent } from './galerija/galerija.component';
 import { UploadSlikeComponent } from './upload-slike/upload-slike.component';
+import { ZanrPocetnaComponent } from './zanr-pocetna/zanr-pocetna.component';
+import { FilmPocetnaComponent } from './film-pocetna/film-pocetna.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { UploadSlikeComponent } from './upload-slike/upload-slike.component';
     FilmoviPretrazivanjeComponent,
     GalerijaComponent,
     UploadSlikeComponent,
+    ZanrPocetnaComponent,
+    FilmPocetnaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

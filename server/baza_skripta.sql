@@ -110,10 +110,15 @@ CREATE TABLE IF NOT EXISTS `film` (
 
 
 SELECT * FROM `film`;
+SELECT * FROM `film_zanr`;
+SELECT * FROM `film` WHERE `id`=555604;
+SELECT * FROM `film` WHERE `id` IN (SELECT film_id FROM film_zanr WHERE zanr_id=14);
+SELECT film_id FROM film_zanr WHERE zanr_id=14;
+SELECT * FROM `film` WHERE `id` JOIN `film_zanr` ON `film_id`
 
 DROP TABLE `film`;
 
-DELETE FROM `film` WHERE `id`=718789;
+DELETE FROM `film_zanr` WHERE `film_id`=315162;
 
 INSERT INTO `film` (`id`, `adult`, `backdrop_path`, `budget`, `homepage`, `imdb_id`, `original_language`, `original_title`, `overview`, `popularity`, `poster_path`, `release_date`, `revenue`, `runtime`, `status`, `tagline`, `title`, `video`, `vote_average`, `vote_count`, `datum_unosa`, `odobreno`, `korisnik_id`) VALUES
 (3, 0, NULL, 5, '5', '5', '5', '5', NULL, 5, NULL, '5', 5, NULL, '5', NULL, '5', 5, 5, 5, '2022-11-23 23:49:47', NULL, 9);

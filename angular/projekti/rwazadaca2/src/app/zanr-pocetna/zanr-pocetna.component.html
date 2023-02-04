@@ -1,0 +1,7 @@
+<p>zanr-pocetna works! {{ zanr.name }} {{ zanr.id }}</p>
+<div *ngIf="filmovi">
+  <app-film-pocetna
+    *ngFor="let film of filmovi"
+    [film]="film"
+  ></app-film-pocetna>
+</div>

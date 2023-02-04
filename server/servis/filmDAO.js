@@ -18,7 +18,7 @@ class FilmDAO {
         this.baza.spojiSeNaBazu();
 
 
-        let sql = "SELECT * FROM film_zanr WHERE zanr_id=?;";
+        let sql = "SELECT * FROM film WHERE id IN (SELECT film_id FROM film_zanr WHERE zanr_id=?);";
         console.log(sql + " " + id);
         var podaci = await this.baza.izvrsiUpit(sql, [parseInt(id)]);
         this.baza.zatvoriVezu();
