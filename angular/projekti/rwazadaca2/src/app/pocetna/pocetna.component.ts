@@ -9,8 +9,6 @@ import { ZanroviService } from '../servisi/zanrovi.service';
 })
 export class PocetnaComponent implements OnInit {
   zanroviMoji: any;
-  randomFilm1: any = '';
-  randomFilm2: any = '';
   merged: any = [];
   mergedFilmovi: any = [];
 
@@ -20,8 +18,8 @@ export class PocetnaComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.prikaziMojeZanrove();
-    await this.prikaziRandomFilmove();
+    await this.prikaziMojeZanrove();
+    this.prikaziRandomFilmove();
   }
 
   async prikaziMojeZanrove() {
@@ -35,15 +33,14 @@ export class PocetnaComponent implements OnInit {
 
       this.merged = [...this.merged, ...odg]; // spaja json odgovor sa prethodnim json odgovorima
 
-      console.log('MERGED ' + this.merged);
+      console.log(this.merged);
       // if (brojac < 2) {
       // }
     }
   }
 
   async prikaziRandomFilmove() {
-    /* this.randomFilm1 = await this.filmoviService.dajOdabraniFilm('370172');
-    console.log('odabrani ' + this.randomFilm1);*/
+    console.log('u prikazi randome');
 
     for (let i = 0; i < this.merged.length; i++) {
       console.log('i ' + i + ', ' + this.merged[i].film_id);
@@ -51,7 +48,12 @@ export class PocetnaComponent implements OnInit {
       this.mergedFilmovi[i] = await this.filmoviService.dajOdabraniFilm(
         this.merged[i].film_id
       );
-      await console.log('mergeani ' + this.mergedFilmovi[i]);
+
+      // this.mergedFilmovi = JSON.parse(
+      //   await this.filmoviService.dajOdabraniFilm(this.merged[i].film_id)
+      // );
+      console.log(this.mergedFilmovi); // PDOACI
+      console.log(JSON.stringify(this.mergedFilmovi));
     }
   }
 }
