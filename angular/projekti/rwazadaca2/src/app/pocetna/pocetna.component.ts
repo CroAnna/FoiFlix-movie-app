@@ -22,7 +22,7 @@ export class PocetnaComponent implements OnInit {
   }
 
   async prikaziMojeZanrove() {
-    this.zanroviMoji = await this.zanroviService.dajMojePodatke();
+    this.zanroviMoji = await await this.zanroviService.dajMojePodatke();
     console.log(this.zanroviMoji);
     // let brojac = 0;
     // for (let zanr of this.zanroviMoji) {

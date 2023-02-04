@@ -15,26 +15,8 @@ export class ZanrPocetnaComponent implements OnInit {
   constructor(private filmoviService: FilmoviService) {}
 
   async ngOnInit() {
-    //this.filmovi = this.filmoviService.dohvatiDvaPoZanru(this.zanr);
-    this.filmovi = await this.filmoviService.dohvatiDvaPoZanru(this.zanr);
-    //console.log('odgovor = ' + filmovi);
+    this.filmovi = (
+      await this.filmoviService.dohvatiDvaPoZanru(this.zanr)
+    ).slice(0, 2); // prikaz samo prva dva
   }
-
-  // async prikaziRandomFilmove() {
-  //   console.log('u prikazi randome');
-
-  //   for (let i = 0; i < this.merged.length; i++) {
-  //     console.log('i ' + i + ', ' + this.merged[i].film_id);
-
-  //     this.filmovi = await this.filmoviService.dajOdabraniFilm(
-  //       this.merged.film_id
-  //     );
-
-  //     // this.filmovi = JSON.parse(
-  //     //   await this.filmoviService.dajOdabraniFilm(this.merged[i].film_id)
-  //     // );
-  //     console.log(this.filmovi); // PDOACI
-  //     console.log(JSON.stringify(this.filmovi));
-  //   }
-  // }
 }
