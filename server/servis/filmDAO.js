@@ -16,14 +16,10 @@ class FilmDAO {
 
     dajPoZanru = async function (id) {
         this.baza.spojiSeNaBazu();
-
-
         let sql = "SELECT * FROM film WHERE id IN (SELECT film_id FROM film_zanr WHERE zanr_id=?);";
-        console.log(sql + " " + id);
         var podaci = await this.baza.izvrsiUpit(sql, [parseInt(id)]);
         this.baza.zatvoriVezu();
         console.log(podaci);
-
         return podaci;
     };
 
@@ -45,14 +41,12 @@ class FilmDAO {
     };
 
     brisi = async function (id, film) {
-        console.log("BRISI DAO " + id + " " + film.id);
-
         this.baza.spojiSeNaBazu();
         let sql = "DELETE FROM film WHERE id=?;";
         var podaci = await this.baza.izvrsiUpit(sql, [film.id]);
-        // brise i podatke iz film_zanr ak se odbaci film :D
+        let sql2 = "DELETE FROM film_zanr WHERE film_id=?";
+        var podaci2 = await this.baza.izvrsiUpit(sql2, [film.id]);
         this.baza.zatvoriVezu();
-        // console.log("izbrisan je film s id " + id);
         return true;
     };
 
