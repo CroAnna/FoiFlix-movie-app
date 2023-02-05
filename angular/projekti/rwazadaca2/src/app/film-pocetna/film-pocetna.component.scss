@@ -1,3 +1,26 @@
-* {
-  background-color: darkcyan;
+$color_black: #171717;
+$color_white: #ededed;
+$color_red: #da0037;
+$color_dark_gray: #444444;
+$color_white_pure: #fff;
+$color_dark_gray: #202020;
+$color_light_gray: #9b9b9b;
+$color_light_gray2: #aaa9a9;
+$color_green: #1bb10b;
+
+.poc-film {
+  margin: 0 auto;
+  background-color: $color_light_gray2;
+  // height: calc(60vh - 10px);
+  height: 370px;
+  overflow: hidden;
+  width: 500px;
+  .img-div {
+    width: 500px;
+    justify-content: center;
+    margin: 0 auto;
+    & img {
+      width: 100%;
+    }
+  }
 }

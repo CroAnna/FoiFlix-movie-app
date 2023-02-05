@@ -1,4 +1,15 @@
-* {
-  background-color: gray;
-  margin: 20px;
+.poc-zanr {
+  text-align: center;
+  & h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  & .filmovi {
+    width: 60%;
+    margin: 30px auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 20px;
+  }
 }

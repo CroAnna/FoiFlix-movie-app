@@ -10,8 +10,6 @@ import { ZanroviService } from '../servisi/zanrovi.service';
 export class ZanrPocetnaComponent implements OnInit {
   @Input('zanr') zanr!: any;
   filmovi: any = '';
-  merged: any = [];
-
   constructor(private filmoviService: FilmoviService) {}
 
   async ngOnInit() {

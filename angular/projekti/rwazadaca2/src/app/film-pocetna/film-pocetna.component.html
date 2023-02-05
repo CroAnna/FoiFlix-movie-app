@@ -1,2 +1,15 @@
-<!-- <p>film-pocetna works!</p> -->
-<p>{{ film.original_title }} {{ film.id }}</p>
+<div class="poc-film">
+  <div class="img-div">
+    <img
+      src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/{{
+        film.poster_path
+      }}"
+      x
+      alt="poster"
+    />
+    <div class="tekst pregled-film">
+      <h4>{{ film.title }}</h4>
+      <p>{{ film.overview }}</p>
+    </div>
+  </div>
+</div>

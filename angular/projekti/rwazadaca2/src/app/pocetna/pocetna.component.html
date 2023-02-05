@@ -1,36 +1,10 @@
 <div class="generirani">
   <h2>Početna 🎬</h2>
-  <h3>Preporučeni filmovi po Vašim žanrovima:</h3>
-  <!-- <div class="generirani-kontejner">
-    <ul *ngFor="let film of mergedFilmovi">
-      <li class="moji-filmovi">
-        <div>id filma = {{ film.id }}, naslov = {{ film.original_title }}</div>
-      </li>
-    </ul>
-  </div> -->
-
+  <h3>Preporučeni filmovi po žanrovima:</h3>
   <div class="generirani-kontejner">
-    <!-- <ul *ngFor="let zanr of zanroviMoji">
-      <li class="moji-filmovi">
-        <div>
-          {{ zanr.name }}
-        </div> -->
-
     <app-zanr-pocetna
       *ngFor="let zanr of zanroviMoji"
       [zanr]="zanr"
     ></app-zanr-pocetna>
-
-    <!-- <div class="generirani-kontejner">
-          <ul *ngFor="let film of mergedFilmovi">
-            <li class="moji-filmovi">
-              <div *ngIf="film">
-                id filma = {{ film.id }}, naslov = {{ film.original_title }}
-              </div>
-            </li>
-          </ul>
-        </div> -->
-    <!-- </li>
-    </ul> -->
   </div>
 </div>
