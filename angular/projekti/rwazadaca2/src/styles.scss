@@ -666,13 +666,14 @@ table.tablica {
 .crvena {
   border-color: #d63d0e;
 }
+
 .sadrzaj {
   width: 85%;
   margin: 0 auto;
   background-color: $color_dark_gray;
   padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px 20px;
   border-radius: 15px;
   margin-bottom: 30px;
@@ -686,6 +687,7 @@ table.tablica {
 
     &.pretrazi {
       background-color: $color_light_gray;
+      width: 300px;
     }
 
     &.pregled-film {
@@ -744,6 +746,8 @@ table.tablica {
       }
       &:hover {
         opacity: 1;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
       }
     }
 
@@ -772,6 +776,12 @@ table.tablica {
         transform: translateY(0px);
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .sadrzaj {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
