@@ -11,15 +11,12 @@ exports.getFilmovi = function (zahtjev, odgovor) {
 };
 
 exports.getFilmoviPoZanru = function (zahtjev, odgovor) {
-    //console.log("u getFilmoviPoZanru!!");
-
     odgovor.type("application/json");
     let fdao = new FilmDAO();
     let id = zahtjev.params.id;
     console.log("iddd" + id);
 
     fdao.dajPoZanru(id).then((filmovi) => {
-        //console.log("zanr" + id + " = " + filmovi + JSON.stringify(filmovi) + "!");
         console.log(filmovi);
         odgovor.send(JSON.stringify(filmovi));
     });
@@ -96,6 +93,4 @@ exports.deleteFilm = function (zahtjev, odgovor) {
     fdao.brisi(id, podaci).then((film) => {
         odgovor.send(JSON.stringify(film));
     });
-
-
 }

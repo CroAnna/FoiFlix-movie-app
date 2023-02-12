@@ -1,6 +1,4 @@
 const konst = require("../konstante.js");
-//const portRest = require(konst.dirPortova + "portovi_rest.js").askarica20;
-//const url = "http://spider.foi.hr:" + portRest + "/api";
 const url = "http://localhost:9000/api";
 const kodovi = require("./moduli/kodovi.js");
 
@@ -25,37 +23,24 @@ class FilmoviZanroviPretrazivanje {
   }
 
   async dohvatiMojeZanrove() {
-    console.log("putanja => " + url + "/zanr");
-    //let odgovor = await fetch("localhost:9000/api/zanr?korime={rest.korime}&lozinka={rest.lozinka}"); // TODO
-    console.log("prije dohvatiMojeZanrove");
-
     let odgovor = await fetch("http://localhost:9000/api/zanr");
-    console.log("u dohvatiMojeZanrove");
     let podaci = await odgovor.text();
     console.log(podaci);
-    console.log(odgovor.status);
     let zanrovi = JSON.parse(podaci);
     return zanrovi;
   }
 
   async dohvatiMojeFilmove() {
-    console.log("putanja => " + url + "/filmoviMoji");
     let odgovor = await fetch("http://localhost:9000/api/filmovi?korime={rest.korime}&lozinka={rest.lozinka}");
-    console.log("u dohvatiMojeFilmove");
     let podaci = await odgovor.text();
     console.log(podaci);
-    console.log(odgovor.status);
     let filmovi = JSON.parse(podaci);
     return filmovi;
   }
 
   async dohvatiMojeKorisnike() {
-    console.log("PRIJE dohvatiMojeKorisnike U filmoviPretrazivanje.js");
     let odgovor = await fetch("http://localhost:9000/api/korisnici?korime={rest.korime}&lozinka={rest.lozinka}");
-    console.log("izmedu");
-
     let podaci = await odgovor.text();
-    console.log(odgovor.status);
     let korisnici = JSON.parse(podaci);
     return korisnici;
   }

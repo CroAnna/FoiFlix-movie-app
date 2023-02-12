@@ -47,7 +47,7 @@ $color_green: #1bb10b;
     border: 2px solid $color_dark_gray;
     box-shadow: $color_red 0px 0px 5px;
     padding: 10px 20px;
-    height: 150px;
+    height: fit-content;
     display: flex;
     & .naslov {
       width: fit-content;

@@ -1,21 +1,12 @@
 const konst = require("../konstante.js");
 const express = require("express");
-
 const Konfiguracija = require("../konfiguracija");
-
-
-
-
-//const portovi = require(konst.dirPortova + "portovi_rest.js");
 const restKorisnik = require("./restKorisnik.js");
 const restFilm = require("./restFilm.js");
 const restZanr = require("./restZanr.js");
 const RestTMDB = require("./restTMDB.js");
 const fsPromise = require("fs/promises");
-
-
 const cors = require('cors');
-
 
 const server = express();
 server.use(cors());
@@ -31,8 +22,6 @@ konf
     else console.error("Nemoguce otvoriti datoteku");
     process.exit();
   });
-
-
 
 let port;
 

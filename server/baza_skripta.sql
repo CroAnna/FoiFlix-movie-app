@@ -8,9 +8,6 @@ INSERT INTO `uloga` (`id`, `naziv`) VALUES
 (2, 'registrirani korisnik'),
 (3, 'gost');
 
-
-
-
 CREATE TABLE IF NOT EXISTS `korisnik` (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   korime TEXT NOT NULL,

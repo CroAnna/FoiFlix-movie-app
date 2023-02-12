@@ -5,7 +5,6 @@ const Konfiguracija = require("../konfiguracija.js");
 let auth = new Autentifikacija();
 let fp = new FilmoviPretrazivanje();
 
-
 let port;
 let konf = new Konfiguracija();
 konf.ucitajKonfiguraciju().then(() => {
@@ -15,14 +14,12 @@ konf.ucitajKonfiguraciju().then(() => {
     port = restport;
 })
 
-
 exports.dajSveZanrove = async function (zahtjev, odgovor) {
     odgovor.json(await fp.dohvatiSveZanrove());
 }
 
 exports.dajMojeKorisnike = async function (zahtjev, odgovor) {
     console.log("u dajMojeKorisnike u fetchUpravitelju");
-
     odgovor.json(await fp.dohvatiMojeKorisnike());
 }
 

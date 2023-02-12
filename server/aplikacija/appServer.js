@@ -3,27 +3,16 @@ const express = require("express");
 const kolacici = require("cookie-parser");
 const sesija = require("express-session")
 const Konfiguracija = require("../konfiguracija");
-//const portovi = require("portovi.js");
 const htmlUpravitelj = require("./htmlUpravitelj.js");
 const fetchUpravitelj = require("./fetchUpravitelj.js");
-//const port = 9001; //TODO
 
 const cors = require('cors');
 
 const server = express();
 server.use(cors());
-/*
-server.use(express.static("./html"));
-server.use("/fotografije", express.static("./fotografije"));
-server.use("/dokumentacija", express.static("../dokumentacija"));
-*/
 
 // za automatsko pokretanje aplikacije sa npm start
 server.use(express.static(__dirname + "/angular"));
-
-
-
-
 
 function pokreniServer() {
   let jsonobjekt = konf.dajKonf();
@@ -45,19 +34,7 @@ function pokreniServer() {
     })
   );
 
-  // pripremiPutanjePocetna();
   pripremiPutanjeAutentifikacija();
-  /* pripremiPutanjePretrazivanjeFilmova();
-   pripremiPutanjeDokumentacija();
-   pripremiPutanjeZanrovi();
-   pripremiPutanjeFilmovi();
-   pripremiPutanjeProfil();
-   pripremiPutanjeKorisnici();
-   pripremiPutanjeSlike();
-   pripremiPutanjeFilmoviPrijedlozi();
-   pripremiPutanjeGalerijaSlika();
- */
-
 
   server.use("/js", express.static(__dirname + "/js"));
   server.use((zahtjev, odgovor) => {
@@ -69,9 +46,6 @@ function pokreniServer() {
   server.listen(port, () => {
     console.log(`Server pokrenut na portu: ${port}`);
   });
-
-
-
 }
 
 let konf = new Konfiguracija();
@@ -86,77 +60,11 @@ konf
     process.exit();
   });
 
-
-
 server.get("/", (zahtjev, odgovor) => {
   odgovor.redirect("/pocetna");
 });
 
-
-function pripremiPutanjePocetna() {
-  server.get("/pocetna", htmlUpravitelj.pocetna);
-  server.get("/ispisiUlogu", htmlUpravitelj.ispisiUlogu);
-  server.get("/dajSveZanrove", fetchUpravitelj.dajSveZanrove);
-  server.get("/dajMojeZanrove", fetchUpravitelj.dajMojeZanrove);
-  server.get("/dajDvaFilma", fetchUpravitelj.dajDvaFilma);
-}
-
-function pripremiPutanjeKorisnici() {
-  server.get("/korisnici", htmlUpravitelj.korisnici);
-  server.put("/korisniciBlokiraj", fetchUpravitelj.korisniciBlokiraj);
-}
-
-function pripremiPutanjePretrazivanjeFilmova() {
-  server.get("/filmoviPretrazivanje", htmlUpravitelj.filmoviPretrazivanje);
-  server.post("/filmoviPretrazivanje", fetchUpravitelj.filmoviPretrazivanje);
-  server.post("/dodajFilm", fetchUpravitelj.dodajFilm);
-}
-
 function pripremiPutanjeAutentifikacija() {
-  //server.get("/registracija", htmlUpravitelj.registracija);
   server.post("/registracija", htmlUpravitelj.registracija);
-  //  server.get("/odjava", htmlUpravitelj.odjava);
-  // server.get("/prijava", htmlUpravitelj.prijava);
   server.post("/prijava", htmlUpravitelj.prijava);
-  //server.get("/getJWT", fetchUpravitelj.getJWT);
-  //server.get("/aktivacijaRacuna", fetchUpravitelj.aktvacijaRacuna);
 }
-
-function pripremiPutanjeDokumentacija() {
-  server.get("/dokumentacija", htmlUpravitelj.dokumentacija);
-}
-
-function pripremiPutanjeZanrovi() {
-  server.get("/zanrovi", htmlUpravitelj.zanrovi);
-  server.post("/zanroviDodaj", fetchUpravitelj.zanroviDodaj);
-  server.put("/zanroviUpdate", fetchUpravitelj.zanroviUpdate);
-  server.delete("/zanroviDelete", fetchUpravitelj.zanroviDelete);
-}
-
-function pripremiPutanjeFilmovi() {
-  server.get("/film", htmlUpravitelj.film);
-  server.get("/filmoviPregled", htmlUpravitelj.filmoviPregled);
-  server.get("/dajMojeFilmove", fetchUpravitelj.dajMojeFilmove);
-
-}
-
-function pripremiPutanjeProfil() {
-  server.get("/profil", htmlUpravitelj.profil);
-  server.get("/profil/ispisiKorime", htmlUpravitelj.ispisiKorime);
-  server.put("/korisnikUpdate", fetchUpravitelj.korisnikUpdate);
-  server.get("/dajMojeKorisnike", fetchUpravitelj.dajMojeKorisnike);
-}
-
-function pripremiPutanjeSlike() {
-  server.get("/slika", htmlUpravitelj.slika);
-};
-
-function pripremiPutanjeFilmoviPrijedlozi() {
-  server.get("/filmoviPrijedlozi", htmlUpravitelj.filmoviPrijedlozi);
-  server.put("/filmoviUpdate", fetchUpravitelj.filmoviUpdate);
-  server.delete("/filmoviDelete", fetchUpravitelj.filmoviDelete);
-};
-
-function pripremiPutanjeGalerijaSlika() {
-  server.get("/galerija", htmlUpravitelj.galerija);
-};

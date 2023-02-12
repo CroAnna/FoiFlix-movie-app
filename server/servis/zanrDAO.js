@@ -36,7 +36,7 @@ class ZanrDAO {
 
   brisiSve = async function () {
     this.baza.spojiSeNaBazu();
-    let sql = "DELETE FROM zanr WHERE zanr.id NOT IN (SELECT film_zanr.zanr_id FROM film_zanr);"; // ovo je dobro (testirano u bazi)
+    let sql = "DELETE FROM zanr WHERE zanr.id NOT IN (SELECT film_zanr.zanr_id FROM film_zanr);";
     await this.baza.izvrsiUpit(sql, []);
     return true;
   };
