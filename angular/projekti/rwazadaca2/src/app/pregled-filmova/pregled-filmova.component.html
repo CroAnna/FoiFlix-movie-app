@@ -1,35 +1,5 @@
 <div class="pretrazivanje-gore">
-  <div id="stranicenje">
-    <button class="btnStranicenje" *ngIf="stranica > 1" (click)="strPrva()">
-      <<
-    </button>
-    <button class="btnStranicenje" *ngIf="stranica > 1" (click)="strNatrag()">
-      <
-    </button>
-    <button
-      class="btnStranicenje"
-      *ngIf="stranica < zadnjaStranica"
-      (click)="strDalje()"
-    >
-      >
-    </button>
-    <button
-      class="btnStranicenje"
-      *ngIf="stranica < zadnjaStranica"
-      (click)="strZadnja()"
-    >
-      >>
-    </button>
-  </div>
   <h1 class="pretrazivanje">Pregled filmova</h1>
-  <input
-    type="text"
-    id="filterPRCMAN"
-    class="search"
-    placeholder="Pretrazi po nazivu..."
-    name="rijeci"
-    (input)="onSearchChange($event)"
-  />
 </div>
 
 <div class="sadrzaj">
