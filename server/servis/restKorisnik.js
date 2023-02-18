@@ -134,13 +134,3 @@ exports.putKorisnikAktivacija = function (zahtjev, odgovor) {
     odgovor.send(JSON.stringify(poruka));
   });
 };
-
-exports.putKorisnikBlokiranje = function (zahtjev, odgovor) {
-  odgovor.type("application/json");
-  let korime = zahtjev.params.korime;
-  let podaci = zahtjev.body;
-  let kdao = new KorisnikDAO();
-  kdao.blokiraj(korime, podaci).then((poruka) => {
-    odgovor.send(JSON.stringify(poruka));
-  });
-};

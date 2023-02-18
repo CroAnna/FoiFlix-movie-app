@@ -86,8 +86,6 @@ function pripremaPutanjeResursKorisnika() {
   server.put("/api/korisnici/:korime/aktivacija", restKorisnik.putKorisnikAktivacija);
   server.get("/api/korisnici/:korime/aktivacija", restKorisnik.getKorisnikAktivacija);
   server.delete("/api/korisnici/:korime/aktivacija", restKorisnik.deleteKorisnikAktivacija);
-
-  server.put("/api/korisnici/:korime/blokiranje", restKorisnik.putKorisnikBlokiranje);
 }
 
 function pripremaPutanjaFilmova() {

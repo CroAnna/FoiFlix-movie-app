@@ -237,29 +237,3 @@ exports.korisnikUpdate = async (zahtjev, odgovor) => {
         return false;
     }
 }
-
-exports.korisniciBlokiraj = async (zahtjev, odgovor) => {
-    tijelo = zahtjev.body;
-    let korime = tijelo.korime;
-    let zaglavlje = new Headers();
-    zaglavlje.set("Content-Type", "application/json");
-
-    let parametri = {
-        method: "PUT",
-        body: JSON.stringify(tijelo),
-        headers: zaglavlje,
-    };
-
-    let odgFetch = await fetch(
-        "http://localhost:9000/api/korisnici/" + korime + "/blokiranje?korime={rest.korime}&lozinka={rest.lozinka}",
-        parametri
-    );
-
-    if (odgFetch.status == 200) {
-        console.log("Korisnik blokiran na servisu");
-        return true;
-    } else {
-        console.log(odgovor.status);
-        return false;
-    }
-}

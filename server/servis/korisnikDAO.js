@@ -73,16 +73,6 @@ class KorisnikDAO {
     console.log("korisnik " + korime + " je aktiviran");
     return true;
   };
-
-  blokiraj = async function (korime, korisnik) {
-    let sql = `UPDATE korisnik SET blokiran=1 WHERE korime=?`;
-    let podaci = [
-      korime,
-    ];
-    await this.baza.izvrsiUpit(sql, podaci);
-    console.log("korisnik " + korime + " je blokiran");
-    return true;
-  };
 }
 
 module.exports = KorisnikDAO;
