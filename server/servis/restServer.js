@@ -81,11 +81,6 @@ function pripremaPutanjeResursKorisnika() {
   server.post("/api/korisnici/:korime", restKorisnik.postKorisnik);
   server.put("/api/korisnici/:korime", restKorisnik.putKorisnik);
   server.delete("/api/korisnici/:korime", restKorisnik.deleteKorisnik);
-
-  server.post("/api/korisnici/:korime/aktivacija", restKorisnik.postKorisnikAktivacija);
-  server.put("/api/korisnici/:korime/aktivacija", restKorisnik.putKorisnikAktivacija);
-  server.get("/api/korisnici/:korime/aktivacija", restKorisnik.getKorisnikAktivacija);
-  server.delete("/api/korisnici/:korime/aktivacija", restKorisnik.deleteKorisnikAktivacija);
 }
 
 function pripremaPutanjaFilmova() {

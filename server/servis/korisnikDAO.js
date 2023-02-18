@@ -63,16 +63,6 @@ class KorisnikDAO {
     await this.baza.izvrsiUpit(sql, podaci);
     return true;
   };
-
-  aktiviraj = async function (korime, korisnik) {
-    let sql = `UPDATE korisnik SET aktiviran=1 WHERE korime=?`;
-    let podaci = [
-      korime,
-    ];
-    await this.baza.izvrsiUpit(sql, podaci);
-    console.log("korisnik " + korime + " je aktiviran");
-    return true;
-  };
 }
 
 module.exports = KorisnikDAO;

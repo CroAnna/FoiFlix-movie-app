@@ -20,10 +20,3 @@ exports.provjeriTOTP = function (uneseniKod, tajniKljuc) {
 		return true;
 	return false;
 }
-
-
-exports.provjeriAkt = function (aktiviranost) {
-	if (aktiviranost == 1)
-		return true;
-	return false;
-}
